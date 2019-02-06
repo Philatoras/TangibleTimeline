@@ -1,0 +1,52 @@
+Libellé;Largeur (mm);Hauteur (mm);X (mm);Y (mm);type
+;25;25;225;40;Zone
+L 1;25;25;200;40;caseLoupDepart
+L 2;30;30;170;40;caseLoupDepart
+L 3;30;30;165;70;caseLoupDepart
+L 4;25;25;140;75;caseLoupDepart
+L 5;25;25;115;75;caseLoupFin
+L 6;25;25;90;75;caseLoupFin
+L 7;30;30;60;75;caseLoupFin
+C Dep;25;25;305;90;caseChaperonDepart
+C 1;25;25;305;115;caseChaperonDepart
+C 2;25;25;305;140;caseChaperonDepart
+C 3;25;25;305;165;caseChaperonDepart
+C 4;30;30;300;190;caseChaperonDepart
+C 5;25;25;275;195;caseChaperonDepart
+C 6;25;25;250;195;caseChaperonDepart
+C 7;25;25;225;195;caseChaperonDepart
+C 8;30;30;195;190;caseChaperonDepart
+C 9;25;25;195;165;caseChaperonDepart
+C 10;25;25;195;140;caseChaperonDepart
+C 11;30;30;190;110;caseChaperonDepart
+C 12;25;25;165;110;caseChaperonDepart
+Racc.;50;50;115;100;caseChaperonDepart
+C 14;25;25;115;150;caseChaperonFin
+C 15;30;30;140;150;caseChaperonFin
+C 16;25;25;145;180;caseChaperonFin
+C 17;30;30;140;205;caseChaperonFin
+C 18;25;25;115;210;caseChaperonFin
+C 19;25;25;90;210;caseChaperonFin
+C 20;30;30;60;205;caseChaperonFin
+M 1;25;25;60;180;caseChaumiereChaperon
+M 2;25;25;60;155;caseChaumiereChaperon
+M 3;25;25;60;130;caseChaumiereChaperon
+M 4;25;25;60;105;caseChaumiereChaperon
+M 4;25;25;60;105;caseChaumiereLoup
+M 3;25;25;60;130;caseChaumiereLoup
+M 2;25;25;60;155;caseChaumiereLoup
+M 1;25;25;60;180;caseChaumiereLoup
+Pioche;25;40;355;210;Pioche
+PANIER;35;70;0;0;Panier
+Joker;25;25;0;225;Joker
+Galette;25;25;0;200;Joker
+Beurre;25;25;0;175;Joker
+Aide;30;20;110;0;Carte
+Carte 1;30;20;140;0;Carte
+Carte 2;30;20;170;0;Carte
+Carte 3;30;20;200;0;Carte
+Carte 4;30;20;230;0;Carte
+Carte 5;30;20;260;0;Carte
+Carte 6;30;20;290;0;Carte
+Carte 7;30;20;320;0;Carte
+Carte 8;30;20;350;0;Carte
