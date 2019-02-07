@@ -1,7 +1,7 @@
-Libellé,Largeur (mm),Hauteur (mm),X (mm),Y (mm),type
-,25,25,225,40,Zone
-XVI,30,20,110,100,caseTime
-XVII,30,20,140,100,caseTime
-XVIII,30,20,170,100,caseTime
-XIX,30,20,200,100,caseTime
-XX,30,20,230,100,caseTime
+Libellé;Largeur (mm);Hauteur (mm);X (mm);Y (mm);type
+;25;25;225;40;Zone
+XVI;30;20;110;100;caseTime
+XVII;30;20;140;100;caseTime
+XVIII;30;20;170;100;caseTime
+XIX;30;20;200;100;caseTime
+XX;30;20;230;100;caseTime

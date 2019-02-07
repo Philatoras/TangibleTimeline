@@ -37,4 +37,6 @@ public class SocketInput implements Runnable
 			client.close();
 		} catch (IOException e) {e.printStackTrace();}
 	}
+	
+	
 }

@@ -14,7 +14,7 @@ public class InterfaceSimulationPupitre extends JFrame
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
 		setLayout(new BorderLayout());
-		PanneauJeu pj = new PanneauJeu(fileName);
+		PanneauJeuFrise pj = new PanneauJeuFrise(fileName);
 		add(pj,BorderLayout.CENTER);
 		addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent ke) 
@@ -38,7 +38,7 @@ public class InterfaceSimulationPupitre extends JFrame
 	{
 		Comm com = new Comm();
 		if(com.open()){
-			new InterfaceSimulationPupitre("plateau.csv",com);
+			new InterfaceSimulationPupitre("plateaufrise.csv",com);
 		}
 	}
 }
