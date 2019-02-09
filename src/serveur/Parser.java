@@ -7,9 +7,9 @@ package serveur;
  */
 public class Parser {
 	
-	private EventZoneManager ezm;
+	private EventZonesManager ezm;
 	
-	public Parser(EventZoneManager in_ezm) {
+	public Parser(EventZonesManager in_ezm) {
 		this.ezm = in_ezm; 
 	}
 	
