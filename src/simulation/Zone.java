@@ -51,5 +51,12 @@ public class Zone extends Rectangle2D.Double
 		g2.setFont(f);
 		g2.drawString(texte,x0,y0);
 	}
+	public double getCentreX(){
+		return this.centreX;
+	}
+	
+	public double getCentreY(){
+		return this.centreY;
+	}
 	
 }

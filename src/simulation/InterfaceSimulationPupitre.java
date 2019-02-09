@@ -1,6 +1,7 @@
 package simulation;
 import java.awt.BorderLayout;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
@@ -31,7 +32,13 @@ public class InterfaceSimulationPupitre extends JFrame
 		
 		this.com = com;
 		com.setPanneauJeu(pj);
-		com.envoiMessage("init="+PanneauJeu.LONGUEUR_PLATEAU+":"+PanneauJeu.HAUTEUR_PLATEAU);
+		com.envoiMessage("init="+PanneauJeuFrise.LONGUEUR_PLATEAU+":"+PanneauJeuFrise.HAUTEUR_PLATEAU);
+		String messageZones = "zones=";
+		ArrayList<Zone> zones = pj.getCasesTimeline();
+		for(int i = 0; i < zones.size(); i++){
+			messageZones += "_" + zones.get(i).getX() + ";" + zones.get(i).getY();
+		}
+		com.envoiMessage(messageZones);
 	}
 	
 	public static void main(String[] args)

@@ -21,8 +21,7 @@ public class PanneauJeuFrise extends JComponent implements MouseInputListener
 	
 	int x0, y0;
 	
-	ArrayList<Case> caseLoupDepart, caseLoupFin, caseChaperonDepart, caseChaperonFin;
-	ArrayList<Zone> caseTime, zones;
+	ArrayList<Zone> casesTimeline;
 	Hashtable<TypePionFrise, Pion> listePions;
 	
 	public PanneauJeuFrise(String fileName)
@@ -39,8 +38,7 @@ public class PanneauJeuFrise extends JComponent implements MouseInputListener
 		x0 = BORDURE + ZONE_GAUCHE + BORDURE;
 		y0 = BORDURE;
 		
-		caseTime = new ArrayList<Zone>();
-		zones = new ArrayList<Zone>();
+		casesTimeline = new ArrayList<Zone>();		
 
 		int espacementPions = 10;
 		int nb=0;
@@ -62,10 +60,8 @@ public class PanneauJeuFrise extends JComponent implements MouseInputListener
 		      switch(val[5])
 		      {
 		      	case "caseTime":
-		      		caseTime.add(creerZone(val[0], Double.parseDouble(val[3]), Double.parseDouble(val[4]), Double.parseDouble(val[1]), Double.parseDouble(val[2])));
-		      	case "Zone":
-		      		zones.add(creerZone(val[0], Double.parseDouble(val[3]), Double.parseDouble(val[4]), Double.parseDouble(val[1]), Double.parseDouble(val[2])));
-		    	break;
+		      		casesTimeline.add(creerZone(val[0], Double.parseDouble(val[3]), Double.parseDouble(val[4]), Double.parseDouble(val[1]), Double.parseDouble(val[2])));
+		      	 	break;
 		      	default:
 		    	break;
 		      }
@@ -129,13 +125,10 @@ public class PanneauJeuFrise extends JComponent implements MouseInputListener
 		g2.setColor(Color.WHITE);
 		g2.fillRect(BORDURE, BORDURE, ZONE_GAUCHE, HAUTEUR_PLATEAU);
 		g2.setColor(Color.BLACK);
-		g2.drawRect(BORDURE, BORDURE, ZONE_GAUCHE, HAUTEUR_PLATEAU);
-
-		for(int i=0;i<zones.size();i++)
-			zones.get(i).paint(g2);
+		g2.drawRect(BORDURE, BORDURE, ZONE_GAUCHE, HAUTEUR_PLATEAU);		
 		
-		for(int i=0;i<caseTime.size();i++)
-			caseTime.get(i).paint(g2);
+		for(int i=0;i<casesTimeline.size();i++)
+			casesTimeline.get(i).paint(g2);
 		
 		for(Pion p : listePions.values())
 			p.paint(g2);
@@ -182,5 +175,8 @@ public class PanneauJeuFrise extends JComponent implements MouseInputListener
 //					p.envoiMessage();
 			}
 		repaint();
+	}
+	public ArrayList<Zone> getCasesTimeline(){
+		return this.casesTimeline;
 	}
 }
