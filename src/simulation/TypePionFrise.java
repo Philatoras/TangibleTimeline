@@ -4,7 +4,10 @@ import java.awt.Color;
 
 public enum TypePionFrise 
 {
-	PIONF("PionF", "pionf", "blue", new Color(164,164,164));
+	PBLEU("Bleu", "bleu", "blue", new Color(0,0,200)),
+	PROUGE("Rouge", "rouge", "red", new Color(200,0,0)),
+	PVERT("Vert", "vert", "green", new Color(0,200,0));
+
 
 	
 	private String libelle, nom, couleurJeton;
@@ -17,3 +20,4 @@ public enum TypePionFrise
 	public String getLibelle(){return libelle;}
 	public String getNom(){return nom;}
 }
+

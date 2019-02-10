@@ -23,7 +23,7 @@ public class PanneauJeuFrise extends JComponent implements MouseInputListener
 	
 	ArrayList<Case> caseLoupDepart, caseLoupFin, caseChaperonDepart, caseChaperonFin;
 	ArrayList<Zone> caseTime, zones;
-	Hashtable<TypePion, Pion> listePions;
+	Hashtable<TypePionFrise, Pion> listePions;
 	
 	public PanneauJeuFrise(String fileName)
 	{
@@ -44,11 +44,11 @@ public class PanneauJeuFrise extends JComponent implements MouseInputListener
 
 		int espacementPions = 10;
 		int nb=0;
-		listePions = new Hashtable<TypePion, Pion>();
-		TypePion lp = TypePion.CHAPERON;
-		listePions.put(lp, new Pion(lp.getLibelle(),lp.getCouleurJeton(),837,214, lp.getCouleur()));
-		lp = TypePion.LOUP;
-		listePions.put(lp, new Pion(lp.getLibelle(),lp.getCouleurJeton(),668,109, lp.getCouleur()));		
+		listePions = new Hashtable<TypePionFrise, Pion>();
+		TypePionFrise fr = TypePionFrise.PROUGE;
+		listePions.put(fr, new Pion(fr.getLibelle(),fr.getCouleurJeton(),837,214, fr.getCouleur()));
+		fr = TypePionFrise.PBLEU;
+		listePions.put(fr, new Pion(fr.getLibelle(),fr.getCouleurJeton(),668,109, fr.getCouleur()));		
 		
 		try 
 		{
@@ -84,7 +84,7 @@ public class PanneauJeuFrise extends JComponent implements MouseInputListener
 	public String toString()
 	{
 		StringBuffer buf = new StringBuffer("pions=");
-		for(TypePion tp: listePions.keySet())
+		for(TypePionFrise tp: listePions.keySet())
 		{
 			buf.append(listePions.get(tp));
 			buf.append("_");
