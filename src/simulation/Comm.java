@@ -4,17 +4,21 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
+import com.sun.speech.freetts.*;
 
 import javax.swing.Timer;
-
+import java.io.*;
 public class Comm 
 {
+	
 	private static final int PORT = 8952;
 	Socket soc;
 	PrintWriter pred;
 	Timer t;
 	PanneauJeuFrise pj;
 	
+	
+	private static final String VOICENAME="kevin16";
 	public Comm()
 	{
 		t = new Timer(200, new ActionListener() {
@@ -27,6 +31,20 @@ public class Comm
 	public void envoiMessage(String msg)
 	{
 		pred.println(msg);
+	}
+	public void LireMessageTTS(String msg)
+	{
+		Voice voice;
+		VoiceManager vm=VoiceManager.getInstance();
+		voice=vm.getVoice(VOICENAME);
+		voice.allocate();
+		
+		try{
+			voice.speak(msg);
+		} 
+		catch(Exception e) {
+			this.envoiMessage("erreur TTS");
+		}
 	}
 	
 	public void setPanneauJeu(PanneauJeuFrise pj2){
