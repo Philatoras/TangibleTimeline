@@ -5,13 +5,13 @@ package serveur;
  * @author gwend
  *
  */
-public class CircleEventZone extends DetailledEventZone implements EventZone {
+public class CircularZone extends DetailledEventZone {
 	
 	private Coordinate center;
 	
 	private float radius;
 	
-	public CircleEventZone(DetailledEvent in_detailledEvent, Coordinate in_center,float in_radius ) {
+	public CircularZone(DetailledEvent in_detailledEvent, Coordinate in_center,float in_radius ) {
 		super(in_detailledEvent);
 		this.center = in_center;
 		this.radius = in_radius;

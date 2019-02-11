@@ -5,7 +5,7 @@ package serveur;
  * @author gwend
  *
  */
-public interface EventZone {
+public interface Zone {
 	
 	/**
 	 * Renvoie si des coordonnées appartiennent à la zone
@@ -19,5 +19,11 @@ public interface EventZone {
 	 * @param params Paramètres de l'action (Ex : couleur)
 	 */
 	public void doAction(Object... params);
+	
+	/**
+	 * Renvoie l'ID de la case
+	 * @return ID de la case
+	 */
+	public String getId();
 	
 }

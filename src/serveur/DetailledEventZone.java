@@ -1,6 +1,6 @@
 package serveur;
 
-public abstract class DetailledEventZone implements EventZone {
+public abstract class DetailledEventZone implements Zone {
 
 	private DetailledEvent detailledEvent;
 	

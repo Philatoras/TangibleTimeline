@@ -1,6 +1,7 @@
 package serveur;
 
 /**
+ * !!! A remplacer par la case dimension !!!
  * Classe gérant les coordonnées des points côté serveur
  * @author gwend
  *

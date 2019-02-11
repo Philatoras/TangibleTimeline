@@ -8,18 +8,18 @@ import java.util.List;
  * @author gwend
  *
  */
-public class EventZonesManager {
+public class ZoneManager {
 
 	/**
 	 * Liste des zones
 	 */
-	private List<EventZone> zones;
+	private List<Zone> zones;
 	
 	/**
 	 * Crée un EventZonesManager vide
 	 * @param in_zones
 	 */
-	public EventZonesManager() {
+	public ZoneManager() {
 		this.zones = new ArrayList<>();
 	}
 	
@@ -27,7 +27,7 @@ public class EventZonesManager {
 	 * Crée un EventZonesManager avec une liste de zones
 	 * @param in_zones
 	 */
-	public EventZonesManager(List<EventZone> in_zones) {
+	public ZoneManager(List<Zone> in_zones) {
 		this.zones = in_zones;
 	}
 	
@@ -39,9 +39,9 @@ public class EventZonesManager {
 	 * @param params Paramètres pour la zone
 	 */
 	public void checkEventTrigger(Coordinate coord, Object... params) {
-		for(EventZone ez : this.zones) {
-			if (ez.PointOnZone(coord)) {
-				ez.doAction(params);
+		for(Zone z : this.zones) {
+			if (z.PointOnZone(coord)) {
+				z.doAction(params);
 			}
 		}
 	}
