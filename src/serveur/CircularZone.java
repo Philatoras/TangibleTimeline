@@ -5,14 +5,14 @@ package serveur;
  * @author gwend
  *
  */
-public class CircularZone extends DetailledEventZone {
+public class CircularZone extends Zone {
 	
 	private Coordinate center;
 	
 	private float radius;
 	
-	public CircularZone(DetailledEvent in_detailledEvent, Coordinate in_center,float in_radius ) {
-		super(in_detailledEvent);
+	public CircularZone(Coordinate in_center,float in_radius ) {
+		super();
 		this.center = in_center;
 		this.radius = in_radius;
 	}
@@ -22,6 +22,12 @@ public class CircularZone extends DetailledEventZone {
 		float x = c.getC_x() - center.getC_x();
 		float y = c.getC_y() - center.getC_y();
 		return Math.sqrt(x*x + y*y) <= this.radius ;
+	}
+
+	@Override
+	public String getId() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

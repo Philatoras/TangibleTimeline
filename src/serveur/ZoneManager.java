@@ -40,9 +40,15 @@ public class ZoneManager {
 	 */
 	public void checkEventTrigger(Coordinate coord, Object... params) {
 		for(Zone z : this.zones) {
-			if (z.PointOnZone(coord)) {
-				z.doAction(params);
-			}
+			//ZoneEvent zoneEvent = new ZoneEvent();
+			//TODO : compléter zoneEvent
+			//Pion pion = new Pion(...params...);
+			//if (z.PointOnZone(coord) && !z.getIdPions().contains(pion.idPion)) {
+				//z.doEnterAction(zoneEvent);
+			//}
+			//if (!z.PointOnZone(coord) && z.getIdPions().contains(pion.idPion)) {
+				//z.doExitAction(zoneEvent);
+			//}
 		}
 	}
 	

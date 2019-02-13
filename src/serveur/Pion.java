@@ -3,8 +3,27 @@ package serveur;
 import java.awt.Color;
 
 public class Pion {
-	String idPion;
+	private String idPion;
 	//Forme form;
-	Color color;
-	Coordinate coordinate;
+	private Color color;
+	private Coordinate coordinate;
+	
+	public Pion(String idPion, Coordinate coordinate, Color color) {
+		this.idPion = idPion;
+		this.color = color;
+		this.coordinate = coordinate;
+	}
+	
+	public Color getColor() {
+		return color;
+	}
+	
+	public Coordinate getCoordinate() {
+		return coordinate;
+	}
+	
+	public String getIdPion() {
+		return idPion;
+	}
+	
 }
