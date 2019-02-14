@@ -46,7 +46,7 @@ public abstract class Zone {
 	 */
 	public void doEnterAction(ZoneEvent zoneEvent) {
 		for (ZoneListener zl : this.listeners) {
-			this.idPions.add(zoneEvent.getPion().idPion);
+			this.idPions.add(zoneEvent.getPion().getIdPion());
 			zl.zoneEntered(zoneEvent);
 		}
 	}
@@ -57,7 +57,7 @@ public abstract class Zone {
 	 */
 	public void doExitAction(ZoneEvent zoneEvent) {
 		for (ZoneListener zl : this.listeners) {
-			this.idPions.remove(zoneEvent.getPion().idPion);
+			this.idPions.remove(zoneEvent.getPion().getIdPion());
 			zl.zoneExited(zoneEvent);
 		}
 	}

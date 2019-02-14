@@ -4,7 +4,6 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
-import com.sun.speech.freetts.*;
 
 import javax.swing.Timer;
 import java.io.*;
