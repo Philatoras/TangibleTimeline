@@ -19,19 +19,31 @@ public class Parser {
 	 */
 	public void parseInput(String input) {
 		//Séparation de la taille du plateau et des zones
-		String[] inputGlob = input.split("!");
-		String[] inputSub = inputGlob[0].split("=");
-		switch(inputSub[0]){
+		String[] inputGlob = input.split("=");
+		switch(inputGlob[0]){
 			case "init":
-				String coordBrut = inputSub[1]; 
+				String coordBrut = inputGlob[1]; 
 				String[] temp = coordBrut.split(":");
-				int longeur = Integer.valueOf(temp[0]);
-				int hauteur = Integer.valueOf(temp[1]);				
+				int longueur = Integer.valueOf(temp[0]);
+				int hauteur = Integer.valueOf(temp[1]);						
 				break;
 			case "pions":
+				//separations des pions par un underscore _
+				String[] pions = inputGlob[1].split("_");
+				for(int i = 0; i < pions.length ; i++){
+					String[] pion = pions[i].split(":");
+					String couleur = pion[0];
+					int x = Integer.valueOf(pion[1]);
+					int y = Integer.valueOf(pion[2]);
+					System.out.println("x " + x + "y " + y);
+					Coordinate coord = new Coordinate(x, y);
+					ezm.checkEventTrigger(coord, couleur);
+				}
+				
 				break;
 				
 		}
+		//OBSOLETE, A SUPPRIMER
 		/*String plateauBrut = input1[0];
 		String zonesBrut = input1[1];
 		String pionsBrut = input1[2];
