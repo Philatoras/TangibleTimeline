@@ -59,4 +59,8 @@ public class Zone extends Rectangle2D.Double
 		return this.centreY;
 	}
 	
+	public String getTexte(){
+		return this.texte;
+	}
+	
 }

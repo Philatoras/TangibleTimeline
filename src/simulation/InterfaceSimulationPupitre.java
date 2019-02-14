@@ -36,7 +36,7 @@ public class InterfaceSimulationPupitre extends JFrame
 		String messageZones = "zones=";
 		ArrayList<Zone> zones = pj.getCasesTimeline();
 		for(int i = 0; i < zones.size(); i++){
-			messageZones += "_" + zones.get(i).getX() + ";" + zones.get(i).getY();
+			messageZones += "_" + zones.get(i).getTexte() + "/" + zones.get(i).getX() + ";" + zones.get(i).getY();
 		}
 		com.envoiMessage(messageZones);
 	}
