@@ -18,12 +18,6 @@ public class TestEventZonesManager {
 			return c.getC_x() > 0 && c.getC_x() < 5 
 					&& c.getC_y() > 5 && c.getC_y() < 14;
 		}
-
-		@Override
-		public String getId() {
-			// TODO Auto-generated method stub
-			return null;
-		}
 		
 	}
 	

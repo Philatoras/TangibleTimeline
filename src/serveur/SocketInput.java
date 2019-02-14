@@ -8,14 +8,15 @@ import java.net.SocketException;
 
 public class SocketInput implements Runnable
 {
-	EventZonesManager ezm;
+	ZoneManager ezm;
 	Parser parser;
 	Socket client;
 
-	public SocketInput(Socket client, Serveur s)
+	public SocketInput(Socket client, Serveur s,ZoneManager ezm)
 	{
 		this.parser = new Parser(ezm);
 		this.client = client;
+		this.ezm = ezm;
 	}
 	
 	public void run() 
