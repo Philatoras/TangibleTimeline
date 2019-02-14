@@ -45,6 +45,7 @@ public abstract class Zone {
 	 * @param params Paramètres de l'action (Ex : couleur)
 	 */
 	public void doEnterAction(ZoneEvent zoneEvent) {
+		ZoneEvent event = new ZoneEvent(zoneEvent.getPion(), zoneEvent.getTime(), this.getId());
 		for (ZoneListener zl : this.listeners) {
 			this.idPions.add(zoneEvent.getPion().getIdPion());
 			zl.zoneEntered(zoneEvent);
@@ -56,6 +57,7 @@ public abstract class Zone {
 	 * @param params Paramètres de l'action (Ex : couleur)
 	 */
 	public void doExitAction(ZoneEvent zoneEvent) {
+		ZoneEvent event = new ZoneEvent(zoneEvent.getPion(), zoneEvent.getTime(), this.getId());
 		for (ZoneListener zl : this.listeners) {
 			this.idPions.remove(zoneEvent.getPion().getIdPion());
 			zl.zoneExited(zoneEvent);
