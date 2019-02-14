@@ -20,7 +20,6 @@ public class TextToSpeech {
 	public void lireMessage(String message) {
 		this.lecteur.setTexte(message);
 		this.lecteur.playAll();
-		this.lecteur.setTexte(null);
 	}
 	
 	
