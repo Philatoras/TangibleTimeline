@@ -56,7 +56,7 @@ public class ZoneManager {
 	 * Ajoute une zone au manager
 	 * @param zone Zone à ajouter
 	 */
-	public void addZone(EventZone zone) {
+	public void addZone(Zone zone) {
 		this.zones.add(zone);
 	}
 	

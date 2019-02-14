@@ -3,15 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="C:/Users/Ludovic/Desktop/tts/freetts-1.2/lib/cmu_time_awb.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ludovic/Desktop/tts/freetts-1.2/lib/cmu_us_kal.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ludovic/Desktop/tts/freetts-1.2/lib/cmudict04.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ludovic/Desktop/tts/freetts-1.2/lib/cmulex.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ludovic/Desktop/tts/freetts-1.2/lib/cmutimelex.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ludovic/Desktop/tts/freetts-1.2/lib/en_us.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ludovic/Desktop/tts/freetts-1.2/lib/freetts.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ludovic/Desktop/tts/freetts-1.2/lib/freetts-jsapi10.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ludovic/Desktop/tts/freetts-1.2/lib/mbrola.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ludovic/Documents/SI_VOX-src/SI_VOX.jar"/>
+	<classpathentry kind="lib" path="ttsJar/SI_VOX.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
