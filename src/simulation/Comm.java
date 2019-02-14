@@ -18,7 +18,6 @@ public class Comm
 	PanneauJeuFrise pj;
 	
 	
-	private static final String VOICENAME="kevin16";
 	public Comm()
 	{
 		t = new Timer(200, new ActionListener() {
@@ -32,10 +31,9 @@ public class Comm
 	{
 		pred.println(msg);
 	}
-	public void LireMessageTTS(String msg)
-	{
+	
 		
-	}
+	
 	
 	public void setPanneauJeu(PanneauJeuFrise pj2){
 		this.pj = pj2;

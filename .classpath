@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="C:/Users/Ludovic/Desktop/tts/freetts-1.2/lib/freetts.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Ludovic/Desktop/tts/freetts-1.2/lib/freetts-jsapi10.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Ludovic/Desktop/tts/freetts-1.2/lib/mbrola.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ludovic/Documents/SI_VOX-src/SI_VOX.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
