@@ -8,7 +8,7 @@ import java.net.SocketException;
 
 public class SocketInput implements Runnable
 {
-	EventZonesManager ezm;
+	ZoneManager ezm;
 	Parser parser;
 	Socket client;
 
