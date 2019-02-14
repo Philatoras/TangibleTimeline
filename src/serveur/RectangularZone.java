@@ -11,8 +11,8 @@ public class RectangularZone extends Zone {
 	private Coordinate coin1;
 	private Coordinate coin2;
 	
-	public RectangularZone(Coordinate in_coin1,Coordinate in_coin2 ) {
-		super();
+	public RectangularZone(Coordinate in_coin1,Coordinate in_coin2, String id ) {
+		super(id);
 		this.coin1 = in_coin1;
 		this.coin2 = in_coin2;
 	}

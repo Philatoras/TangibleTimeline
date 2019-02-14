@@ -13,6 +13,10 @@ public class TestEventZonesManager {
 	
 	private class FakeEventZone extends Zone{
 
+		public FakeEventZone(String id) {
+			super(id);
+		}
+
 		@Override
 		public boolean PointOnZone(Coordinate c) {
 			return c.getC_x() > 0 && c.getC_x() < 5 

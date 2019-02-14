@@ -10,6 +10,7 @@ import java.util.List;
  */
 public abstract class Zone {
 	
+	private String id;
 	/**
 	 * Listeners de la zone
 	 */
@@ -20,7 +21,8 @@ public abstract class Zone {
 	 */
 	private List<String> idPions;
 	
-	public Zone() {
+	public Zone(String id) {
+		this.id = id;
 		this.listeners = new ArrayList<>();
 		this.idPions = new ArrayList<>();
 	}
@@ -68,7 +70,9 @@ public abstract class Zone {
 	 * Renvoie l'ID de la case
 	 * @return ID de la case
 	 */
-	public abstract String getId();
+	public String getId() {
+		return this.id;
+	}
 	
 	public List<String> getIdPions() {
 		return idPions;

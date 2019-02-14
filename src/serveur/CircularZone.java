@@ -11,8 +11,8 @@ public class CircularZone extends Zone {
 	
 	private float radius;
 	
-	public CircularZone(Coordinate in_center,float in_radius ) {
-		super();
+	public CircularZone(Coordinate in_center,float in_radius, String id ) {
+		super(id);
 		this.center = in_center;
 		this.radius = in_radius;
 	}
