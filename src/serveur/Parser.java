@@ -34,8 +34,7 @@ public class Parser {
 					String[] pion = pions[i].split(":");
 					String couleur = pion[0];
 					int x = Integer.valueOf(pion[1]);
-					int y = Integer.valueOf(pion[2]);
-					System.out.println("x " + x + "y " + y);
+					int y = Integer.valueOf(pion[2]);					
 					Coordinate coord = new Coordinate(x, y);
 					ezm.checkEventTrigger(coord, couleur);
 				}
