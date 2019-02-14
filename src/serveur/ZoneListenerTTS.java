@@ -13,14 +13,16 @@ public class ZoneListenerTTS implements ZoneListener {
 	
 	@Override
 	public void zoneEntered(ZoneEvent zoneEvent) {
-		TextToSpeech tts = new TextToSpeech();
-		tts.lireMessage(messageEntree);
+		//TextToSpeech tts = new TextToSpeech();
+		//tts.lireMessage(messageEntree);
+		System.out.println(messageEntree);
 	}
 
 	@Override
 	public void zoneExited(ZoneEvent zoneExited) {
-		TextToSpeech tts = new TextToSpeech();
-		tts.lireMessage(messageEntree);
+		//TextToSpeech tts = new TextToSpeech();
+		//tts.lireMessage(messageEntree);
+		System.out.println(messageSortie);
 	}
 
 }

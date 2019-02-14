@@ -19,12 +19,15 @@ public class RectangularZone extends Zone {
 	
 	@Override
 	public boolean PointOnZone(Coordinate c) {
-		float x1 = c.getC_x() - coin1.getC_x();
+		/*float x1 = c.getC_x() - coin1.getC_x();
 		float y1 = c.getC_y() - coin1.getC_y();
 		float x2 = c.getC_x() - coin2.getC_x();
 		float y2 = c.getC_y() - coin2.getC_y();
 		boolean absi = Math.abs((x2-x1))>0;
 		boolean ordo = Math.abs((y1-y2))>0;
+		return (absi && ordo);*/
+		boolean absi = c.getC_x() > coin1.getC_x() && c.getC_x() < coin2.getC_x() || c.getC_x() < coin1.getC_x() && c.getC_x() > coin2.getC_x();
+		boolean ordo = c.getC_y() > coin1.getC_y() && c.getC_y() < coin2.getC_y() || c.getC_y() < coin1.getC_y() && c.getC_y() > coin2.getC_y();
 		return (absi && ordo);
 	}
 }
