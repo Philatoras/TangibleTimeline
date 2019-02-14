@@ -34,17 +34,7 @@ public class Comm
 	}
 	public void LireMessageTTS(String msg)
 	{
-		Voice voice;
-		VoiceManager vm=VoiceManager.getInstance();
-		voice=vm.getVoice(VOICENAME);
-		voice.allocate();
 		
-		try{
-			voice.speak(msg);
-		} 
-		catch(Exception e) {
-			this.envoiMessage("erreur TTS");
-		}
 	}
 	
 	public void setPanneauJeu(PanneauJeuFrise pj2){
