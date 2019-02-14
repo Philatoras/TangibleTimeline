@@ -23,10 +23,4 @@ public class CircularZone extends Zone {
 		float y = c.getC_y() - center.getC_y();
 		return Math.sqrt(x*x + y*y) <= this.radius ;
 	}
-
-	@Override
-	public String getId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
