@@ -1,6 +1,6 @@
 package serveur;
 
-public class ScenarioSimple implements Scenario {
+public class ScenarioMenu implements Scenario {
 
 	@Override
 	public void initScenario(ZoneManager zoneManager) {
@@ -12,22 +12,22 @@ public class ScenarioSimple implements Scenario {
 		
 		ZoneListenerTTS ttsBaroque = new ZoneListenerTTS("Baroque et classicisme", "");
 		Zone zoneBaroque = new RectangularZone(new Coordinate(125, 90),new Coordinate(155, 110), "zoneBaroque&classicisme");
-		zoneBaroque.addListener(ttsBaroque);
+		zonePleiade.addListener(ttsBaroque);
 		zoneManager.addZone(zoneBaroque);
 		
 		ZoneListenerTTS ttsLumiere = new ZoneListenerTTS("Lumières", "");
 		Zone zoneLumiere = new RectangularZone(new Coordinate(155, 90),new Coordinate(185, 110), "zoneLumiere");
-		zoneLumiere.addListener(ttsLumiere);
+		zonePleiade.addListener(ttsLumiere);
 		zoneManager.addZone(zoneLumiere);
 		
 		ZoneListenerTTS ttsRomantisme = new ZoneListenerTTS("Romantisme", "");
 		Zone zoneRomantisme = new RectangularZone(new Coordinate(185, 90),new Coordinate(215, 110), "zoneRomantisme");
-		zoneRomantisme.addListener(ttsRomantisme);
+		zonePleiade.addListener(ttsRomantisme);
 		zoneManager.addZone(zoneRomantisme);
 		
 		ZoneListenerTTS ttsSurrealisme = new ZoneListenerTTS("Surrealisme", "");
 		Zone zoneSurrealisme = new RectangularZone(new Coordinate(215, 90),new Coordinate(245, 110), "zoneSurrealisme");
-		zoneSurrealisme.addListener(ttsSurrealisme);
+		zonePleiade.addListener(ttsSurrealisme);
 		zoneManager.addZone(zoneSurrealisme);
 	}
 

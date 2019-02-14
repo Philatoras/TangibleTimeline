@@ -44,8 +44,9 @@ public class PanneauJeuFrise extends JComponent implements MouseInputListener
 		int nb=0;
 		listePions = new Hashtable<TypePionFrise, Pion>();
 		TypePionFrise p = TypePionFrise.PIONF;
+		TypePionFrise pmenu = TypePionFrise.MENU;
 		listePions.put(p, new Pion(p.getLibelle(),p.getCouleurJeton(),837,214, p.getCouleur()));				
-		
+		listePions.put(pmenu, new Pion(pmenu.getLibelle(),pmenu.getCouleurJeton(),837,214, pmenu.getCouleur()));
 		try 
 		{
 		   BufferedReader buf = new BufferedReader(new FileReader(fileName));
