@@ -26,7 +26,7 @@ public class ScenarioSimple implements Scenario {
 		zoneManager.addZone(zoneRomantisme);
 		
 		ZoneListenerTTS ttsSurrealisme = new ZoneListenerTTS("Surrealisme", "");
-		Zone zoneSurrealisme = new RectangularZone(new Coordinate(185, 90),new Coordinate(215, 110), "zoneSurrealisme");
+		Zone zoneSurrealisme = new RectangularZone(new Coordinate(215, 90),new Coordinate(245, 110), "zoneSurrealisme");
 		zonePleiade.addListener(ttsSurrealisme);
 		zoneManager.addZone(zoneSurrealisme);
 	}
