@@ -38,17 +38,16 @@ public class ZoneManager {
 	 * @param coord Coordonnées à tester
 	 * @param params Paramètres pour la zone
 	 */
-	public void checkEventTrigger(Coordinate coord, Object... params) {
+	public void checkEventTrigger(Coordinate coord, String couleur) {
 		for(Zone z : this.zones) {
-			//ZoneEvent zoneEvent = new ZoneEvent();
-			//TODO : compléter zoneEvent
-			//Pion pion = new Pion(...params...);
-			//if (z.PointOnZone(coord) && !z.getIdPions().contains(pion.idPion)) {
-				//z.doEnterAction(zoneEvent);
-			//}
-			//if (!z.PointOnZone(coord) && z.getIdPions().contains(pion.idPion)) {
-				//z.doExitAction(zoneEvent);
-			//}
+			Pion pion = new Pion(couleur, coord, couleur); //Pour l'instant, fait passer l'id du pion pour sa couleur
+			ZoneEvent zoneEvent = new ZoneEvent(pion, 0l, ""); //Pour l'instant, pas de time
+			if (z.PointOnZone(coord) && !z.getIdPions().contains(pion.getIdPion())) {
+				z.doEnterAction(zoneEvent);
+			}
+			if (!z.PointOnZone(coord) && z.getIdPions().contains(pion.getIdPion())) {
+				z.doExitAction(zoneEvent);
+			}
 		}
 	}
 	

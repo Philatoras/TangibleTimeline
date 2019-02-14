@@ -43,7 +43,7 @@ public class TestZone {
 		valeurTest = 0;
 		Coordinate c = new Coordinate(5, 5);
 		zone = new CircularZone(c,3f,"");
-		Pion pion = new Pion("Pion", c, new Color(0));
+		Pion pion = new Pion("Pion", c, "");
 		zoneEvent = new ZoneEvent(pion, 0l, "Source");
 	}
 	
