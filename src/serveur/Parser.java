@@ -19,8 +19,20 @@ public class Parser {
 	 */
 	public void parseInput(String input) {
 		//Séparation de la taille du plateau et des zones
-		String[] input1 = input.split("!");
-		String plateauBrut = input1[0];
+		String[] inputGlob = input.split("!");
+		String[] inputSub = inputGlob[0].split("=");
+		switch(inputSub[0]){
+			case "init":
+				String coordBrut = inputSub[1]; 
+				String[] temp = coordBrut.split(":");
+				int longeur = Integer.valueOf(temp[0]);
+				int hauteur = Integer.valueOf(temp[1]);				
+				break;
+			case "pions":
+				break;
+				
+		}
+		/*String plateauBrut = input1[0];
 		String zonesBrut = input1[1];
 		String pionsBrut = input1[2];
 		//Taille du plateau
@@ -28,7 +40,7 @@ public class Parser {
 		plateauBrut = temp[1]; //temp[0] = "init" 
 		temp = plateauBrut.split(":");
 		int longeur = Integer.valueOf(temp[0]);
-		int hauteur = Integer.valueOf(temp[1]);
+		int hauteur = Integer.valueOf(temp[1]);*/
 		//Zones
 		/*String[] zones = zonesBrut.split("_");
 		for(int i = 0; i < zones.length ; i++){
