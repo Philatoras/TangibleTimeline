@@ -32,13 +32,14 @@ public class InterfaceSimulationPupitre extends JFrame
 		
 		this.com = com;
 		com.setPanneauJeu(pj);
-		com.envoiMessage("init="+PanneauJeuFrise.LONGUEUR_PLATEAU+":"+PanneauJeuFrise.HAUTEUR_PLATEAU);
+		//On utilise ! comme séparateur entre chaque partie (plateau, zones, pions)
+		com.envoiMessage("init="+PanneauJeuFrise.LONGUEUR_PLATEAU+":"+PanneauJeuFrise.HAUTEUR_PLATEAU + "!");
 		String messageZones = "zones=";
 		ArrayList<Zone> zones = pj.getCasesTimeline();
 		for(int i = 0; i < zones.size(); i++){
-			messageZones += "_" + zones.get(i).getTexte() + "/" + zones.get(i).getX() + ";" + zones.get(i).getY();
+			messageZones += "_" + zones.get(i).getTexte() + ":" + zones.get(i).getX() + ":" + zones.get(i).getY();
 		}
-		com.envoiMessage(messageZones);
+		com.envoiMessage(messageZones + "!");
 	}
 	
 	public static void main(String[] args)
