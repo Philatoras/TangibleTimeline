@@ -21,7 +21,7 @@ public class Serveur implements Runnable
 		{
 			try {
 				Socket client = server.accept();
-				Scenario scenar = new ScenarioSimple();
+				Scenario scenar = new ScenarioMultiPion();
 				ZoneManager ezm = new ZoneManager();
 				scenar.initScenario(ezm);
 				input = new SocketInput(client, this,ezm);

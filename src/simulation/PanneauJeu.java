@@ -11,7 +11,7 @@ import java.util.Hashtable;
 import javax.swing.*;
 import javax.swing.event.*;
 
-public class PanneauJeu extends JComponent implements MouseInputListener
+public class PanneauJeu extends JComponent implements MouseInputListener, PanneauJeuI
 {
 	public static final int LONGUEUR_PLATEAU = 800;
 	public static final int HAUTEUR_PLATEAU = Transformation.getHauteur(LONGUEUR_PLATEAU);
@@ -217,5 +217,17 @@ public class PanneauJeu extends JComponent implements MouseInputListener
 //					p.envoiMessage();
 			}
 		repaint();
+	}
+
+	@Override
+	public boolean checkPionZone(Pion pion, Zone zone) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public ArrayList<Zone> getCasesTimeline() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
