@@ -1,10 +1,10 @@
 package serveur;
 
 public class ModeMenu {
-	public static String mode = "";//rien par défaut
+	public static String mode;
 	
-	public void setMode(String mode){
-		this.mode = mode;
+	public static void setMode(String mode){
+		ModeMenu.mode = mode;
 	}
 	
 	public String getMode(){

@@ -10,15 +10,15 @@ public class ZoneListenerMenu implements ZoneListener {
 	
 	@Override
 	public void zoneEntered(ZoneEvent zoneEvent) {
-		if(zoneEvent.getPion().getColor() == "red"){
-			ModeMenu.mode = mode;
+		if(zoneEvent.getPion().getColor().equals("red")){
+			ModeMenu.setMode(mode);
 		}
 	}
 
 	@Override
 	public void zoneExited(ZoneEvent zoneExited) {
-		if(zoneExited.getPion().getColor() == "red"){
-			ModeMenu.mode = "";
+		if(zoneExited.getPion().getColor().equals("red")){
+			ModeMenu.setMode("");
 		}
 
 	}
