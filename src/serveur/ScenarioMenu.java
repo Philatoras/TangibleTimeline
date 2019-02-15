@@ -41,11 +41,11 @@ public class ScenarioMenu implements Scenario {
 		zoneManager.addZone(zoneSurrealisme);
 		
 		//Zones du menu
-		ZoneListenerMenu listMenuMouv = new ZoneListenerMenu();
+		ZoneListenerMenu listMenuMouv = new ZoneListenerMenu("mvt");
 		Zone zoneMenuMouv = new RectangularZone(new Coordinate(215, 120),new Coordinate(245, 130), "zoneMenuMouv");//Coord a changer
 		zoneMenuMouv.addListener(listMenuMouv);		
 		zoneManager.addZone(zoneMenuMouv);
-		ZoneListenerMenu listMenuAut = new ZoneListenerMenu();
+		ZoneListenerMenu listMenuAut = new ZoneListenerMenu("aut");
 		Zone zoneMenuAut = new RectangularZone(new Coordinate(245, 120),new Coordinate(275, 130), "zoneMenuAut");//Coord a changer
 		zoneMenuAut.addListener(listMenuAut);		
 		zoneManager.addZone(zoneMenuAut);

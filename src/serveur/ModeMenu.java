@@ -1,7 +1,7 @@
 package serveur;
 
 public class ModeMenu {
-	public static String mode = "mvt";//mode "mouvement" de base
+	public static String mode = "";//rien par défaut
 	
 	public void setMode(String mode){
 		this.mode = mode;
