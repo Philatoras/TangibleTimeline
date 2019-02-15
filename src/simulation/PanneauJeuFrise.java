@@ -11,7 +11,7 @@ import java.util.Hashtable;
 import javax.swing.*;
 import javax.swing.event.*;
 
-public class PanneauJeuFrise extends JComponent implements MouseInputListener
+public class PanneauJeuFrise extends JComponent implements MouseInputListener, PanneauJeuI
 {
 	public static final int LONGUEUR_PLATEAU = 800;
 	public static final int HAUTEUR_PLATEAU = Transformation.getHauteur(LONGUEUR_PLATEAU);

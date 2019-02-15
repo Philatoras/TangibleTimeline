@@ -14,7 +14,7 @@ public class Comm
 	Socket soc;
 	PrintWriter pred;
 	Timer t;
-	PanneauJeuFrise pj;
+	PanneauJeuI pj;
 	
 	
 	public Comm()
@@ -35,7 +35,7 @@ public class Comm
 		
 	
 	
-	public void setPanneauJeu(PanneauJeuFrise pj2){
+	public void setPanneauJeu(PanneauJeuI pj2){
 		this.pj = pj2;
 	}
 	
