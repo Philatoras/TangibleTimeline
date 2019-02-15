@@ -81,7 +81,7 @@ public class PanneauJeuFrise extends JComponent implements MouseInputListener
 		StringBuffer buf = new StringBuffer("pions=");
 		for(TypePionFrise tp: listePions.keySet())
 		{
-			buf.append(listePions.get(tp).toString());
+			buf.append(listePions.get(tp).pionVersStream());
 			buf.append("_");
 		}
 		return buf.toString();

@@ -22,6 +22,7 @@ public class Comm
 		t = new Timer(200, new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pred.println(pj);
+				//Multiplier par la base 800*526 diviser par 380*250
 			}
 		});
 	}
