@@ -180,4 +180,7 @@ public class PanneauJeuFrise extends JComponent implements MouseInputListener, P
 	public ArrayList<Zone> getCasesTimeline(){
 		return this.casesTimeline;
 	}
+
+	
+	
 }

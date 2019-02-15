@@ -15,7 +15,7 @@ public class InterfaceSimulationPupitre extends JFrame
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
 		setLayout(new BorderLayout());
-		PanneauJeuFrise pj = new PanneauJeuFrise(fileName);
+		PanneauJeuMulti pj = new PanneauJeuMulti(fileName);
 		add(pj,BorderLayout.CENTER);
 		addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent ke) 
@@ -38,7 +38,7 @@ public class InterfaceSimulationPupitre extends JFrame
 		for(int i = 0; i < zones.size(); i++){
 			messageZones += "_" + zones.get(i).getTexte() + ":" + zones.get(i).getX() + ":" + zones.get(i).getY();
 		}*/
-		com.envoiMessage("init="+PanneauJeuFrise.LONGUEUR_PLATEAU+":"+PanneauJeuFrise.HAUTEUR_PLATEAU);		
+		com.envoiMessage("init="+pj.LONGUEUR_PLATEAU+":"+pj.HAUTEUR_PLATEAU);		
 		
 	}
 	
