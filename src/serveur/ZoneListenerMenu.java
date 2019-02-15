@@ -4,12 +4,16 @@ public class ZoneListenerMenu implements ZoneListener {
 
 	@Override
 	public void zoneEntered(ZoneEvent zoneEvent) {
-		//TODO
+		if(zoneEvent.getPion().getColor() == "red"){
+			
+		}
 	}
 
 	@Override
 	public void zoneExited(ZoneEvent zoneExited) {
-		//TODO
+		if(zoneExited.getPion().getColor() == "red"){
+			
+		}
 
 	}
 
