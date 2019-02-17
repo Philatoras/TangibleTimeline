@@ -31,7 +31,7 @@ public class SocketInput implements Runnable
 					{
 						if(input.startsWith("Deconnexion"))
 							socketOuvert=false;
-						System.out.println(input);
+						//System.out.println(input);
 						parser.parseInput(input);
 					}
 				}catch(SocketException se){

@@ -5,7 +5,7 @@ public class ZoneListenerTTSPion extends ZoneListenerTTS {
 	private String couleurTrigger;	
 	
 	public ZoneListenerTTSPion(String messageEntree, String messageSortie, String couleurTrigger) {
-		super(messageEntree, messageSortie);
+		super(messageEntree, messageSortie, "");
 		this.couleurTrigger = couleurTrigger;
 	}
 	
