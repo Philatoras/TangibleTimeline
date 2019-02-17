@@ -5,17 +5,17 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
-public class InterfaceSimulationPupitre extends JFrame
+public class InterfaceSimulationPupitreQuad extends JFrame
 {
 	Comm com;
 	
-	public InterfaceSimulationPupitre(String fileName, Comm com)
+	public InterfaceSimulationPupitreQuad(String fileName, Comm com)
 	{
 		super("Simulation pupitre");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
 		setLayout(new BorderLayout());
-		PanneauJeuFrise pj = new PanneauJeuFrise(fileName);
+		PanneauJeuFriseQuad pj = new PanneauJeuFriseQuad(fileName);
 		add(pj,BorderLayout.CENTER);
 		addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent ke) 
@@ -46,7 +46,7 @@ public class InterfaceSimulationPupitre extends JFrame
 	{
 		Comm com = new Comm();
 		if(com.open()){
-			new InterfaceSimulationPupitre("plateauFriseMenu.csv",com);
+			new InterfaceSimulationPupitreQuad("plateaufrise.csv",com);
 		}
 	}
 }

@@ -18,7 +18,7 @@ public class ZoneListenerMenu implements ZoneListener {
 	@Override
 	public void zoneExited(ZoneEvent zoneExited) {
 		if(zoneExited.getPion().getColor().equals("red")){
-			ModeMenu.setMode("");
+			//ModeMenu.setMode("");
 		}
 
 	}

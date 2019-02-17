@@ -19,8 +19,8 @@ public class ZoneListenerTTS implements ZoneListener {
 	@Override
 	public void zoneEntered(ZoneEvent zoneEvent) {
 		if (mode.equals(ModeMenu.mode)) {
-			// TextToSpeech tts = new TextToSpeech();
-			// tts.lireMessage(messageEntree);
+			TextToSpeech tts = new TextToSpeech();
+			tts.lireMessage(messageEntree);
 			System.out.println(messageEntree);
 		}
 
