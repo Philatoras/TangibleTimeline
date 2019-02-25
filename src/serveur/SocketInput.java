@@ -8,11 +8,15 @@ import java.net.SocketException;
 
 public class SocketInput implements Runnable
 {
+	ZoneManager ezm;
+	Parser parser;
 	Socket client;
 
-	public SocketInput(Socket client, Serveur s)
+	public SocketInput(Socket client, Serveur s,ZoneManager ezm)
 	{
+		this.parser = new Parser(ezm);
 		this.client = client;
+		this.ezm = ezm;
 	}
 	
 	public void run() 
@@ -27,7 +31,8 @@ public class SocketInput implements Runnable
 					{
 						if(input.startsWith("Deconnexion"))
 							socketOuvert=false;
-						System.out.println(input);
+						//System.out.println(input);
+						parser.parseInput(input);
 					}
 				}catch(SocketException se){
 					socketOuvert=false;

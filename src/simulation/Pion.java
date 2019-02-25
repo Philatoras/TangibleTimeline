@@ -55,6 +55,15 @@ public class Pion extends Ellipse2D.Double
 		return buf.toString();
 	}
 	
+	public String pionVersStream() {
+		StringBuffer buf = new StringBuffer(commande);
+		buf.append(":");
+		buf.append(Math.round((double)(Transformation.transformeAbscisseInverse(centreX-PanneauJeu.BORDURE-PanneauJeu.ZONE_GAUCHE-PanneauJeu.BORDURE))));
+		buf.append(":");
+		buf.append(Math.round((double)(Transformation.transformeOrdonneeInverse(centreY-PanneauJeu.BORDURE))));
+		return buf.toString();
+	}
+	
 	public void paint(Graphics2D g2)
 	{
 		g2.setColor(couleur);

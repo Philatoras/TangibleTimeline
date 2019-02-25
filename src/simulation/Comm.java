@@ -6,20 +6,23 @@ import java.net.InetAddress;
 import java.net.Socket;
 
 import javax.swing.Timer;
-
+import java.io.*;
 public class Comm 
 {
+	
 	private static final int PORT = 8952;
 	Socket soc;
 	PrintWriter pred;
 	Timer t;
-	PanneauJeuFrise pj;
+	PanneauJeuI pj;
+	
 	
 	public Comm()
 	{
 		t = new Timer(200, new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pred.println(pj);
+				//Multiplier par la base 800*526 diviser par 380*250
 			}
 		});
 	}
@@ -29,7 +32,10 @@ public class Comm
 		pred.println(msg);
 	}
 	
-	public void setPanneauJeu(PanneauJeuFrise pj2){
+		
+	
+	
+	public void setPanneauJeu(PanneauJeuI pj2){
 		this.pj = pj2;
 	}
 	
