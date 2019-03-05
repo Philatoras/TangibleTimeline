@@ -15,6 +15,7 @@ public class MenuBlock extends CodingBlock {
 
 	@Override
 	void receipt(HashMap<Attributs, Object> atts) {
+		//reçoit le nom (ou le type de contenu) de la zone menu activée
 		String modeRecu = (String)getAttributs().get(Attributs.TEXTE);
 		mode = modeRecu;
 		getAttributs().put(Attributs.TEXTE, modeRecu);
