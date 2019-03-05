@@ -25,13 +25,8 @@ public class SocketInputBloc2 implements Runnable
 		this.client = client;
 		this.parser = new ParserBloc(zmb);
 		this.zmb = new ZoneManagerBloc();
-		PionBlock pb = new PionBlock("P1", "dark", "Cercle");
-		this.zmb.addPion(pb);		
-		ZoneBlock zone = new ZoneBlock("Z1", 50, 50, 200, 200, "Bonjour");
-		this.zmb.addZone(zone);
-		TTSBlock tts = new TTSBlock();
-		pb.addSortie(zone);
-		zone.addSortie(tts);
+		ScenarioBloc scenar = new ScenarioQuad();
+		scenar.initScenario(zmb);
 	}
 	
 	public void run() 

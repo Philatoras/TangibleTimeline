@@ -17,16 +17,14 @@ import blocs.ZoneBlock;
 public class SocketInputBloc implements Runnable
 {
 	Socket client;
-	PionBlock pb;
+	ZoneManagerBloc zmb;
 
 	public SocketInputBloc(Socket client, ServeurBloc s)
 	{
 		this.client = client;
-		pb = new PionBlock("P1", "dark", "Cercle");
-		ZoneBlock zone = new ZoneBlock("Z1", 50, 50, 200, 200, "Bonjour");
-		TTSBlock tts = new TTSBlock();
-		pb.addSortie(zone);
-		zone.addSortie(tts);
+		ScenarioBloc scenar = new ScenarioQuad();
+		zmb = new ZoneManagerBloc();
+		scenar.initScenario(zmb);
 	}
 	
 	public void run() 
@@ -48,19 +46,21 @@ public class SocketInputBloc implements Runnable
 								{
 									String[] valeurs = s.split(":");
 									String couleur = valeurs[0].trim().toLowerCase();
-									if(couleur.equals(pb.getAttributs().get(Attributs.COULEUR)))
-									{
-										System.out.println("dark "+s);
-										int x = 0;
-										if(!valeurs[1].equals("None"))
-											x = (int)(Double.parseDouble(valeurs[1]));
-										int y = 0;
-										if(!valeurs[2].equals("None"))
-											y = (int)(Double.parseDouble(valeurs[2]));
-										HashMap<Attributs, Object> attributs = new HashMap<Attributs, Object>();
-										attributs.put(Attributs.X, x);
-										attributs.put(Attributs.Y, y);
-										pb.receipt(attributs);
+									for (PionBlock pb : zmb.getPions()) {
+										if(couleur.equals(pb.getAttributs().get(Attributs.COULEUR)))
+										{
+											System.out.println("dark "+s);
+											int x = 0;
+											if(!valeurs[1].equals("None"))
+												x = (int)(Double.parseDouble(valeurs[1]));
+											int y = 0;
+											if(!valeurs[2].equals("None"))
+												y = (int)(Double.parseDouble(valeurs[2]));
+											HashMap<Attributs, Object> attributs = new HashMap<Attributs, Object>();
+											attributs.put(Attributs.X, x);
+											attributs.put(Attributs.Y, y);
+											pb.receipt(attributs);
+										}
 									}
 								}
 							break;
