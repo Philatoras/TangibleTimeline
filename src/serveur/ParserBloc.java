@@ -46,7 +46,7 @@ public class ParserBloc {
 						HashMap<Attributs, Object> attributs = new HashMap<Attributs, Object>();
 						attributs.put(Attributs.X, x);
 						attributs.put(Attributs.Y, y);
-						pions.get(0);
+						pions.get(0).receipt(attributs);
 						
 					}
 				}

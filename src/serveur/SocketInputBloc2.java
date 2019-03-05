@@ -20,10 +20,10 @@ public class SocketInputBloc2 implements Runnable
 	ParserBloc parser;
 	ZoneManagerBloc zmb;
 	
-	public SocketInputBloc2(Socket client, ServeurBloc s)
+	public SocketInputBloc2(Socket client, ServeurBloc2 s)
 	{
-		this.client = client;
-		this.parser = new ParserBloc(zmb);
+		zmb = new ZoneManagerBloc();
+		this.client = client;		
 		this.zmb = new ZoneManagerBloc();
 		PionBlock pb = new PionBlock("P1", "dark", "Cercle");
 		this.zmb.addPion(pb);		
@@ -32,6 +32,7 @@ public class SocketInputBloc2 implements Runnable
 		TTSBlock tts = new TTSBlock();
 		pb.addSortie(zone);
 		zone.addSortie(tts);
+		this.parser = new ParserBloc(zmb);
 	}
 	
 	public void run() 
