@@ -31,6 +31,12 @@ public abstract class CodingBlock {
 		return attributs;
 	}
 	
+	protected void setAttributs(Attributs att, String val) {
+		this.attributs.put(att, val);
+	}
 	
+	protected void setAllAttributs(HashMap<Attributs, Object> atts) {
+		this.attributs = atts;
+	}
 	
 }
