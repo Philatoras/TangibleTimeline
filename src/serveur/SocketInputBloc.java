@@ -60,7 +60,7 @@ public class SocketInputBloc implements Runnable
 										HashMap<Attributs, Object> attributs = new HashMap<Attributs, Object>();
 										attributs.put(Attributs.X, x);
 										attributs.put(Attributs.Y, y);
-										pb.receipt(attributs);
+										pb.receipt(attributs);										
 									}
 								}
 							break;

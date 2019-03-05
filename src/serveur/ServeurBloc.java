@@ -34,7 +34,7 @@ public class ServeurBloc implements Runnable
 	
 	public static void main(String[] args) 
 	{
-		Serveur s = new Serveur();
+		ServeurBloc s = new ServeurBloc();
 		Thread t = new Thread(s);
 		t.start();
 	}
