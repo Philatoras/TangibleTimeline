@@ -31,7 +31,7 @@ public class ScenarioQuad implements ScenarioBloc{
 		pionAuteur.addSortie(zoneRomantisme);
 		pionPeintre.addSortie(zoneRomantisme);
 		
-		ZoneBlock zoneSurrealisme = new ZoneBlock("zoneSurrealisme",200, 100,30,20,"Surrealisme");
+		ZoneBlock zoneSurrealisme = new ZoneBlock("zoneSurrealisme",230, 100,30,20,"Surrealisme");
 		pionAuteur.addSortie(zoneSurrealisme);
 		pionPeintre.addSortie(zoneSurrealisme);
 		
