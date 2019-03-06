@@ -10,7 +10,7 @@ public class ServeurBloc implements Runnable
 {
 	private static final int PORT = 8952;
 	ServerSocket server;
-	SocketInputBloc input;
+	SocketInputBloc2 input;
 
 	public void run() 
 	{
@@ -23,7 +23,7 @@ public class ServeurBloc implements Runnable
 		{
 			try {
 				Socket client = server.accept();
-				input = new SocketInputBloc(client, this);
+				input = new SocketInputBloc2(client, this);
 				Thread t = new Thread(input);
 				t.start();
 			} catch (IOException e) {
@@ -34,7 +34,7 @@ public class ServeurBloc implements Runnable
 	
 	public static void main(String[] args) 
 	{
-		Serveur s = new Serveur();
+		ServeurBloc s = new ServeurBloc();
 		Thread t = new Thread(s);
 		t.start();
 	}

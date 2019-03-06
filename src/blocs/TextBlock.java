@@ -13,9 +13,8 @@ public class TextBlock extends CodingBlock {
 	
 	@Override
 	void receipt(HashMap<Attributs, Object> atts) {
-		this.setAllAttributs(atts);
-		this.setAttributs(Attributs.TEXTE, textePerso);
-		this.sendAttributs();
+		atts.put(Attributs.TEXTE, textePerso);
+		this.sendAttributs(atts);
 	}
 
 }

@@ -21,8 +21,9 @@ public class ConditionBlock extends CodingBlock {
 	@Override
 	void receipt(HashMap<Attributs, Object> atts) {
 		this.setAllAttributs(atts);
-		if (atts.get(attributTest) == valeurCible) {
-			sendAttributs();
+		String valeurActuelle = (String)atts.get(attributTest);
+		if (valeurActuelle.equals(valeurCible)) {
+			sendAttributs(atts);
 		} else {
 			sendAttributsFaux();
 		}

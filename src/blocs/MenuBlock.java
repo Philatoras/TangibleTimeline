@@ -17,8 +17,8 @@ public class MenuBlock extends CodingBlock {
 	void receipt(HashMap<Attributs, Object> atts) {
 		String modeRecu = (String)getAttributs().get(Attributs.TEXTE);
 		mode = modeRecu;
-		getAttributs().put(Attributs.TEXTE, modeRecu);
-		sendAttributs();		
+		atts.put(Attributs.TEXTE, modeRecu);
+		sendAttributs(atts);		
 		
 	}
 }

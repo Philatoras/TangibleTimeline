@@ -11,21 +11,21 @@ public class ScenarioQuad implements ScenarioBloc{
 	@Override
 	public void initScenario(ZoneManagerBloc zoneManager) {
 				
-		PionBlock pionAuteur = new PionBlock("auteur","rouge","rond");
-		PionBlock pionPeintre = new PionBlock("peintre","jaune","rond");
+		PionBlock pionAuteur = new PionBlock("auteur","red","rond");
+		PionBlock pionPeintre = new PionBlock("peintre","yellow","rond");
 		
 		ZoneBlock zonePleiade = new ZoneBlock("zonePleiade",110, 100,30,20,"Pléïade");
 		pionAuteur.addSortie(zonePleiade);
-		pionPeintre.addSortie(pionPeintre);
+		pionPeintre.addSortie(zonePleiade);
 		
 		ZoneBlock zoneBaroque = new ZoneBlock("zoneBaroque",140, 100,30,20,"Baroque");
 		pionAuteur.addSortie(zoneBaroque);
 		pionPeintre.addSortie(zoneBaroque);
 		
 		ConditionBlock conditionAuteurPleiade = new ConditionBlock(Attributs.COULEUR, "red");
-		ConditionBlock conditionPeintrePleiade = new ConditionBlock(Attributs.COULEUR, "jaune");
+		ConditionBlock conditionPeintrePleiade = new ConditionBlock(Attributs.COULEUR, "yellow");
 		ConditionBlock conditionAuteurBaroque = new ConditionBlock(Attributs.COULEUR, "red");
-		ConditionBlock conditionPeintreBaroque = new ConditionBlock(Attributs.COULEUR, "jaune");
+		ConditionBlock conditionPeintreBaroque = new ConditionBlock(Attributs.COULEUR, "yellow");
 		zonePleiade.addSortie(conditionAuteurPleiade);
 		zonePleiade.addSortie(conditionPeintrePleiade);
 		zoneBaroque.addSortie(conditionAuteurBaroque);
@@ -45,5 +45,10 @@ public class ScenarioQuad implements ScenarioBloc{
 		textPeintrePleiade.addSortie(tts);
 		textAuteurBaroque.addSortie(tts);
 		textAuteurPleiade.addSortie(tts);
+		
+		zoneManager.addZone(zoneBaroque);
+		zoneManager.addZone(zonePleiade);
+		zoneManager.addPion(pionPeintre);
+		zoneManager.addPion(pionAuteur);
 	}
 }

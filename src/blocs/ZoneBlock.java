@@ -23,6 +23,7 @@ public class ZoneBlock extends CodingBlock{
 		getAttributs().put(Attributs.HAUTEUR, h);
 		getAttributs().put(Attributs.TEXTE, texteMap);
 	}
+	
 	@Override
 	void receipt(HashMap<Attributs, Object> atts) {
 		int x = (Integer)getAttributs().get(Attributs.X);
@@ -31,8 +32,9 @@ public class ZoneBlock extends CodingBlock{
 		int h = (Integer)getAttributs().get(Attributs.HAUTEUR);
 		int xRecu = (Integer)atts.get(Attributs.X);
 		int yRecu = (Integer)atts.get(Attributs.Y);
-		if(xRecu>x && xRecu<(x+l) && yRecu>y && yRecu<(y+h))
-			sendAttributs();
+		if(xRecu>x && xRecu<(x+l) && yRecu>y && yRecu<(y+h)) {
+			sendAttributs(atts);
+		}
 	}
 
 }

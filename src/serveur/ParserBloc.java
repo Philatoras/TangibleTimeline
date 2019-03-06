@@ -34,19 +34,21 @@ public class ParserBloc {
 				{
 					String[] valeurs = s.split(":");
 					String couleur = valeurs[0].trim().toLowerCase();
-					if(couleur.equals(pions.get(0).getAttributs().get(Attributs.COULEUR)))
+					for (PionBlock p : pions)
 					{
-						System.out.println("dark "+s);
-						int x = 0;
-						if(!valeurs[1].equals("None"))
-							x = (int)(Double.parseDouble(valeurs[1]));
-						int y = 0;
-						if(!valeurs[2].equals("None"))
-							y = (int)(Double.parseDouble(valeurs[2]));
-						HashMap<Attributs, Object> attributs = new HashMap<Attributs, Object>();
-						attributs.put(Attributs.X, x);
-						attributs.put(Attributs.Y, y);
-						pions.get(0);
+						if (p.getAttributs().get(Attributs.COULEUR).equals(couleur)) {
+							System.out.println(s);
+							int x = 0;
+							if(!valeurs[1].equals("None"))
+								x = (int)(Double.parseDouble(valeurs[1]));
+							int y = 0;
+							if(!valeurs[2].equals("None"))
+								y = (int)(Double.parseDouble(valeurs[2]));
+							HashMap<Attributs, Object> attributs = new HashMap<Attributs, Object>();
+							attributs.put(Attributs.X, x);
+							attributs.put(Attributs.Y, y);
+							p.receipt(attributs);
+						}
 						
 					}
 				}
