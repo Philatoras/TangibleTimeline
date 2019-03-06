@@ -86,6 +86,12 @@ public class ScenarioQuad implements ScenarioBloc{
 		textPeintrePleiade.addSortie(tts);
 		textAuteurBaroque.addSortie(tts);
 		textAuteurPleiade.addSortie(tts);
+		textAuteurLumiere.addSortie(tts);
+		textAuteurRomantisme.addSortie(tts);
+		textAuteurSurrealisme.addSortie(tts);
+		textPeintreLumiere.addSortie(tts);
+		textPeintreRomantisme.addSortie(tts);
+		textPeintreSurrealisme.addSortie(tts);
 		
 		zoneManager.addZone(zoneBaroque);
 		zoneManager.addZone(zonePleiade);
