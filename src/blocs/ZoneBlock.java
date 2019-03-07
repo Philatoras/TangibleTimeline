@@ -3,6 +3,8 @@ package blocs;
 import java.util.HashMap;
 
 public class ZoneBlock extends CodingBlock{
+	
+	private String idGroup;
 
 	public ZoneBlock(String id, int x, int y, int l, int h, String texte) {
 		super();
@@ -11,18 +13,20 @@ public class ZoneBlock extends CodingBlock{
 		getAttributs().put(Attributs.Y, y);
 		getAttributs().put(Attributs.LONGUEUR, l);
 		getAttributs().put(Attributs.HAUTEUR, h);
-		getAttributs().put(Attributs.TEXTE, texte);
+		getAttributs().put(Attributs.TEXTE, texte);		
 	}
 	
-	public ZoneBlock(String id, int x, int y, int l, int h, HashMap<String, String> texteMap) {
+	public ZoneBlock(String id, int x, int y, int l, int h, String texte, String idGroup) {
 		super();
 		getAttributs().put(Attributs.ID, id);
 		getAttributs().put(Attributs.X, x);
 		getAttributs().put(Attributs.Y, y);
 		getAttributs().put(Attributs.LONGUEUR, l);
 		getAttributs().put(Attributs.HAUTEUR, h);
-		getAttributs().put(Attributs.TEXTE, texteMap);
-	}
+		getAttributs().put(Attributs.TEXTE, texte);
+		this.idGroup = idGroup;
+	}	
+	
 	@Override
 	void receipt(HashMap<Attributs, Object> atts) {
 		int x = (Integer)getAttributs().get(Attributs.X);
