@@ -37,6 +37,7 @@ public class ZoneBlock extends CodingBlock{
 		int xRecu = (Integer)atts.get(Attributs.X);
 		int yRecu = (Integer)atts.get(Attributs.Y);
 		if(xRecu>x && xRecu<(x+l) && yRecu>y && yRecu<(y+h)) {
+			atts.put(Attributs.TEXTE, this.getAttributs().get(Attributs.TEXTE));
 			sendAttributs(atts);
 		}
 	}

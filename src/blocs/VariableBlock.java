@@ -2,19 +2,20 @@ package blocs;
 
 import java.util.HashMap;
 
+import serveur.ZoneManagerBloc;
+
 public class VariableBlock extends CodingBlock {
 	
 	String variableAChanger;
 
-	public VariableBlock(String id, String variableAChanger) {
+	public VariableBlock(String variableAChanger) {
 		super();
-		getAttributs().put(Attributs.ID, id);
-		this.variableAChanger = variableAChanger;
+		this.variableAChanger = variableAChanger;		
 	}
 	
 	@Override
 	void receipt(HashMap<Attributs, Object> atts) {
-		getAttributs().put(Attributs.TEXTE, atts.get(Attributs.TEXTE));
+		ZoneManagerBloc.putVariable(variableAChanger, (String) atts.get(Attributs.TEXTE));
 		sendAttributs(atts);
 
 	}

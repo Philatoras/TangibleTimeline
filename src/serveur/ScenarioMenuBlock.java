@@ -16,7 +16,10 @@ public class ScenarioMenuBlock implements ScenarioBloc {
 		PionBlock pionFrise = new PionBlock("frise","red","rond");
 		PionBlock pionMenu = new PionBlock("menu","yellow","rond");
 		
-		VariableBlock varMenu = new VariableBlock("varMenu", "");
+		VariableBlock varMenu = new VariableBlock("varMenu");
+		
+		//Initialisation a auteur
+		ZoneManagerBloc.putVariable("valMenu", "peintre");
 		
 		ZoneBlock zonePleiade = new ZoneBlock("zonePleiade",110, 100,30,20,"Pléïade");
 		pionFrise.addSortie(zonePleiade);
@@ -36,19 +39,19 @@ public class ScenarioMenuBlock implements ScenarioBloc {
 		ZoneBlock zoneMenuAuteur = new ZoneBlock("zoneMenuAuteur",140, 130,30,20,"auteur");
 		pionMenu.addSortie(zoneMenuAuteur);
 		
-		ZoneBlock zoneMenuPeintre = new ZoneBlock("zoneMenuPeintre",140, 130,30,20,"peintre");
+		ZoneBlock zoneMenuPeintre = new ZoneBlock("zoneMenuPeintre",110, 130,30,20,"peintre");
 		pionMenu.addSortie(zoneMenuPeintre);
 		
-		ConditionVariableBlock conditionAuteurPleiade = new ConditionVariableBlock(varMenu, "auteur");
-		ConditionVariableBlock conditionPeintrePleiade = new ConditionVariableBlock(varMenu, "mouv");
-		ConditionVariableBlock conditionAuteurBaroque = new ConditionVariableBlock(varMenu, "auteur");
-		ConditionVariableBlock conditionPeintreBaroque = new ConditionVariableBlock(varMenu, "mouv");
-		ConditionVariableBlock conditionAuteurSurrealisme = new ConditionVariableBlock(varMenu, "auteur");
-		ConditionVariableBlock conditionPeintreSurrealisme = new ConditionVariableBlock(varMenu, "mouv");
-		ConditionVariableBlock conditionAuteurLumieres = new ConditionVariableBlock(varMenu, "auteur");
-		ConditionVariableBlock conditionPeintreLumieres = new ConditionVariableBlock(varMenu, "mouv");
-		ConditionVariableBlock conditionAuteurRomantisme = new ConditionVariableBlock(varMenu, "auteur");
-		ConditionVariableBlock conditionPeintreRomantisme = new ConditionVariableBlock(varMenu, "mouv");
+		ConditionVariableBlock conditionAuteurPleiade = new ConditionVariableBlock("valMenu", "auteur");
+		ConditionVariableBlock conditionPeintrePleiade = new ConditionVariableBlock("valMenu", "peintre");
+		ConditionVariableBlock conditionAuteurBaroque = new ConditionVariableBlock("valMenu", "auteur");
+		ConditionVariableBlock conditionPeintreBaroque = new ConditionVariableBlock("valMenu", "peintre");
+		ConditionVariableBlock conditionAuteurSurrealisme = new ConditionVariableBlock("valMenu", "auteur");
+		ConditionVariableBlock conditionPeintreSurrealisme = new ConditionVariableBlock("valMenu", "peintre");
+		ConditionVariableBlock conditionAuteurLumieres = new ConditionVariableBlock("valMenu", "auteur");
+		ConditionVariableBlock conditionPeintreLumieres = new ConditionVariableBlock("valMenu", "peintre");
+		ConditionVariableBlock conditionAuteurRomantisme = new ConditionVariableBlock("valMenu", "auteur");
+		ConditionVariableBlock conditionPeintreRomantisme = new ConditionVariableBlock("valMenu", "peintre");
 		
 		zonePleiade.addSortie(conditionAuteurPleiade);
 		zonePleiade.addSortie(conditionPeintrePleiade);
@@ -82,7 +85,21 @@ public class ScenarioMenuBlock implements ScenarioBloc {
 		textAuteurSurrealisme.addSortie(tts);
 		textPeintreLumiere.addSortie(tts);
 		textPeintreRomantisme.addSortie(tts);
-		textPeintreSurrealisme.addSortie(tts);		
+		textPeintreSurrealisme.addSortie(tts);
+		
+		conditionAuteurPleiade.addSortie(textAuteurPleiade);
+		conditionPeintrePleiade.addSortie(textPeintrePleiade);
+		conditionAuteurBaroque.addSortie(textAuteurBaroque);
+		conditionPeintreBaroque.addSortie(textPeintreBaroque);
+		conditionAuteurSurrealisme.addSortie(textAuteurSurrealisme);
+		conditionPeintreSurrealisme.addSortie(textPeintreSurrealisme);
+		conditionAuteurLumieres.addSortie(textAuteurLumiere);
+		conditionPeintreLumieres.addSortie(textPeintreLumiere);
+		conditionAuteurRomantisme.addSortie(textAuteurRomantisme);
+		conditionPeintreRomantisme.addSortie(textPeintreRomantisme);
+		
+		zoneMenuAuteur.addSortie(varMenu);
+		zoneMenuPeintre.addSortie(varMenu);		
 		
 		zoneManager.addZone(zoneBaroque);
 		zoneManager.addZone(zonePleiade);
