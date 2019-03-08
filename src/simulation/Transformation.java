@@ -29,4 +29,12 @@ public class Transformation
 	{
 		return normaliseOrdonnee(y)*PanneauJeu.HAUTEUR_PLATEAU;
 	}
+	
+	public static double transformeAbscisseInverse(double x) {
+		return x/PanneauJeu.LONGUEUR_PLATEAU*LONGUEUR_BASE;
+	}
+	
+	public static double transformeOrdonneeInverse(double y) {
+		return y/PanneauJeu.HAUTEUR_PLATEAU*HAUTEUR_BASE;
+	}
 }

@@ -22,9 +22,7 @@ public class Case extends Zone
 	{
 		g2.setStroke(new BasicStroke(1.5f));
 		g2.setColor(Color.BLACK);
-		if(chaumiere)
-			g2.drawRoundRect((int)x, (int)y, (int)width, (int)height, (int)Transformation.transformeAbscisse(5), (int)Transformation.transformeOrdonnee(5));
-		else
+		
 			g2.drawOval((int)x, (int)y, (int)width, (int)height);
 		afficheTexte(g2);
 	}
