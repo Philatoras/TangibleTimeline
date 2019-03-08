@@ -1,7 +1,9 @@
 package serveur;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import blocs.PionBlock;
 import blocs.ZoneBlock;
@@ -9,6 +11,43 @@ import blocs.ZoneBlock;
 
 public class ZoneManagerBloc {
 
+	/**
+	 * Singleton map pour stocker les variables
+	 */
+	private static Map<String,String> variablesMap;
+	
+	/**
+	 * Renvoie la liste des variables, et la crée si besoin
+	 * @return Liste des variables
+	 */
+	public static Map<String, String> getVariablesMap() {
+		if (variablesMap == null) {
+			variablesMap = new HashMap<>();
+		}
+		return variablesMap;
+	}
+	
+	/**
+	 * Affecte à une variable la valeur en paramètre
+	 * @param nomVariable Variable à assigner
+	 * @param value Valeur à assigner
+	 */
+	public static void putVariable(String nomVariable, String value) {
+		ZoneManagerBloc.getVariablesMap().put(nomVariable, value);
+	}
+	
+	/**
+	 * Renvoie la valeur de la variable en paramètre
+	 * @param nomVariable variable
+	 * @return valeur de la variable
+	 */
+	public static String getValueVariable(String nomVariable) {
+		String r = ZoneManagerBloc.getVariablesMap().get(nomVariable);
+		if (r == null)
+			r = "";
+		return r;
+	}
+	
 	/**
 	 * Liste des zones
 	 */
