@@ -1,10 +1,12 @@
 package serveur;
 
+
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class Serveur implements Runnable
+public class ServeurBloc2 implements Runnable
 {
 	private static final int PORT = 8952;
 	ServerSocket server;
@@ -21,14 +23,7 @@ public class Serveur implements Runnable
 		{
 			try {
 				Socket client = server.accept();
-				
-				//Scenario scenar = new ScenarioSimple();
-				Scenario scenar = new ScenarioMenu();
-				
-				//Scenario scenar = new ScenarioQuad();
-				ZoneManager ezm = new ZoneManager();
-				scenar.initScenario(ezm);
-				input = new SocketInputBloc2(client, null);
+				input = new SocketInputBloc2(client, this);
 				Thread t = new Thread(input);
 				t.start();
 			} catch (IOException e) {
@@ -39,7 +34,7 @@ public class Serveur implements Runnable
 	
 	public static void main(String[] args) 
 	{
-		Serveur s = new Serveur();
+		ServeurBloc2 s = new ServeurBloc2();
 		Thread t = new Thread(s);
 		t.start();
 	}

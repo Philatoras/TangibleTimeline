@@ -45,10 +45,11 @@ public class PanneauJeuFriseQuad extends JComponent implements MouseInputListene
 		listePions = new Hashtable<TypePionFrise, Pion>();
 		
 		TypePionFrise pj = TypePionFrise.PIONJ;
-		TypePionFrise pr = TypePionFrise.PIONR;		
+		TypePionFrise pr = TypePionFrise.PIONR;
 		
 		listePions.put(pj, new Pion(pj.getLibelle(),pj.getCouleurJeton(),800,200, pj.getCouleur()));
-		listePions.put(pr, new Pion(pr.getLibelle(),pr.getCouleurJeton(),800,300, pr.getCouleur()));	
+		listePions.put(pr, new Pion(pr.getLibelle(),pr.getCouleurJeton(),800,300, pr.getCouleur()));
+		
 		
 		try 
 		{
@@ -107,7 +108,8 @@ public class PanneauJeuFriseQuad extends JComponent implements MouseInputListene
 		h = Transformation.transformeOrdonnee(h);
 		return new Zone(t,x,y,l,h);
 	}
-	//Vérifie si le pion donné touche la zone donnée
+	
+	// Vérifie si le pion donné touche la zone donnée
 	public boolean checkPionZone(Pion pion, Zone zone){
 		if(pion.centreX == zone.centreX && pion.centreY == zone.centreY){
 			return true;
@@ -176,7 +178,7 @@ public class PanneauJeuFriseQuad extends JComponent implements MouseInputListene
 			{
 				p.deplacer(arg0.getX(), arg0.getY());
 //				if(p.commande.equals(TypePion.PIOCHE.name()) || p.commande.equals(TypePion.PANIER.name()))
-//					p.envoiMessage();
+	//				p.envoiMessage();
 			}
 		repaint();
 	}
