@@ -15,7 +15,7 @@ public class VariableBlock extends CodingBlock {
 	@Override
 	void receipt(HashMap<Attributs, Object> atts) {
 		getAttributs().put(Attributs.TEXTE, atts.get(Attributs.TEXTE));
-		sendAttributs();
+		sendAttributs(atts);
 
 	}
 
