@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TangibleBoxApp>
+	<Panel
+	    tba:layout_width="800"
+	    tba:layout_height="">
+		
+		<Pions>
+	    	<Pion 
+	    		tba:id="pionAuteur"
+	    		tba:color="red"
+	    		tba:form="rond"/>
+	    		
+	    		<Pion 
+	    		tba:id="pionPeintre"
+	    		tba:color="yellow"
+	    		tba:form="rond"/>
+	    	</Pions>
+	    	
+	    <ZoneGroup 
+		    tba:id=""/>
+		
+		<Zones>
+			<Zone  
+		    	tba:id="zonePleiade"
+		    	tba:idGroup="null"
+				tba:form="rect" 
+		    	tba:x="110"
+		    	tba:y="100"
+		    	tba:width="30"
+		    	tba:height="20"
+		   	 	tba:texte="Pléïade"/>
+		   	 	
+		   	 	<Zone   
+		    	tba:id="zoneBaroque"
+		    	tba:idGroup="null"
+				tba:form="rect" 
+		    	tba:x="140"
+		    	tba:y="100"
+		    	tba:width="30"
+		    	tba:height="20"
+		   	 	tba:texte="Baroque"/>
+		   	 	
+		   	 	<Zone    
+		    	tba:id="zoneLumieres"
+		    	tba:idGroup="null"
+				tba:form="rect" 
+		    	tba:x="170"
+		    	tba:y="100"
+		    	tba:width="30"
+		    	tba:height="20"
+		   	 	tba:texte="Lumières"/>
+		   	 	
+		   	 	<Zone    
+		    	tba:id="zoneRomantisme"
+		    	tba:idGroup="null"
+				tba:form="rect" 
+		    	tba:x="200"
+		    	tba:y="100"
+		    	tba:width="30"
+		    	tba:height="20"
+		   	 	tba:texte="Romantisme"/>
+		   	 	
+		   	 	<Zone      
+		    	tba:id="zoneSurrealisme"
+		    	tba:idGroup="null"
+				tba:form="rect" 
+		    	tba:x="230"
+		    	tba:y="100"
+		    	tba:width="30"
+		    	tba:height="20"
+		   	 	tba:texte="Surrealisme"/>
+		   	</Zones>
+		   	
+		   	<Texts>
+		   		<Text
+		   		tba:id="textPeintreBaroque"
+		   		tba:texte="Rembrandt"/>
+		   		
+		   		<Text
+		   		tba:id="textAuteurBaroque"
+		   		tba:texte="Christofle de Beaujeu"/>
+		   		
+		   		<Text
+		   		tba:id="textPeintrePleiade"
+		   		tba:texte="Leonard De Vinci"/>
+		   		
+		   		<Text
+		   		tba:id="textAuteurPleiade"
+		   		tba:texte="Rabelais"/>
+		   		
+		   		<Text
+		   		tba:id="textPeintreRomantisme"
+		   		tba:texte="Théodore Géricault"/>
+		   		
+		   		<Text
+		   		tba:id="textAuteurRomantisme"
+		   		tba:texte="Victor Hugo"/>
+		   		
+		   		<Text
+		   		tba:id="textPeintreLumiere"
+		   		tba:texte="Jean-Antoine Watteau"/>
+		   		
+		   		<Text
+		   		tba:id="textAuteurLumiere"
+		   		tba:texte="Voltaire"/>
+		   		
+		   		<Text
+		   		tba:id="textPeintreSurrealisme"
+		   		tba:texte="Salvador Dali"/>
+		   		
+		   		<Text
+		   		tba:id="textAuteurSurrealisme"
+		   		tba:texte="André Breton"/>
+		   	</Texts>
+		   	
+		   	<Conds>
+		   		<Cond
+		   		tba:id="conditionAuteurPleiade"
+		   		tba:att="COULEUR"
+		   		tba:valCible="red"/>
+		   		
+		   		<Cond
+		   		tba:id="conditionPeintrePleiade"
+		   		tba:att="COULEUR"
+		   		tba:valCible="yellow"/>
+		   		
+		   		<Cond
+		   		tba:id="conditionAuteurBaroque"
+		   		tba:att="COULEUR"
+		   		tba:valCible="red"/>
+		   		
+		   		<Cond
+		   		tba:id="conditionPeintreBaroque"
+		   		tba:att="COULEUR"
+		   		tba:valCible="yellow"/>
+		   		
+		   		<Cond
+		   		tba:id="conditionAuteurSurrealisme"
+		   		tba:att="COULEUR"
+		   		tba:valCible="red"/>
+		   		
+		   		<Cond
+		   		tba:id="conditionPeintreSurrealisme"
+		   		tba:att="COULEUR"
+		   		tba:valCible="yellow"/>
+		   		
+		   		<Cond
+		   		tba:id="conditionAuteurLumieres"
+		   		tba:att="COULEUR"
+		   		tba:valCible="red"/>
+		   	
+		   		<Cond
+		   		tba:id="conditionPeintreLumieres"
+		   		tba:att="COULEUR"
+		   		tba:valCible="yellow"/>
+		   		
+		   		<Cond
+		   		tba:id=" conditionAuteurRomantisme"
+		   		tba:att="COULEUR"
+		   		tba:valCible="red"/>
+		   		
+		   		<Cond
+		   		tba:id=" conditionPeintreRomantisme"
+		   		tba:att="COULEUR"
+		   		tba:valCible="yellow"/>
+		   	
+		   	</Conds>
+		   	
+	</Panel>
+	
+	<Behavior>
+	</Behavior>
+	<Output>
+	
+		<Tts
+		tba:id="maTTS"/>
+	</Output>
+	
+	<Links>
+		<!-- -------------Liens PIONS A ZONES---------------------- -->
+		<Link
+			tba:srcId="pionAuteur"
+			tba:destId="zoneSurrealisme"/>
+			
+			<Link
+			tba:srcId="pionAuteur"
+			tba:destId="zonePleiade"/>
+			
+			<Link
+			tba:srcId="pionAuteur"
+			tba:destId="zoneBaroque"/>
+			
+			<Link
+			tba:srcId="pionAuteur"
+			tba:destId="zoneLumieres"/>
+			
+			<Link
+			tba:srcId="pionAuteur"
+			tba:destId="zoneRomantisme"/>
+			
+			<Link
+			tba:srcId="pionPeintre"
+			tba:destId="zoneSurrealisme"/>
+			
+			<Link
+			tba:srcId="pionPeintre"
+			tba:destId="zonePleiade"/>
+			
+			<Link
+			tba:srcId="pionPeintre"
+			tba:destId="zoneBaroque"/>
+			
+			<Link
+			tba:srcId="pionPeintre"
+			tba:destId="zoneLumieres"/>
+			
+			<Link
+			tba:srcId="pionPeintre"
+			tba:destId="zoneRomantisme"/>
+			
+			
+		<!-- --------------Liens ZONES A CONDITIONS------------------- -->
+			<Link
+			tba:srcId="zonePleiade"
+			tba:destId="conditionAuteurPleiade"/>
+			
+			<Link
+			tba:srcId="zonePleiade"
+			tba:destId="conditionPeintrePleiade"/>
+			
+			<Link
+			tba:srcId="zoneBaroque"
+			tba:destId="conditionAuteurBaroque"/>
+			
+			<Link
+			tba:srcId="zoneBaroque"
+			tba:destId="conditionPeintreBaroque"/>
+			
+			<Link
+			tba:srcId="zoneRomantisme"
+			tba:destId="conditionAuteurRomantisme"/>
+			
+			<Link
+			tba:srcId="zoneRomantisme"
+			tba:destId="conditionPeintreRomantisme"/>
+			
+			<Link
+			tba:srcId="zoneSurrealisme"
+			tba:destId="conditionAuteurSurrealisme"/>
+			
+			<Link
+			tba:srcId="zoneSurrealisme"
+			tba:destId="conditionPeintreSurrealisme"/>
+			
+			<Link
+			tba:srcId="zoneLumieres"
+			tba:destId="conditionAuteurLumieres"/>
+			
+			<Link
+			tba:srcId="zoneLumieres"
+			tba:destId="conditionPeintreLumieres"/>
+
+		<!-- --------Liens CONDITIONS A TEXTE-------------------- -->
+		
+			<Link
+			tba:srcId="conditionAuteurBaroque"
+			tba:destId="textAuteurBaroque"/>
+			
+			<Link
+			tba:srcId="conditionPeintreBaroque"
+			tba:destId="textPeintreBaroque"/>
+			
+			<Link
+			tba:srcId="conditionAuteurPleiade"
+			tba:destId="textAuteurPleiade"/>
+			
+			<Link
+			tba:srcId="conditionPeintrePleiade"
+			tba:destId="textPeintrePleiade"/>
+			
+			<Link
+			tba:srcId="conditionAuteurLumieres"
+			tba:destId="textAuteurLumieres"/>
+			
+			<Link
+			tba:srcId="conditionPeintreLumieres"
+			tba:destId="textPeintreLumieres"/>
+			
+			<Link
+			tba:srcId="conditionAuteurRomantisme"
+			tba:destId="textAuteurRomantisme"/>
+			
+			<Link
+			tba:srcId="conditionPeintreRomantisme"
+			tba:destId="textPeintreRomantisme"/>
+			
+			<Link
+			tba:srcId="conditionAuteurSurrealisme"
+			tba:destId="textAuteurSurrealisme"/>
+			
+			<Link
+			tba:srcId="conditionPeintreSurrealisme"
+			tba:destId="textPeintreSurrealisme"/>
+			
+		<!-- --------Liens TEXTE A TTS-------------------- -->
+
+			<Link
+			tba:srcId="textPeintreBaroque"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="textPeintrePleiade"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="textAuteurBaroque"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="textAuteurPleiade"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="textAuteurLumiere"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="textAuteurRomantisme"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="textAuteurSurrealisme"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="textPeintreLumiere"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="textPeintreRomantisme"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="conditionPeintreSurrealisme"
+			tba:destId="maTTS"/>
+			
+			
+			
+
+			
+	</Links>
+	
+</TangibleBox>
