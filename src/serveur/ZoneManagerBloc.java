@@ -42,7 +42,10 @@ public class ZoneManagerBloc {
 	 * @return valeur de la variable
 	 */
 	public static String getValueVariable(String nomVariable) {
-		return ZoneManagerBloc.getVariablesMap().get(nomVariable);
+		String r = ZoneManagerBloc.getVariablesMap().get(nomVariable);
+		if (r == null)
+			r = "";
+		return r;
 	}
 	
 	/**
