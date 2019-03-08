@@ -167,6 +167,15 @@
 		   	</Conds>
 		   	
 	</Panel>
+	
+	<Behavior>
+	</Behavior>
+	<Output>
+	
+		<Tts
+		tba:id="maTTS"/>
+	</Output>
+	
 	<Links>
 		<!-- -------------Liens PIONS A ZONES---------------------- -->
 		<Link
@@ -292,11 +301,53 @@
 			<Link
 			tba:srcId="conditionPeintreSurrealisme"
 			tba:destId="textPeintreSurrealisme"/>
+			
+		<!-- --------Liens TEXTE A TTS-------------------- -->
+
+			<Link
+			tba:srcId="textPeintreBaroque"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="textPeintrePleiade"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="textAuteurBaroque"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="textAuteurPleiade"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="textAuteurLumiere"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="textAuteurRomantisme"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="textAuteurSurrealisme"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="textPeintreLumiere"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="textPeintreRomantisme"
+			tba:destId="maTTS"/>
+			
+			<Link
+			tba:srcId="conditionPeintreSurrealisme"
+			tba:destId="maTTS"/>
+			
+			
+			
 
 			
 	</Links>
-	<Behavior>
-	</Behavior>
-	<Output>
-	</Output>
+	
 </TangibleBox>
