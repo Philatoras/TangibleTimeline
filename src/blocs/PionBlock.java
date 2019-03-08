@@ -13,9 +13,10 @@ public class PionBlock extends CodingBlock{
 	
 	@Override
 	public void receipt(HashMap<Attributs, Object> atts) {
-		getAttributs().put(Attributs.X, atts.get(Attributs.X));
-		getAttributs().put(Attributs.Y, atts.get(Attributs.Y));
-		sendAttributs();
+		atts.put(Attributs.COULEUR, getAttributs().get(Attributs.COULEUR));
+		atts.put(Attributs.FORME, getAttributs().get(Attributs.FORME));
+		atts.put(Attributs.ID, getAttributs().get(Attributs.ID));
+		sendAttributs(atts);
 	}
 
 	

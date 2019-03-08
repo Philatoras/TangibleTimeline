@@ -8,7 +8,7 @@ public class Serveur implements Runnable
 {
 	private static final int PORT = 8952;
 	ServerSocket server;
-	SocketInput input;
+	SocketInputBloc2 input;
 
 	public void run() 
 	{
@@ -23,12 +23,12 @@ public class Serveur implements Runnable
 				Socket client = server.accept();
 				
 				//Scenario scenar = new ScenarioSimple();
-				//Scenario scenar = new ScenarioMenu();
+				Scenario scenar = new ScenarioMenu();
 				
-				Scenario scenar = new ScenarioQuad();
+				//Scenario scenar = new ScenarioQuad();
 				ZoneManager ezm = new ZoneManager();
 				scenar.initScenario(ezm);
-				input = new SocketInput(client, this,ezm);
+				input = new SocketInputBloc2(client, null);
 				Thread t = new Thread(input);
 				t.start();
 			} catch (IOException e) {

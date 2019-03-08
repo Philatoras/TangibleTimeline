@@ -1,42 +1,105 @@
 package serveur;
 
-public class ScenarioQuad implements Scenario{
+import blocs.Attributs;
+import blocs.ConditionBlock;
+import blocs.PionBlock;
+import blocs.TTSBlock;
+import blocs.TextBlock;
+import blocs.ZoneBlock;
+
+public class ScenarioQuad implements ScenarioBloc{
 	@Override
-	public void initScenario(ZoneManager zoneManager) {
+	public void initScenario(ZoneManagerBloc zoneManager) {
+				
+		PionBlock pionAuteur = new PionBlock("auteur","red","rond");
+		PionBlock pionPeintre = new PionBlock("peintre","yellow","rond");
 		
-		ZoneListenerTTS ttsPleiadeA = new ZoneListenerTTSPion("Humanisme:Rabelais", "","red");
-		ZoneListenerTTS ttsPleiadeP = new ZoneListenerTTSPion("Humanisme:Leonard de Vinci", "","yellow");
-		Zone zonePleiade = new RectangularZone(new Coordinate(110, 100),new Coordinate(140, 120), "zonePleiade");
-		zonePleiade.addListener(ttsPleiadeA);
-		zonePleiade.addListener(ttsPleiadeP);
-		zoneManager.addZone(zonePleiade);
 		
-		ZoneListenerTTS ttsBaroqueA = new ZoneListenerTTSPion("Baroque et classicisme:Christofle de Beaujeu", "","red");
-		ZoneListenerTTS ttsBaroqueP = new ZoneListenerTTSPion("Baroque et classicisme:Rembrandt", "","yellow");
-		Zone zoneBaroque = new RectangularZone(new Coordinate(140, 100),new Coordinate(170, 120), "zoneBaroque&classicisme");
-		zoneBaroque.addListener(ttsBaroqueA);
-		zoneBaroque.addListener(ttsBaroqueP);
+		ZoneBlock zonePleiade = new ZoneBlock("zonePleiade",110, 100,30,20,"Pléïade");
+		pionAuteur.addSortie(zonePleiade);
+		pionPeintre.addSortie(zonePleiade);
+		
+		ZoneBlock zoneBaroque = new ZoneBlock("zoneBaroque",140, 100,30,20,"Baroque");
+		pionAuteur.addSortie(zoneBaroque);
+		pionPeintre.addSortie(zoneBaroque);
+		
+		ZoneBlock zoneLumieres = new ZoneBlock("zoneLumieres",170, 100,30,20,"Lumieres");
+		pionAuteur.addSortie(zoneLumieres);
+		pionPeintre.addSortie(zoneLumieres);
+		
+		ZoneBlock zoneRomantisme = new ZoneBlock("zoneRomantisme",200, 100,30,20,"Romantisme");
+		pionAuteur.addSortie(zoneRomantisme);
+		pionPeintre.addSortie(zoneRomantisme);
+		
+		ZoneBlock zoneSurrealisme = new ZoneBlock("zoneSurrealisme",230, 100,30,20,"Surrealisme");
+		pionAuteur.addSortie(zoneSurrealisme);
+		pionPeintre.addSortie(zoneSurrealisme);
+		
+		
+		ConditionBlock conditionAuteurPleiade = new ConditionBlock(Attributs.COULEUR, "red");
+		ConditionBlock conditionPeintrePleiade = new ConditionBlock(Attributs.COULEUR, "yellow");
+		ConditionBlock conditionAuteurBaroque = new ConditionBlock(Attributs.COULEUR, "red");
+		ConditionBlock conditionPeintreBaroque = new ConditionBlock(Attributs.COULEUR, "yellow");
+		ConditionBlock conditionAuteurSurrealisme = new ConditionBlock(Attributs.COULEUR, "red");
+		ConditionBlock conditionPeintreSurrealisme = new ConditionBlock(Attributs.COULEUR, "yellow");
+		ConditionBlock conditionAuteurLumieres = new ConditionBlock(Attributs.COULEUR, "red");
+		ConditionBlock conditionPeintreLumieres = new ConditionBlock(Attributs.COULEUR, "yellow");
+		ConditionBlock conditionAuteurRomantisme = new ConditionBlock(Attributs.COULEUR, "red");
+		ConditionBlock conditionPeintreRomantisme = new ConditionBlock(Attributs.COULEUR, "yellow");
+		
+		zonePleiade.addSortie(conditionAuteurPleiade);
+		zonePleiade.addSortie(conditionPeintrePleiade);
+		zoneBaroque.addSortie(conditionAuteurBaroque);
+		zoneBaroque.addSortie(conditionPeintreBaroque);
+		zoneRomantisme.addSortie(conditionAuteurRomantisme);
+		zoneRomantisme.addSortie(conditionPeintreRomantisme);
+		zoneSurrealisme.addSortie(conditionAuteurSurrealisme);
+		zoneSurrealisme.addSortie(conditionPeintreSurrealisme);
+		zoneLumieres.addSortie(conditionAuteurLumieres);
+		zoneLumieres.addSortie(conditionPeintreLumieres);
+		
+		
+		TextBlock textPeintreBaroque = new TextBlock("Rembrandt");
+		TextBlock textPeintrePleiade = new TextBlock("Leonard De Vinci");
+		TextBlock textAuteurBaroque = new TextBlock("Christofle de Beaujeu");
+		TextBlock textAuteurPleiade = new TextBlock("Rabelais");
+		TextBlock textPeintreRomantisme = new TextBlock("Théodore Géricault");
+		TextBlock textAuteurRomantisme = new TextBlock("Victor Hugo");
+		TextBlock textPeintreLumiere = new TextBlock("Jean-Antoine Watteau");
+		TextBlock textAuteurLumiere = new TextBlock("Voltaire");
+		TextBlock textPeintreSurrealisme = new TextBlock("Salvador Dali");
+		TextBlock textAuteurSurrealisme = new TextBlock("André Breton");
+		
+		conditionAuteurBaroque.addSortie(textAuteurBaroque);
+		conditionAuteurPleiade.addSortie(textAuteurPleiade);
+		conditionPeintreBaroque.addSortie(textPeintreBaroque);
+		conditionPeintrePleiade.addSortie(textPeintrePleiade);
+		conditionAuteurLumieres.addSortie(textAuteurLumiere);
+		conditionAuteurRomantisme.addSortie(textAuteurRomantisme);
+		conditionAuteurSurrealisme.addSortie(textAuteurSurrealisme);
+		conditionPeintreRomantisme.addSortie(textPeintreRomantisme);
+		conditionPeintreSurrealisme.addSortie(textPeintreSurrealisme);
+		conditionPeintreLumieres.addSortie(textPeintreLumiere);
+		
+		TTSBlock tts = new TTSBlock();
+		textPeintreBaroque.addSortie(tts);
+		textPeintrePleiade.addSortie(tts);
+		textAuteurBaroque.addSortie(tts);
+		textAuteurPleiade.addSortie(tts);
+		textAuteurLumiere.addSortie(tts);
+		textAuteurRomantisme.addSortie(tts);
+		textAuteurSurrealisme.addSortie(tts);
+		textPeintreLumiere.addSortie(tts);
+		textPeintreRomantisme.addSortie(tts);
+		textPeintreSurrealisme.addSortie(tts);
+		
 		zoneManager.addZone(zoneBaroque);
-		
-		ZoneListenerTTS ttsLumiereA = new ZoneListenerTTSPion("Lumières:Voltaire", "","red");
-		ZoneListenerTTS ttsLumiereP = new ZoneListenerTTSPion("Lumières:Joseph Aved", "","yellow");
-		Zone zoneLumiere = new RectangularZone(new Coordinate(170, 100),new Coordinate(200, 120), "zoneLumiere");
-		zoneLumiere.addListener(ttsLumiereA);
-		zoneLumiere.addListener(ttsLumiereP);
-		zoneManager.addZone(zoneLumiere);
-		
-		ZoneListenerTTS ttsRomantismeA = new ZoneListenerTTSPion("Romantisme:Victor Hugo", "","red");
-		ZoneListenerTTS ttsRomantismeP = new ZoneListenerTTSPion("Romantisme:Théodore Géricault", "","yellow");
-		Zone zoneRomantisme = new RectangularZone(new Coordinate(200, 100),new Coordinate(230, 120), "zoneRomantisme");
-		zoneRomantisme.addListener(ttsRomantismeA);
-		zoneRomantisme.addListener(ttsRomantismeP);
-		zoneManager.addZone(zoneRomantisme);
-		
-		ZoneListenerTTS ttsSurrealismeA = new ZoneListenerTTSPion("Surrealisme:Guillaume Apollinaire", "","red");
-		ZoneListenerTTS ttsSurrealismeP = new ZoneListenerTTSPion("Surrealisme:Picasso", "","yellow");
-		Zone zoneSurrealisme = new RectangularZone(new Coordinate(230, 100),new Coordinate(260, 120), "zoneSurrealisme");
-		zoneSurrealisme.addListener(ttsSurrealismeA);
-		zoneSurrealisme.addListener(ttsSurrealismeP);
+		zoneManager.addZone(zonePleiade);
 		zoneManager.addZone(zoneSurrealisme);
+		zoneManager.addZone(zoneRomantisme);
+		zoneManager.addZone(zoneLumieres);
+		
+		zoneManager.addPion(pionPeintre);
+		zoneManager.addPion(pionAuteur);
 	}
 }

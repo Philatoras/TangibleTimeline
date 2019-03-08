@@ -18,9 +18,9 @@ public abstract class CodingBlock {
 	
 	abstract void receipt(HashMap<Attributs, Object> atts);
 	
-	void sendAttributs(){
+	void sendAttributs(HashMap<Attributs, Object> atts){
 		for(CodingBlock c : listeSortie)
-			c.receipt(attributs);
+			c.receipt(atts);
 	}
 
 	public ArrayList<CodingBlock> getListeSortie() {
@@ -31,6 +31,12 @@ public abstract class CodingBlock {
 		return attributs;
 	}
 	
+	protected void setAttributs(Attributs att, String val) {
+		this.attributs.put(att, val);
+	}
 	
+	protected void setAllAttributs(HashMap<Attributs, Object> atts) {
+		this.attributs = atts;
+	}
 	
 }

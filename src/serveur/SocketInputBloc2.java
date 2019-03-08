@@ -20,18 +20,18 @@ public class SocketInputBloc2 implements Runnable
 	ParserBloc parser;
 	ZoneManagerBloc zmb;
 	
+
 	public SocketInputBloc2(Socket client, ServeurBloc2 s)
+
+	
 	{
+
 		zmb = new ZoneManagerBloc();
 		this.client = client;		
 		this.zmb = new ZoneManagerBloc();
-		PionBlock pb = new PionBlock("P1", "dark", "Cercle");
-		this.zmb.addPion(pb);		
-		ZoneBlock zone = new ZoneBlock("Z1", 50, 50, 200, 200, "Bonjour");
-		this.zmb.addZone(zone);
-		TTSBlock tts = new TTSBlock();
-		pb.addSortie(zone);
-		zone.addSortie(tts);
+
+		ScenarioBloc scenar = new ScenarioQuad();
+		scenar.initScenario(zmb);
 		this.parser = new ParserBloc(zmb);
 	}
 	
@@ -43,7 +43,7 @@ public class SocketInputBloc2 implements Runnable
 			while (socketOuvert) {
 				try{
 					String input = plec.readLine();
-					if(input != null)
+					if(input != null && input != "")
 					{
 						if(input.startsWith("Deconnexion"))
 							socketOuvert=false;

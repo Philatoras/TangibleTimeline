@@ -1,6 +1,7 @@
 package serveur;
 
 import blocs.Attributs;
+import blocs.ConditionVariableBlock;
 import blocs.PionBlock;
 import blocs.TTSBlock;
 import blocs.ZoneBlock;

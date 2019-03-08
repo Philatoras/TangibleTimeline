@@ -18,8 +18,8 @@ public class MenuBlock extends CodingBlock {
 		//reçoit le nom (ou le type de contenu) de la zone menu activée
 		String modeRecu = (String)getAttributs().get(Attributs.TEXTE);
 		mode = modeRecu;
-		getAttributs().put(Attributs.TEXTE, modeRecu);
-		sendAttributs();		
+		atts.put(Attributs.TEXTE, modeRecu);
+		sendAttributs(atts);		
 		
 	}
 }
