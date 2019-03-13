@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package simulation;
 
 import java.awt.*;
@@ -187,8 +186,7 @@ public class PanneauJeuFrise extends JComponent implements MouseInputListener
 		repaint();
 	}
 }
-=======
-package simulation;
+/*package simulation;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -375,3 +373,4 @@ public class PanneauJeuFrise extends JComponent implements MouseInputListener, P
 	
 }
 >>>>>>> refs/remotes/origin/base_scenars
+*/
