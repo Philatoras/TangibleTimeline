@@ -1,7 +1,6 @@
 package ParserXML;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Map;
 
@@ -13,6 +12,7 @@ import org.xml.sax.*;
 import org.xml.sax.helpers.DefaultHandler;
 
 import blocs.CodingBlock;
+import blocs.PionBlock;
 import serveur.ZoneManagerBloc;
 
 /**
@@ -41,6 +41,11 @@ public class TBAMLToJava extends DefaultHandler {
 			String id = attributes.getValue("id");
 			String color = attributes.getValue("color");
 			String form = attributes.getValue("form");
+			PionBlock pion = new PionBlock(id, color, form);
+			zmb.addPion(pion);
+		}
+		if(qName == "Zone") {
+			String id = attributes.getValue("id");
 		}
 	}
 	
@@ -48,6 +53,13 @@ public class TBAMLToJava extends DefaultHandler {
 		super();
 	}
 	
+	/**
+	 * Lance la conversion du fichier TBAML en code java
+	 * @param zmb ZoneManager utilisé pour le programme
+	 * @throws ParserConfigurationException
+	 * @throws SAXException
+	 * @throws IOException
+	 */
 	public static void convert(ZoneManagerBloc zmb) throws ParserConfigurationException,
 	SAXException, IOException {
 		SAXParserFactory spf = SAXParserFactory.newInstance();
