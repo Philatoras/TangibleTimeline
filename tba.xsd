@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="https://www.w3schools.com"
+xmlns="https://www.w3schools.com"
+elementFormDefault="qualified">
+
+ <!-- Style XSD : store vénitien (mieux que tranches de salami) -->
+
+ <!-- Définition de groupes d'attributs réutilisables
+         (pour éviter la définition d'attributs globaux) -->
+    <xsd:attributeGroup name="gr_pion">
+        <xsd:attribute name="id_pion" form="unqualified"
+            type="xsd:string" />
+		<xsd:attribute name="coul_pion" form="unqualified"
+            type="xsd:string" />	
+		<xsd:attribute name="form_pion" form="unqualified"
+            type="xsd:string" />	
+    </xsd:attributeGroup>
+	
+	<xsd:attributeGroup name="gr_zone">
+        <xsd:attribute name="id_zone" form="unqualified"
+            type="xsd:string" />
+		<xsd:attribute name="idGroup_zone" form="unqualified"
+            type="xsd:string" />	
+		<xsd:attribute name="form_zone" form="unqualified"
+            type="xsd:string" />	
+		<xsd:attribute name="x_zone" form="unqualified"
+            type="xsd:string" />	
+		<xsd:attribute name="y_zone" form="unqualified"
+            type="xsd:string" />	
+		<xsd:attribute name="width_zone" form="unqualified"
+            type="xsd:string" />
+		<xsd:attribute name="height_zone" form="unqualified"
+            type="xsd:string" />
+		<xsd:attribute name="texte_zone" form="unqualified"
+            type="xsd:string" />		
+    </xsd:attributeGroup>
+	
+	<xsd:attributeGroup name="gr_text">
+        <xsd:attribute name="id_text" form="unqualified"
+            type="xsd:string" />
+		<xsd:attribute name="texte_text" form="unqualified"
+            type="xsd:string" />	
+	</xsd:attributeGroup>
+	
+	<xsd:attributeGroup name="gr_tts">
+        <xsd:attribute name="id_tts" form="unqualified"
+            type="xsd:string" />			
+	</xsd:attributeGroup>
+	
+	<xsd:attributeGroup name="gr_link">
+        <xsd:attribute name="srcId" form="unqualified"
+            type="xsd:string" />
+		<xsd:attribute name="destId" form="unqualified"
+            type="xsd:string" />	
+	</xsd:attributeGroup>
+	
+	<Link
+			tba:srcId="lePion"
+			tba:destId="zonePleiade"/>
+	
+	
+	<xsd:complexType name="pionType">
+			<xsd:attributeGroup ref="gr_pion" />
+	</xsd:complexType>
+	
+	<xsd:complexType name="zoneType">
+			<xsd:attributeGroup ref="gr_zone" />
+	</xsd:complexType>
+	
+	<xsd:complexType name="textType">
+			<xsd:attributeGroup ref="gr_text" />
+	</xsd:complexType>
+	
+	<xsd:complexType name="ttsType">
+			<xsd:attributeGroup ref="gr_tts" />
+	</xsd:complexType>
+	
+	<xsd:complexType name="linkType">
+			<xsd:attributeGroup ref="gr_link" />
+	</xsd:complexType>
+	
+	<xsd:complexType name="pionsType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" name="Pion" type="pionType"/>			
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="zonesType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" name="Zone" type="zoneType"/>			
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="textsType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" name="Text" type="textType"/>			
+		</xsd:sequence>
+	</xsd:complexType>	
+	
+
+	<xsd:complexType name="panelType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" name="Pions" type="pionsType"/>	
+			<xsd:element maxOccurs="unbounded" name="Zones" type="zonesType"/>
+			<xsd:element maxOccurs="unbounded" name="Texts" type="textsType"/>					
+		</xsd:sequence>
+	</xsd:complexType>	
+	
+	<xsd:complexType name="outputType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" name="Tts" type="tssType"/>			
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="linksType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" name="Link" type="linkType"/>			
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="tbaType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" name="Panel" type="panelType"/>		
+			<xsd:element maxOccurs="unbounded" name="Output" type="outputType"/>
+			<xsd:element maxOccurs="unbounded" name="Links" type="linksType"/>			
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+	
+	
+	<!--  Définition d'un seul élément global : TangibleBoxApp -->
+	<xsd:element name="TangibleBoxApp" type="tbaType"/>
+</xs:schema>

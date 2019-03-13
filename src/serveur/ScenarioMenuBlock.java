@@ -16,7 +16,9 @@ public class ScenarioMenuBlock implements ScenarioBloc {
 		PionBlock pionFrise = new PionBlock("frise","red","rond");
 		PionBlock pionMenu = new PionBlock("menu","yellow","rond");
 		
-		VariableBlock varMenu = new VariableBlock("varMenu", "");
+		//nom de la variable du menu
+		String varValMenu = "valMenu";
+		VariableBlock varMenu = new VariableBlock(varValMenu);
 		
 		ZoneBlock zonePleiade = new ZoneBlock("zonePleiade",110, 100,30,20,"Pléïade");
 		pionFrise.addSortie(zonePleiade);
@@ -36,19 +38,19 @@ public class ScenarioMenuBlock implements ScenarioBloc {
 		ZoneBlock zoneMenuAuteur = new ZoneBlock("zoneMenuAuteur",140, 130,30,20,"auteur");
 		pionMenu.addSortie(zoneMenuAuteur);
 		
-		ZoneBlock zoneMenuPeintre = new ZoneBlock("zoneMenuPeintre",140, 130,30,20,"peintre");
+		ZoneBlock zoneMenuPeintre = new ZoneBlock("zoneMenuPeintre",110, 130,30,20,"peintre");
 		pionMenu.addSortie(zoneMenuPeintre);
 		
-		ConditionVariableBlock conditionAuteurPleiade = new ConditionVariableBlock(varMenu, "auteur");
-		ConditionVariableBlock conditionPeintrePleiade = new ConditionVariableBlock(varMenu, "mouv");
-		ConditionVariableBlock conditionAuteurBaroque = new ConditionVariableBlock(varMenu, "auteur");
-		ConditionVariableBlock conditionPeintreBaroque = new ConditionVariableBlock(varMenu, "mouv");
-		ConditionVariableBlock conditionAuteurSurrealisme = new ConditionVariableBlock(varMenu, "auteur");
-		ConditionVariableBlock conditionPeintreSurrealisme = new ConditionVariableBlock(varMenu, "mouv");
-		ConditionVariableBlock conditionAuteurLumieres = new ConditionVariableBlock(varMenu, "auteur");
-		ConditionVariableBlock conditionPeintreLumieres = new ConditionVariableBlock(varMenu, "mouv");
-		ConditionVariableBlock conditionAuteurRomantisme = new ConditionVariableBlock(varMenu, "auteur");
-		ConditionVariableBlock conditionPeintreRomantisme = new ConditionVariableBlock(varMenu, "mouv");
+		ConditionVariableBlock conditionAuteurPleiade = new ConditionVariableBlock(varValMenu, "auteur");
+		ConditionVariableBlock conditionPeintrePleiade = new ConditionVariableBlock(varValMenu, "peintre");
+		ConditionVariableBlock conditionAuteurBaroque = new ConditionVariableBlock(varValMenu, "auteur");
+		ConditionVariableBlock conditionPeintreBaroque = new ConditionVariableBlock(varValMenu, "peintre");
+		ConditionVariableBlock conditionAuteurSurrealisme = new ConditionVariableBlock(varValMenu, "auteur");
+		ConditionVariableBlock conditionPeintreSurrealisme = new ConditionVariableBlock(varValMenu, "peintre");
+		ConditionVariableBlock conditionAuteurLumieres = new ConditionVariableBlock(varValMenu, "auteur");
+		ConditionVariableBlock conditionPeintreLumieres = new ConditionVariableBlock(varValMenu, "peintre");
+		ConditionVariableBlock conditionAuteurRomantisme = new ConditionVariableBlock(varValMenu, "auteur");
+		ConditionVariableBlock conditionPeintreRomantisme = new ConditionVariableBlock(varValMenu, "peintre");
 		
 		zonePleiade.addSortie(conditionAuteurPleiade);
 		zonePleiade.addSortie(conditionPeintrePleiade);
@@ -72,6 +74,17 @@ public class ScenarioMenuBlock implements ScenarioBloc {
 		TextBlock textPeintreSurrealisme = new TextBlock("Salvador Dali");
 		TextBlock textAuteurSurrealisme = new TextBlock("André Breton");
 		
+		conditionAuteurPleiade.addSortie(textAuteurPleiade);
+		conditionPeintrePleiade.addSortie(textPeintrePleiade);
+		conditionAuteurBaroque.addSortie(textAuteurBaroque);
+		conditionPeintreBaroque.addSortie(textPeintreBaroque);
+		conditionAuteurSurrealisme.addSortie(textAuteurSurrealisme);
+		conditionPeintreSurrealisme.addSortie(textPeintreSurrealisme);
+		conditionAuteurLumieres.addSortie(textAuteurLumiere);
+		conditionPeintreLumieres.addSortie(textPeintreLumiere);
+		conditionAuteurRomantisme.addSortie(textAuteurRomantisme);
+		conditionPeintreRomantisme.addSortie(textPeintreRomantisme);		
+		
 		TTSBlock tts = new TTSBlock();
 		textPeintreBaroque.addSortie(tts);
 		textPeintrePleiade.addSortie(tts);
@@ -83,6 +96,9 @@ public class ScenarioMenuBlock implements ScenarioBloc {
 		textPeintreLumiere.addSortie(tts);
 		textPeintreRomantisme.addSortie(tts);
 		textPeintreSurrealisme.addSortie(tts);		
+		
+		zoneMenuAuteur.addSortie(varMenu);
+		zoneMenuPeintre.addSortie(varMenu);		
 		
 		zoneManager.addZone(zoneBaroque);
 		zoneManager.addZone(zonePleiade);
