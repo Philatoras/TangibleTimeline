@@ -13,6 +13,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import blocs.CodingBlock;
 import blocs.PionBlock;
+import blocs.ZoneBlock;
 import serveur.ZoneManagerBloc;
 
 /**
@@ -43,9 +44,19 @@ public class TBAMLToJava extends DefaultHandler {
 			String form = attributes.getValue("form");
 			PionBlock pion = new PionBlock(id, color, form);
 			zmb.addPion(pion);
+			codingBlocks.put(id, pion);
 		}
 		if(qName == "Zone") {
 			String id = attributes.getValue("id");
+			String form = attributes.getValue("form");
+			String x = attributes.getValue("x");
+			String y = attributes.getValue("y");
+			String width = attributes.getValue("width");
+			String height = attributes.getValue("height");
+			String texte = attributes.getValue("texte");
+			ZoneBlock zone = new ZoneBlock(id,Integer.parseInt(x),Integer.parseInt(y),Integer.parseInt(width),Integer.parseInt(height), texte);
+			zmb.addZone(zone);
+			codingBlocks.put(id,zone);
 		}
 	}
 	
