@@ -113,7 +113,12 @@
 		   		tba:texte="André Breton"/>
 		   	</Texts>
 		   	
-		   	<Conds>
+		   	
+		   	
+	</Panel>
+	
+	<Behavior>
+		<Conds>
 		   		<Cond
 		   		tba:id="conditionAuteurPleiade"
 		   		tba:att="COULEUR"
@@ -165,10 +170,6 @@
 		   		tba:valCible="yellow"/>
 		   	
 		   	</Conds>
-		   	
-	</Panel>
-	
-	<Behavior>
 	</Behavior>
 	<Output>
 	
