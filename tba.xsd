@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+<tba:schema xmlns:tba="http://www.w3.org/2001/XMLSchema"
 targetNamespace="https://www.w3schools.com"
 xmlns="https://www.w3schools.com"
 elementFormDefault="qualified">
@@ -8,6 +8,14 @@ elementFormDefault="qualified">
 
  <!-- Définition de groupes d'attributs réutilisables
          (pour éviter la définition d'attributs globaux) -->
+	<tba:attributeGroup name="gr_panel">
+        <tba:attribute name="layout_width" form="unqualified"
+            type="tba:string" />
+		<tba:attribute name="layout_height" form="unqualified"
+            type="tba:string" />				
+    </tba:attributeGroup> 
+		 
+		 
     <tba:attributeGroup name="gr_pion">
         <tba:attribute name="id_pion" form="unqualified"
             type="tba:string" />
@@ -126,25 +134,24 @@ elementFormDefault="qualified">
 	
 	<tba:complexType name="condsType">
 		<tba:sequence>
-			<tba:element maxOccurs="unbounded" name="Text" type="condType"/>	
-			<tba:element maxOccurs="unbounded" name="Text" type="varCondType"/>			
+			<tba:element maxOccurs="unbounded" name="Cond" type="condType"/>	
+			<tba:element maxOccurs="unbounded" name="VarCond" type="varCondType"/>			
 		</tba:sequence>
 	</tba:complexType>	
 	
 	<tba:complexType name="varsType">
 		<tba:sequence>		
-			<tba:element maxOccurs="unbounded" name="Text" type="varType"/>							
+			<tba:element maxOccurs="unbounded" name="Var" type="varType"/>							
 		</tba:sequence>
-	</tba:complexType>	
-	
-	
+	</tba:complexType>				
 
 	<tba:complexType name="panelType">
-		<tba:sequence>
+		<tba:sequence>		
 			<tba:element maxOccurs="unbounded" name="Pions" type="pionsType"/>	
 			<tba:element maxOccurs="unbounded" name="Zones" type="zonesType"/>
 			<tba:element maxOccurs="unbounded" name="Texts" type="textsType"/>					
 		</tba:sequence>
+		<tba:attributeGroup ref="gr_panel" />
 	</tba:complexType>	
 	
 	<tba:complexType name="behaviorType">
@@ -156,7 +163,7 @@ elementFormDefault="qualified">
 	
 	<tba:complexType name="outputType">
 		<tba:sequence>
-			<tba:element maxOccurs="unbounded" name="Tts" type="tssType"/>			
+			<tba:element maxOccurs="unbounded" name="Tts" type="ttsType"/>			
 		</tba:sequence>
 	</tba:complexType>
 	
@@ -180,4 +187,4 @@ elementFormDefault="qualified">
 	
 	<!--  Définition d'un seul élément global : TangibleBoxApp -->
 	<tba:element name="TangibleBoxApp" type="tbaType"/>
-</xs:schema>
+</tba:schema>
