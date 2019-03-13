@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TangibleBoxApp>
+<TangibleBoxApp xmlns="http://www.example.com"
+    xmlns:tba="http://www.w3.org/2001/XMLSchema-instance"
+    tba:schemaLocation="./tba.xsd">
 	<Panel
 	    tba:layout_width="800"
 	    tba:layout_height="">

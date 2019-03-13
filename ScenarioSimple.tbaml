@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TangibleBoxApp>
+<TangibleBoxApp xmlns="http://www.example.com"
+    xmlns:tba="http://www.w3.org/2001/XMLSchema-instance"
+    tba:schemaLocation="./tba.xsd">
 	<Panel
 	    tba:layout_width="800"
 	    tba:layout_height="">
@@ -24,7 +26,7 @@
 		    	tba:y="100"
 		    	tba:width="30"
 		    	tba:height="20"
-		   	 	tba:texte="PlÃ©Ã¯ade"/>
+		   	 	tba:texte="Pléïade"/>
 		   	 	
 		   	 	<Zone   
 		    	tba:id="zoneBaroque"
@@ -44,7 +46,7 @@
 		    	tba:y="100"
 		    	tba:width="30"
 		    	tba:height="20"
-		   	 	tba:texte="LumiÃ¨res"/>
+		   	 	tba:texte="Lumières"/>
 		   	 	
 		   	 	<Zone    
 		    	tba:id="zoneRomantisme"
@@ -107,7 +109,7 @@
 	</Output>
 	
 	<Links>
-		<!-- -------------Liens PIONS A ZONES---------------------- -->
+		<!--Liens PIONS A ZONES-->
 		
 			<Link
 			tba:srcId="lePion"
@@ -129,7 +131,7 @@
 			tba:srcId="lePion"
 			tba:destId="zoneSurrealisme"/>
 			
-		<!-- --------Liens Zone A TEXTE-------------------- -->
+		<!--Liens Zone A TEXT-->
 		
 			<Link
 			tba:srcId="zonePleiade"
