@@ -30,7 +30,7 @@ public class TBAMLToJava extends DefaultHandler {
 
 	private static ZoneManagerBloc zmb;
 	
-	private static final String FILE_TO_CONVERT = "/test.tbaml";
+	private static String FILE_TO_CONVERT = "/test.tbaml";
 	
 	private Map<String,CodingBlock> codingBlocks; //Map de CodingBlocks caractérisés par leur ID
 	
@@ -90,6 +90,13 @@ public class TBAMLToJava extends DefaultHandler {
 	
 	public TBAMLToJava(){
 		super();
+	}
+	
+	//charger une nouvelle application Tangible Box à partir de .tbaml
+	protected void changeTbamlFile() {
+		XML_finder graphicFinder=new XML_finder();
+		File nouveauTbaml=graphicFinder.fileChooser();
+		TBAMLToJava.FILE_TO_CONVERT=nouveauTbaml.getAbsolutePath();
 	}
 	
 	/**
