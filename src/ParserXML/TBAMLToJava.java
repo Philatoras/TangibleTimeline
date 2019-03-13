@@ -11,7 +11,9 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.*;
 import org.xml.sax.helpers.DefaultHandler;
 
+import blocs.Attributs;
 import blocs.CodingBlock;
+import blocs.ConditionBlock;
 import blocs.PionBlock;
 import blocs.TextBlock;
 import blocs.ZoneBlock;
@@ -63,6 +65,13 @@ public class TBAMLToJava extends DefaultHandler {
 			String id = attributes.getValue("id");
 			String texte = attributes.getValue("texte");
 			TextBlock textBlock = new TextBlock(texte);
+			codingBlocks.put(id, textBlock);
+		}
+		if(qName == "Cond") {
+			String id = attributes.getValue("id");
+			String attribut = attributes.getValue("att");
+			String valeur = attributes.getValue("valCible");
+			ConditionBlock textBlock = new ConditionBlock(Attributs.valueOf(attribut), valeur);
 			codingBlocks.put(id, textBlock);
 		}
 	}
