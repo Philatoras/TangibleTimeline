@@ -31,9 +31,6 @@ import javax.swing.filechooser.FileSystemView;
 
 		}
 		
-		public static void main(String[] args) {
-			XML_finder f=new XML_finder();
-			f.fileChooser();
-		}	
+		
 
 	}
