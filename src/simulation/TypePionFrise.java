@@ -4,16 +4,13 @@ import java.awt.Color;
 
 public enum TypePionFrise 
 {
-<<<<<<< HEAD
 	PBLEU("Bleu", "bleu", "blue", new Color(0,0,200)),
 	PROUGE("Rouge", "rouge", "red", new Color(200,0,0)),
-	PVERT("Vert", "vert", "green", new Color(0,200,0));
+	PVERT("Vert", "vert", "green", new Color(0,200,0)),
 
 
-=======
 	PIONF("PionF", "pionf", "blue", new Color(164,164,164)), MENU("Menu", "menu", "red", new Color(250,0,0)),
 	PIONJ("PionJ", "pionj", "yellow", new Color(250,250,0)),PIONR("PionR", "pionr", "red", new Color(250,0,0));
->>>>>>> refs/remotes/origin/base_scenars
 	
 	private String libelle, nom, couleurJeton;
 	private Color couleur;
