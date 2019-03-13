@@ -30,7 +30,13 @@ public class TBAMLToJava extends DefaultHandler {
 	
 	public void startElement(String uri, String localName, String qName,
 			Attributes attributes) throws SAXException {
-		
+		if(qName == "Link") {
+			String srcId = attributes.getValue("srcId");
+			String destId = attributes.getValue("destId");
+			CodingBlock src = codingBlocks.get(srcId);
+			CodingBlock dest = codingBlocks.get(destId);
+			src.addSortie(dest);
+		}
 	}
 	
 	public TBAMLToJava(){
