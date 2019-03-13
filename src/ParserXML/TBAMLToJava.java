@@ -14,6 +14,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import blocs.Attributs;
 import blocs.CodingBlock;
 import blocs.ConditionBlock;
+import blocs.GroupBlock;
 import blocs.PionBlock;
 import blocs.TTSBlock;
 import blocs.TextBlock;
@@ -79,6 +80,11 @@ public class TBAMLToJava extends DefaultHandler {
 			String id = attributes.getValue("id");
 			TTSBlock tts = new TTSBlock();
 			codingBlocks.put(id, tts);
+		}
+		if(qName == "ZoneGroup") {
+			String id = attributes.getValue("id");
+			GroupBlock group = new GroupBlock(id);
+			codingBlocks.put(id, group);
 		}
 	}
 	
