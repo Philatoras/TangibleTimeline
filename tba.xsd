@@ -4,180 +4,180 @@ targetNamespace="https://www.w3schools.com"
 xmlns="https://www.w3schools.com"
 elementFormDefault="qualified">
 
- <!-- Style XSD : store vénitien (mieux que tranches de salami) -->
+ <!-- Style tba : store vénitien (mieux que tranches de salami) -->
 
  <!-- Définition de groupes d'attributs réutilisables
          (pour éviter la définition d'attributs globaux) -->
-    <xsd:attributeGroup name="gr_pion">
-        <xsd:attribute name="id_pion" form="unqualified"
-            type="xsd:string" />
-		<xsd:attribute name="coul_pion" form="unqualified"
-            type="xsd:string" />	
-		<xsd:attribute name="form_pion" form="unqualified"
-            type="xsd:string" />	
-    </xsd:attributeGroup>
+    <tba:attributeGroup name="gr_pion">
+        <tba:attribute name="id_pion" form="unqualified"
+            type="tba:string" />
+		<tba:attribute name="coul_pion" form="unqualified"
+            type="tba:string" />	
+		<tba:attribute name="form_pion" form="unqualified"
+            type="tba:string" />	
+    </tba:attributeGroup>
 	
-	<xsd:attributeGroup name="gr_zone">
-        <xsd:attribute name="id_zone" form="unqualified"
-            type="xsd:string" />
-		<xsd:attribute name="idGroup_zone" form="unqualified"
-            type="xsd:string" />	
-		<xsd:attribute name="form_zone" form="unqualified"
-            type="xsd:string" />	
-		<xsd:attribute name="x_zone" form="unqualified"
-            type="xsd:string" />	
-		<xsd:attribute name="y_zone" form="unqualified"
-            type="xsd:string" />	
-		<xsd:attribute name="width_zone" form="unqualified"
-            type="xsd:string" />
-		<xsd:attribute name="height_zone" form="unqualified"
-            type="xsd:string" />
-		<xsd:attribute name="texte_zone" form="unqualified"
-            type="xsd:string" />		
-    </xsd:attributeGroup>
+	<tba:attributeGroup name="gr_zone">
+        <tba:attribute name="id_zone" form="unqualified"
+            type="tba:string" />
+		<tba:attribute name="idGroup_zone" form="unqualified"
+            type="tba:string" />	
+		<tba:attribute name="form_zone" form="unqualified"
+            type="tba:string" />	
+		<tba:attribute name="x_zone" form="unqualified"
+            type="tba:string" />	
+		<tba:attribute name="y_zone" form="unqualified"
+            type="tba:string" />	
+		<tba:attribute name="width_zone" form="unqualified"
+            type="tba:string" />
+		<tba:attribute name="height_zone" form="unqualified"
+            type="tba:string" />
+		<tba:attribute name="texte_zone" form="unqualified"
+            type="tba:string" />		
+    </tba:attributeGroup>
 	
-	<xsd:attributeGroup name="gr_text">
-        <xsd:attribute name="id_text" form="unqualified"
-            type="xsd:string" />
-		<xsd:attribute name="texte_text" form="unqualified"
-            type="xsd:string" />	
-	</xsd:attributeGroup>
+	<tba:attributeGroup name="gr_text">
+        <tba:attribute name="id_text" form="unqualified"
+            type="tba:string" />
+		<tba:attribute name="texte_text" form="unqualified"
+            type="tba:string" />	
+	</tba:attributeGroup>
 	
-	<xsd:attributeGroup name="gr_tts">
-        <xsd:attribute name="id_tts" form="unqualified"
-            type="xsd:string" />			
-	</xsd:attributeGroup>
+	<tba:attributeGroup name="gr_tts">
+        <tba:attribute name="id_tts" form="unqualified"
+            type="tba:string" />			
+	</tba:attributeGroup>
 	
-	<xsd:attributeGroup name="gr_link">
-        <xsd:attribute name="srcId" form="unqualified"
-            type="xsd:string" />
-		<xsd:attribute name="destId" form="unqualified"
-            type="xsd:string" />	
-	</xsd:attributeGroup>	
+	<tba:attributeGroup name="gr_link">
+        <tba:attribute name="srcId" form="unqualified"
+            type="tba:string" />
+		<tba:attribute name="destId" form="unqualified"
+            type="tba:string" />	
+	</tba:attributeGroup>	
 	
-	<xsd:attributeGroup name="gr_cond">
-        <xsd:attribute name="attTest" form="unqualified"
-            type="xsd:string" />
-		<xsd:attribute name="valCible" form="unqualified"
-            type="xsd:string" />	
-	</xsd:attributeGroup>
+	<tba:attributeGroup name="gr_cond">
+        <tba:attribute name="attTest" form="unqualified"
+            type="tba:string" />
+		<tba:attribute name="valCible" form="unqualified"
+            type="tba:string" />	
+	</tba:attributeGroup>
 
-	<xsd:attributeGroup name="gr_varcond">
-        <xsd:attribute name="varTest" form="unqualified"
-            type="xsd:string" />
-		<xsd:attribute name="valCible" form="unqualified"
-            type="xsd:string" />	
-	</xsd:attributeGroup>	
+	<tba:attributeGroup name="gr_varcond">
+        <tba:attribute name="varTest" form="unqualified"
+            type="tba:string" />
+		<tba:attribute name="valCible" form="unqualified"
+            type="tba:string" />	
+	</tba:attributeGroup>	
 
-	<xsd:attributeGroup name="gr_var">
-        <xsd:attribute name="idVar" form="unqualified"
-            type="xsd:string" />		
-	</xsd:attributeGroup>		
+	<tba:attributeGroup name="gr_var">
+        <tba:attribute name="idVar" form="unqualified"
+            type="tba:string" />		
+	</tba:attributeGroup>		
 	
-	<xsd:complexType name="pionType">
-			<xsd:attributeGroup ref="gr_pion" />
-	</xsd:complexType>
+	<tba:complexType name="pionType">
+			<tba:attributeGroup ref="gr_pion" />
+	</tba:complexType>
 	
-	<xsd:complexType name="zoneType">
-			<xsd:attributeGroup ref="gr_zone" />
-	</xsd:complexType>
+	<tba:complexType name="zoneType">
+			<tba:attributeGroup ref="gr_zone" />
+	</tba:complexType>
 	
-	<xsd:complexType name="textType">
-			<xsd:attributeGroup ref="gr_text" />
-	</xsd:complexType>
+	<tba:complexType name="textType">
+			<tba:attributeGroup ref="gr_text" />
+	</tba:complexType>
 	
-	<xsd:complexType name="ttsType">
-			<xsd:attributeGroup ref="gr_tts" />
-	</xsd:complexType>
+	<tba:complexType name="ttsType">
+			<tba:attributeGroup ref="gr_tts" />
+	</tba:complexType>
 	
-	<xsd:complexType name="linkType">
-			<xsd:attributeGroup ref="gr_link" />
-	</xsd:complexType>
+	<tba:complexType name="linkType">
+			<tba:attributeGroup ref="gr_link" />
+	</tba:complexType>
 	
-	<xsd:complexType name="condType">
-			<xsd:attributeGroup ref="gr_cond" />
-	</xsd:complexType>
+	<tba:complexType name="condType">
+			<tba:attributeGroup ref="gr_cond" />
+	</tba:complexType>
 	
-	<xsd:complexType name="varCondType">
-			<xsd:attributeGroup ref="gr_varcond" />
-	</xsd:complexType>
+	<tba:complexType name="varCondType">
+			<tba:attributeGroup ref="gr_varcond" />
+	</tba:complexType>
 	
-	<xsd:complexType name="varType">
-			<xsd:attributeGroup ref="gr_var" />
-	</xsd:complexType>
+	<tba:complexType name="varType">
+			<tba:attributeGroup ref="gr_var" />
+	</tba:complexType>
 	
-	<xsd:complexType name="pionsType">
-		<xsd:sequence>
-			<xsd:element maxOccurs="unbounded" name="Pion" type="pionType"/>			
-		</xsd:sequence>
-	</xsd:complexType>
+	<tba:complexType name="pionsType">
+		<tba:sequence>
+			<tba:element maxOccurs="unbounded" name="Pion" type="pionType"/>			
+		</tba:sequence>
+	</tba:complexType>
 	
-	<xsd:complexType name="zonesType">
-		<xsd:sequence>
-			<xsd:element maxOccurs="unbounded" name="Zone" type="zoneType"/>			
-		</xsd:sequence>
-	</xsd:complexType>
+	<tba:complexType name="zonesType">
+		<tba:sequence>
+			<tba:element maxOccurs="unbounded" name="Zone" type="zoneType"/>			
+		</tba:sequence>
+	</tba:complexType>
 	
-	<xsd:complexType name="textsType">
-		<xsd:sequence>
-			<xsd:element maxOccurs="unbounded" name="Text" type="textType"/>			
-		</xsd:sequence>
-	</xsd:complexType>	
+	<tba:complexType name="textsType">
+		<tba:sequence>
+			<tba:element maxOccurs="unbounded" name="Text" type="textType"/>			
+		</tba:sequence>
+	</tba:complexType>	
 	
-	<xsd:complexType name="condsType">
-		<xsd:sequence>
-			<xsd:element maxOccurs="unbounded" name="Text" type="condType"/>	
-			<xsd:element maxOccurs="unbounded" name="Text" type="varCondType"/>			
-		</xsd:sequence>
-	</xsd:complexType>	
+	<tba:complexType name="condsType">
+		<tba:sequence>
+			<tba:element maxOccurs="unbounded" name="Text" type="condType"/>	
+			<tba:element maxOccurs="unbounded" name="Text" type="varCondType"/>			
+		</tba:sequence>
+	</tba:complexType>	
 	
-	<xsd:complexType name="varsType">
-		<xsd:sequence>		
-			<xsd:element maxOccurs="unbounded" name="Text" type="varType"/>							
-		</xsd:sequence>
-	</xsd:complexType>	
+	<tba:complexType name="varsType">
+		<tba:sequence>		
+			<tba:element maxOccurs="unbounded" name="Text" type="varType"/>							
+		</tba:sequence>
+	</tba:complexType>	
 	
 	
 
-	<xsd:complexType name="panelType">
-		<xsd:sequence>
-			<xsd:element maxOccurs="unbounded" name="Pions" type="pionsType"/>	
-			<xsd:element maxOccurs="unbounded" name="Zones" type="zonesType"/>
-			<xsd:element maxOccurs="unbounded" name="Texts" type="textsType"/>					
-		</xsd:sequence>
-	</xsd:complexType>	
+	<tba:complexType name="panelType">
+		<tba:sequence>
+			<tba:element maxOccurs="unbounded" name="Pions" type="pionsType"/>	
+			<tba:element maxOccurs="unbounded" name="Zones" type="zonesType"/>
+			<tba:element maxOccurs="unbounded" name="Texts" type="textsType"/>					
+		</tba:sequence>
+	</tba:complexType>	
 	
-	<xsd:complexType name="behaviorType">
-		<xsd:sequence>
-			<xsd:element maxOccurs="unbounded" name="Conds" type="condsType"/>	
-			<xsd:element maxOccurs="unbounded" name="Vars" type="varsType"/>							
-		</xsd:sequence>
-	</xsd:complexType>
+	<tba:complexType name="behaviorType">
+		<tba:sequence>
+			<tba:element maxOccurs="unbounded" name="Conds" type="condsType"/>	
+			<tba:element maxOccurs="unbounded" name="Vars" type="varsType"/>							
+		</tba:sequence>
+	</tba:complexType>
 	
-	<xsd:complexType name="outputType">
-		<xsd:sequence>
-			<xsd:element maxOccurs="unbounded" name="Tts" type="tssType"/>			
-		</xsd:sequence>
-	</xsd:complexType>
+	<tba:complexType name="outputType">
+		<tba:sequence>
+			<tba:element maxOccurs="unbounded" name="Tts" type="tssType"/>			
+		</tba:sequence>
+	</tba:complexType>
 	
-	<xsd:complexType name="linksType">
-		<xsd:sequence>
-			<xsd:element maxOccurs="unbounded" name="Link" type="linkType"/>			
-		</xsd:sequence>
-	</xsd:complexType>
+	<tba:complexType name="linksType">
+		<tba:sequence>
+			<tba:element maxOccurs="unbounded" name="Link" type="linkType"/>			
+		</tba:sequence>
+	</tba:complexType>
 	
-	<xsd:complexType name="tbaType">
-		<xsd:sequence>
-			<xsd:element maxOccurs="unbounded" name="Panel" type="panelType"/>	
-			<xsd:element maxOccurs="unbounded" name="Behavior" type="behaviorType"/>			
-			<xsd:element maxOccurs="unbounded" name="Output" type="outputType"/>
-			<xsd:element maxOccurs="unbounded" name="Links" type="linksType"/>			
-		</xsd:sequence>
-	</xsd:complexType>
+	<tba:complexType name="tbaType">
+		<tba:sequence>
+			<tba:element maxOccurs="unbounded" name="Panel" type="panelType"/>	
+			<tba:element maxOccurs="unbounded" name="Behavior" type="behaviorType"/>			
+			<tba:element maxOccurs="unbounded" name="Output" type="outputType"/>
+			<tba:element maxOccurs="unbounded" name="Links" type="linksType"/>			
+		</tba:sequence>
+	</tba:complexType>
 	
 	
 	
 	
 	<!--  Définition d'un seul élément global : TangibleBoxApp -->
-	<xsd:element name="TangibleBoxApp" type="tbaType"/>
+	<tba:element name="TangibleBoxApp" type="tbaType"/>
 </xs:schema>
