@@ -15,8 +15,10 @@ import javax.swing.filechooser.FileSystemView;
 			JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 			jfc.setDialogTitle("Ouverture d'un fichier tbaml ");
 			jfc.setAcceptAllFileFilterUsed(false);
+			//seuls les fichier .tbaml ou .xml sont affichés
 			FileNameExtensionFilter filter = new FileNameExtensionFilter("fichier tbaml ou xml", ".tbaml", ".xml");
 			jfc.addChoosableFileFilter(filter);
+			jfc.showDialog(null, "Charger l'application");
 
 			int returnValue = jfc.showOpenDialog(null);
 
