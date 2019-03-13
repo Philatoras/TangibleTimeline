@@ -15,6 +15,7 @@ import blocs.Attributs;
 import blocs.CodingBlock;
 import blocs.ConditionBlock;
 import blocs.PionBlock;
+import blocs.TTSBlock;
 import blocs.TextBlock;
 import blocs.ZoneBlock;
 import serveur.ZoneManagerBloc;
@@ -73,6 +74,11 @@ public class TBAMLToJava extends DefaultHandler {
 			String valeur = attributes.getValue("valCible");
 			ConditionBlock textBlock = new ConditionBlock(Attributs.valueOf(attribut), valeur);
 			codingBlocks.put(id, textBlock);
+		}
+		if(qName == "Tts") {
+			String id = attributes.getValue("id");
+			TTSBlock tts = new TTSBlock();
+			codingBlocks.put(id, tts);
 		}
 	}
 	
