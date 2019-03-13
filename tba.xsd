@@ -53,12 +53,26 @@ elementFormDefault="qualified">
             type="xsd:string" />
 		<xsd:attribute name="destId" form="unqualified"
             type="xsd:string" />	
+	</xsd:attributeGroup>	
+	
+	<xsd:attributeGroup name="gr_cond">
+        <xsd:attribute name="attTest" form="unqualified"
+            type="xsd:string" />
+		<xsd:attribute name="valCible" form="unqualified"
+            type="xsd:string" />	
 	</xsd:attributeGroup>
-	
-	<Link
-			tba:srcId="lePion"
-			tba:destId="zonePleiade"/>
-	
+
+	<xsd:attributeGroup name="gr_varcond">
+        <xsd:attribute name="varTest" form="unqualified"
+            type="xsd:string" />
+		<xsd:attribute name="valCible" form="unqualified"
+            type="xsd:string" />	
+	</xsd:attributeGroup>	
+
+	<xsd:attributeGroup name="gr_var">
+        <xsd:attribute name="idVar" form="unqualified"
+            type="xsd:string" />		
+	</xsd:attributeGroup>		
 	
 	<xsd:complexType name="pionType">
 			<xsd:attributeGroup ref="gr_pion" />
@@ -80,6 +94,18 @@ elementFormDefault="qualified">
 			<xsd:attributeGroup ref="gr_link" />
 	</xsd:complexType>
 	
+	<xsd:complexType name="condType">
+			<xsd:attributeGroup ref="gr_cond" />
+	</xsd:complexType>
+	
+	<xsd:complexType name="varCondType">
+			<xsd:attributeGroup ref="gr_varcond" />
+	</xsd:complexType>
+	
+	<xsd:complexType name="varType">
+			<xsd:attributeGroup ref="gr_var" />
+	</xsd:complexType>
+	
 	<xsd:complexType name="pionsType">
 		<xsd:sequence>
 			<xsd:element maxOccurs="unbounded" name="Pion" type="pionType"/>			
@@ -98,6 +124,20 @@ elementFormDefault="qualified">
 		</xsd:sequence>
 	</xsd:complexType>	
 	
+	<xsd:complexType name="condsType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" name="Text" type="condType"/>	
+			<xsd:element maxOccurs="unbounded" name="Text" type="varCondType"/>			
+		</xsd:sequence>
+	</xsd:complexType>	
+	
+	<xsd:complexType name="varsType">
+		<xsd:sequence>		
+			<xsd:element maxOccurs="unbounded" name="Text" type="varType"/>							
+		</xsd:sequence>
+	</xsd:complexType>	
+	
+	
 
 	<xsd:complexType name="panelType">
 		<xsd:sequence>
@@ -106,6 +146,13 @@ elementFormDefault="qualified">
 			<xsd:element maxOccurs="unbounded" name="Texts" type="textsType"/>					
 		</xsd:sequence>
 	</xsd:complexType>	
+	
+	<xsd:complexType name="behaviorType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" name="Conds" type="condsType"/>	
+			<xsd:element maxOccurs="unbounded" name="Vars" type="varsType"/>							
+		</xsd:sequence>
+	</xsd:complexType>
 	
 	<xsd:complexType name="outputType">
 		<xsd:sequence>
@@ -121,7 +168,8 @@ elementFormDefault="qualified">
 	
 	<xsd:complexType name="tbaType">
 		<xsd:sequence>
-			<xsd:element maxOccurs="unbounded" name="Panel" type="panelType"/>		
+			<xsd:element maxOccurs="unbounded" name="Panel" type="panelType"/>	
+			<xsd:element maxOccurs="unbounded" name="Behavior" type="behaviorType"/>			
 			<xsd:element maxOccurs="unbounded" name="Output" type="outputType"/>
 			<xsd:element maxOccurs="unbounded" name="Links" type="linksType"/>			
 		</xsd:sequence>
