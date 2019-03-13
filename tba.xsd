@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <tba:schema xmlns:tba="http://www.w3.org/2001/XMLSchema"
-targetNamespace="https://www.w3schools.com"
-xmlns="https://www.w3schools.com"
+targetNamespace="http://www.example.com"
+xmlns="http://www.example.com"
 elementFormDefault="qualified">
 
  <!-- Style tba : store vénitien (mieux que tranches de salami) -->
@@ -17,42 +17,47 @@ elementFormDefault="qualified">
 		 
 		 
     <tba:attributeGroup name="gr_pion">
-        <tba:attribute name="id_pion" form="unqualified"
+        <tba:attribute name="id" form="unqualified"
             type="tba:string" />
-		<tba:attribute name="coul_pion" form="unqualified"
+		<tba:attribute name="color" form="unqualified"
             type="tba:string" />	
-		<tba:attribute name="form_pion" form="unqualified"
+		<tba:attribute name="form" form="unqualified"
             type="tba:string" />	
     </tba:attributeGroup>
 	
+	<tba:attributeGroup name="gr_zoneGroup">
+        <tba:attribute name="id" form="unqualified"
+            type="tba:string" />            	
+    </tba:attributeGroup>
+
 	<tba:attributeGroup name="gr_zone">
-        <tba:attribute name="id_zone" form="unqualified"
+        <tba:attribute name="id" form="unqualified"
             type="tba:string" />
-		<tba:attribute name="idGroup_zone" form="unqualified"
+		<tba:attribute name="idGroup" form="unqualified"
             type="tba:string" />	
-		<tba:attribute name="form_zone" form="unqualified"
+		<tba:attribute name="form" form="unqualified"
             type="tba:string" />	
-		<tba:attribute name="x_zone" form="unqualified"
+		<tba:attribute name="x" form="unqualified"
             type="tba:string" />	
-		<tba:attribute name="y_zone" form="unqualified"
+		<tba:attribute name="y" form="unqualified"
             type="tba:string" />	
-		<tba:attribute name="width_zone" form="unqualified"
+		<tba:attribute name="width" form="unqualified"
             type="tba:string" />
-		<tba:attribute name="height_zone" form="unqualified"
+		<tba:attribute name="height" form="unqualified"
             type="tba:string" />
-		<tba:attribute name="texte_zone" form="unqualified"
+		<tba:attribute name="texte" form="unqualified"
             type="tba:string" />		
     </tba:attributeGroup>
 	
 	<tba:attributeGroup name="gr_text">
-        <tba:attribute name="id_text" form="unqualified"
+        <tba:attribute name="id" form="unqualified"
             type="tba:string" />
-		<tba:attribute name="texte_text" form="unqualified"
+		<tba:attribute name="texte" form="unqualified"
             type="tba:string" />	
 	</tba:attributeGroup>
 	
 	<tba:attributeGroup name="gr_tts">
-        <tba:attribute name="id_tts" form="unqualified"
+        <tba:attribute name="id" form="unqualified"
             type="tba:string" />			
 	</tba:attributeGroup>
 	
@@ -64,26 +69,34 @@ elementFormDefault="qualified">
 	</tba:attributeGroup>	
 	
 	<tba:attributeGroup name="gr_cond">
-        <tba:attribute name="attTest" form="unqualified"
+		<tba:attribute name="id" form="unqualified"
+            type="tba:string" />
+        <tba:attribute name="att" form="unqualified"
             type="tba:string" />
 		<tba:attribute name="valCible" form="unqualified"
             type="tba:string" />	
 	</tba:attributeGroup>
 
 	<tba:attributeGroup name="gr_varcond">
-        <tba:attribute name="varTest" form="unqualified"
+		<tba:attribute name="id" form="unqualified"
+            type="tba:string" />
+        <tba:attribute name="variable" form="unqualified"
             type="tba:string" />
 		<tba:attribute name="valCible" form="unqualified"
             type="tba:string" />	
 	</tba:attributeGroup>	
 
 	<tba:attributeGroup name="gr_var">
-        <tba:attribute name="idVar" form="unqualified"
+        <tba:attribute name="id" form="unqualified"
             type="tba:string" />		
 	</tba:attributeGroup>		
 	
 	<tba:complexType name="pionType">
 			<tba:attributeGroup ref="gr_pion" />
+	</tba:complexType>
+	
+	<tba:complexType name="zoneGroupType">
+			<tba:attributeGroup ref="gr_zoneGroup" />
 	</tba:complexType>
 	
 	<tba:complexType name="zoneType">
@@ -120,6 +133,12 @@ elementFormDefault="qualified">
 		</tba:sequence>
 	</tba:complexType>
 	
+	<tba:complexType name="zoneGroupsType">
+		<tba:sequence>
+			<tba:element maxOccurs="unbounded" name="ZoneGroup" type="zoneGroupType"/>			
+		</tba:sequence>
+	</tba:complexType>
+	
 	<tba:complexType name="zonesType">
 		<tba:sequence>
 			<tba:element maxOccurs="unbounded" name="Zone" type="zoneType"/>			
@@ -134,8 +153,13 @@ elementFormDefault="qualified">
 	
 	<tba:complexType name="condsType">
 		<tba:sequence>
-			<tba:element maxOccurs="unbounded" name="Cond" type="condType"/>	
-			<tba:element maxOccurs="unbounded" name="VarCond" type="varCondType"/>			
+			<tba:element maxOccurs="unbounded" name="Cond" type="condType"/>							
+		</tba:sequence>
+	</tba:complexType>	
+	
+	<tba:complexType name="varCondsType">
+		<tba:sequence>
+			<tba:element maxOccurs="unbounded" name="VarCond" type="varCondType"/>							
 		</tba:sequence>
 	</tba:complexType>	
 	
@@ -148,6 +172,7 @@ elementFormDefault="qualified">
 	<tba:complexType name="panelType">
 		<tba:sequence>		
 			<tba:element maxOccurs="unbounded" name="Pions" type="pionsType"/>	
+			<tba:element  minOccurs="0" name="ZoneGroups" type="zoneGroupsType"/>	
 			<tba:element maxOccurs="unbounded" name="Zones" type="zonesType"/>
 			<tba:element maxOccurs="unbounded" name="Texts" type="textsType"/>					
 		</tba:sequence>
@@ -156,8 +181,9 @@ elementFormDefault="qualified">
 	
 	<tba:complexType name="behaviorType">
 		<tba:sequence>
-			<tba:element maxOccurs="unbounded" name="Conds" type="condsType"/>	
-			<tba:element maxOccurs="unbounded" name="Vars" type="varsType"/>							
+			<tba:element minOccurs="0" name="Conds" type="condsType"/>	
+			<tba:element minOccurs="0" name="VarConds" type="varCondsType"/>	
+			<tba:element minOccurs="0" name="Vars" type="varsType"/>							
 		</tba:sequence>
 	</tba:complexType>
 	
@@ -176,7 +202,7 @@ elementFormDefault="qualified">
 	<tba:complexType name="tbaType">
 		<tba:sequence>
 			<tba:element maxOccurs="unbounded" name="Panel" type="panelType"/>	
-			<tba:element maxOccurs="unbounded" name="Behavior" type="behaviorType"/>			
+			<tba:element minOccurs="0" name="Behavior" type="behaviorType"/>			
 			<tba:element maxOccurs="unbounded" name="Output" type="outputType"/>
 			<tba:element maxOccurs="unbounded" name="Links" type="linksType"/>			
 		</tba:sequence>

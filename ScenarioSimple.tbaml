@@ -3,108 +3,106 @@
     xmlns:tba="http://www.w3.org/2001/XMLSchema-instance"
     tba:schemaLocation="./tba.xsd">
 	<Panel
-	    tba:layout_width="800"
-	    tba:layout_height="">
+	    layout_width="800"
+	    layout_height="">
 		
 		<Pions>
 	    	<Pion 
-	    		tba:id="lePion"
-	    		tba:color="red"
-	    		tba:form="rond"/>
+	    		id="lePion"
+	    		color="red"
+	    		form="rond"/>
 	    		
 	    	</Pions>
-	    	
+	    <ZoneGroups>	
 	    <ZoneGroup 
-		    tba:id=""/>
+		    id=""/>
+        </ZoneGroups>
 		
 		<Zones>
 			<Zone  
-		    	tba:id="zonePleiade"
-		    	tba:idGroup="null"
-				tba:form="rect" 
-		    	tba:x="110"
-		    	tba:y="100"
-		    	tba:width="30"
-		    	tba:height="20"
-		   	 	tba:texte="Pléïade"/>
+		    	id="zonePleiade"
+		    	idGroup="null"
+				form="rect" 
+		    	x="110"
+		    	y="100"
+		    	width="30"
+		    	height="20"
+		   	texte="Pléïade"/>
 		   	 	
 		   	 	<Zone   
-		    	tba:id="zoneBaroque"
-		    	tba:idGroup="null"
-				tba:form="rect" 
-		    	tba:x="140"
-		    	tba:y="100"
-		    	tba:width="30"
-		    	tba:height="20"
-		   	 	tba:texte="Baroque"/>
+		    	id="zoneBaroque"
+		    	idGroup="null"
+				form="rect" 
+		    	x="140"
+		    	y="100"
+		    	width="30"
+		    	height="20"
+		   	 	texte="Baroque"/>
 		   	 	
 		   	 	<Zone    
-		    	tba:id="zoneLumieres"
-		    	tba:idGroup="null"
-				tba:form="rect" 
-		    	tba:x="170"
-		    	tba:y="100"
-		    	tba:width="30"
-		    	tba:height="20"
-		   	 	tba:texte="Lumières"/>
+		    	id="zoneLumieres"
+		    	idGroup="null"
+				form="rect" 
+		    	x="170"
+		    	y="100"
+		    	width="30"
+		    	height="20"
+		   	 	texte="Lumières"/>
 		   	 	
 		   	 	<Zone    
-		    	tba:id="zoneRomantisme"
-		    	tba:idGroup="null"
-				tba:form="rect" 
-		    	tba:x="200"
-		    	tba:y="100"
-		    	tba:width="30"
-		    	tba:height="20"
-		   	 	tba:texte="Romantisme"/>
+		    	id="zoneRomantisme"
+		    	idGroup="null"
+				form="rect" 
+		    	x="200"
+		    	y="100"
+		    	width="30"
+		    	height="20"
+		   	 	texte="Romantisme"/>
 		   	 	
 		   	 	<Zone      
-		    	tba:id="zoneSurrealisme"
-		    	tba:idGroup="null"
-				tba:form="rect" 
-		    	tba:x="230"
-		    	tba:y="100"
-		    	tba:width="30"
-		    	tba:height="20"
-		   	 	tba:texte="Surrealisme"/>
+		    	id="zoneSurrealisme"
+		    	idGroup="null"
+				form="rect" 
+		    	x="230"
+		    	y="100"
+		    	width="30"
+		    	height="20"
+		   	 	texte="Surrealisme"/>
 		   	</Zones>
 		   	
 		   	<Texts>
 		   		
 		   		<Text
-		   		tba:id="textBaroque"
-		   		tba:texte="Baroque"/>
+		   		id="textBaroque"
+		   		texte="Baroque"/>
 		   		
 		   		<Text
-		   		tba:id="textPleiade"
-		   		tba:texte="Pleiade"/>
+		   		id="textPleiade"
+		   		texte="Pleiade"/>
 		   		
 		   		<Text
-		   		tba:id="textRomantisme"
-		   		tba:texte="Romantisme"/>
+		   		id="textRomantisme"
+		   		texte="Romantisme"/>
 		   		
 		   		<Text
-		   		tba:id="textLumiere"
-		   		tba:texte="Lumiere"/>
+		   		id="textLumiere"
+		   		texte="Lumiere"/>
 		   		
 		   		<Text
-		   		tba:id="textSurrealisme"
-		   		tba:texte="Surrealisme"/>
+		   		id="textSurrealisme"
+		   		texte="Surrealisme"/>
 		   		
 		   	</Texts>
 		   	
-		   	<Conds> 
-
-		   	</Conds>
+		   	
 		   	
 	</Panel>
 	
-	<Behavior>
-	</Behavior>
+	
 	<Output>
 	
 		<Tts
-		tba:id="maTTS"/>
+		id="maTTS"/>
 		
 	</Output>
 	
@@ -112,68 +110,67 @@
 		<!--Liens PIONS A ZONES-->
 		
 			<Link
-			tba:srcId="lePion"
-			tba:destId="zonePleiade"/>
+			srcId="lePion"
+			destId="zonePleiade"/>
 			
 			<Link
-			tba:srcId="lePion"
-			tba:destId="zoneBaroque"/>
+			srcId="lePion"
+			destId="zoneBaroque"/>
 			
 			<Link
-			tba:srcId="lePion"
-			tba:destId="zoneLumieres"/>
+			srcId="lePion"
+			destId="zoneLumieres"/>
 			
 			<Link
-			tba:srcId="lePion"
-			tba:destId="zoneRomantisme"/>
+			srcId="lePion"
+			destId="zoneRomantisme"/>
 			
 			<Link
-			tba:srcId="lePion"
-			tba:destId="zoneSurrealisme"/>
+			srcId="lePion"
+			destId="zoneSurrealisme"/>
 			
 		<!--Liens Zone A TEXT-->
 		
 			<Link
-			tba:srcId="zonePleiade"
-			tba:destId="textBaroque"/>
+			srcId="zonePleiade"
+			destId="textBaroque"/>
 			
 			<Link
-			tba:srcId="zonePleiade"
-			tba:destId="textBaroque"/>
+			srcId="zonePleiade"
+			destId="textBaroque"/>
 			
 			<Link
-			tba:srcId="zoneLumieres"
-			tba:destId="textLumiere"/>
+			srcId="zoneLumieres"
+			destId="textLumiere"/>
 			
 			<Link
-			tba:srcId="zoneRomantisme"
-			tba:destId="textRomantisme"/>
+			srcId="zoneRomantisme"
+			destId="textRomantisme"/>
 			
 			<Link
-			tba:srcId="zoneSurrealisme"
-			tba:destId="textSurrealisme"/>
+			srcId="zoneSurrealisme"
+			destId="textSurrealisme"/>
 			
 			<Link
-			tba:srcId="textBaroque"
-			tba:destId="maTTS"/>
+			srcId="textBaroque"
+			destId="maTTS"/>
 			
 			<Link
-			tba:srcId="textPleiade"
-			tba:destId="maTTS"/>
+			srcId="textPleiade"
+			destId="maTTS"/>
 			
 			<Link
-			tba:srcId="textLumiere"
-			tba:destId="maTTS"/>
+			srcId="textLumiere"
+			destId="maTTS"/>
 			
 			<Link
-			tba:srcId="textRomantisme"
-			tba:destId="maTTS"/>
+			srcId="textRomantisme"
+			destId="maTTS"/>
 			
 			<Link
-			tba:srcId="textSurrealisme"
-			tba:destId="maTTS"/>
+			srcId="textSurrealisme"
+			destId="maTTS"/>
 			
 				
-	</Links>
-	
+	</Links>	
 </TangibleBoxApp>

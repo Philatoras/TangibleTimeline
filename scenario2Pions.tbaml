@@ -3,116 +3,117 @@
     xmlns:tba="http://www.w3.org/2001/XMLSchema-instance"
     tba:schemaLocation="./tba.xsd">
 	<Panel
-	    tba:layout_width="800"
-	    tba:layout_height="">
+	    layout_width="800"
+	    layout_height="">
 		
 		<Pions>
 	    	<Pion 
-	    		tba:id="pionAuteur"
-	    		tba:color="red"
-	    		tba:form="rond"/>
+	    		id="pionAuteur"
+	    		color="red"
+	    		form="rond"/>
 	    		
 	    		<Pion 
-	    		tba:id="pionPeintre"
-	    		tba:color="yellow"
-	    		tba:form="rond"/>
+	    		id="pionPeintre"
+	    		color="yellow"
+	    		form="rond"/>
 	    	</Pions>
-	    	
-	    <ZoneGroup 
-		    tba:id=""/>
+	    <ZoneGroups>	
+	   		 <ZoneGroup 
+		    id=""/>
+		 </ZonesGroups>   
 		
 		<Zones>
 			<Zone  
-		    	tba:id="zonePleiade"
-		    	tba:idGroup="null"
-				tba:form="rect" 
-		    	tba:x="110"
-		    	tba:y="100"
-		    	tba:width="30"
-		    	tba:height="20"
-		   	 	tba:texte="Pléïade"/>
+		    	id="zonePleiade"
+		    	idGroup="null"
+				form="rect" 
+		    	x="110"
+		    	y="100"
+		    	width="30"
+		    	height="20"
+		   	 	texte="Pléïade"/>
 		   	 	
 		   	 	<Zone   
-		    	tba:id="zoneBaroque"
-		    	tba:idGroup="null"
-				tba:form="rect" 
-		    	tba:x="140"
-		    	tba:y="100"
-		    	tba:width="30"
-		    	tba:height="20"
-		   	 	tba:texte="Baroque"/>
+		    	id="zoneBaroque"
+		    	idGroup="null"
+				form="rect" 
+		    	x="140"
+		    	y="100"
+		    	width="30"
+		    	height="20"
+		   	 	texte="Baroque"/>
 		   	 	
 		   	 	<Zone    
-		    	tba:id="zoneLumieres"
-		    	tba:idGroup="null"
-				tba:form="rect" 
-		    	tba:x="170"
-		    	tba:y="100"
-		    	tba:width="30"
-		    	tba:height="20"
-		   	 	tba:texte="Lumières"/>
+		    	id="zoneLumieres"
+		    	idGroup="null"
+				form="rect" 
+		    	x="170"
+		    	y="100"
+		    	width="30"
+		    	height="20"
+		   	 	texte="Lumières"/>
 		   	 	
 		   	 	<Zone    
-		    	tba:id="zoneRomantisme"
-		    	tba:idGroup="null"
-				tba:form="rect" 
-		    	tba:x="200"
-		    	tba:y="100"
-		    	tba:width="30"
-		    	tba:height="20"
-		   	 	tba:texte="Romantisme"/>
+		    	id="zoneRomantisme"
+		    	idGroup="null"
+				form="rect" 
+		    	x="200"
+		    	y="100"
+		    	width="30"
+		    	height="20"
+		   	 	texte="Romantisme"/>
 		   	 	
 		   	 	<Zone      
-		    	tba:id="zoneSurrealisme"
-		    	tba:idGroup="null"
-				tba:form="rect" 
-		    	tba:x="230"
-		    	tba:y="100"
-		    	tba:width="30"
-		    	tba:height="20"
-		   	 	tba:texte="Surrealisme"/>
+		    	id="zoneSurrealisme"
+		    	idGroup="null"
+				form="rect" 
+		    	x="230"
+		    	y="100"
+		    	width="30"
+		    	height="20"
+		   	 	texte="Surrealisme"/>
 		   	</Zones>
 		   	
 		   	<Texts>
 		   		<Text
-		   		tba:id="textPeintreBaroque"
-		   		tba:texte="Rembrandt"/>
+		   		id="textPeintreBaroque"
+		   		texte="Rembrandt"/>
 		   		
 		   		<Text
-		   		tba:id="textAuteurBaroque"
-		   		tba:texte="Christofle de Beaujeu"/>
+		   		id="textAuteurBaroque"
+		   		texte="Christofle de Beaujeu"/>
 		   		
 		   		<Text
-		   		tba:id="textPeintrePleiade"
-		   		tba:texte="Leonard De Vinci"/>
+		   		id="textPeintrePleiade"
+		   		texte="Leonard De Vinci"/>
 		   		
 		   		<Text
-		   		tba:id="textAuteurPleiade"
-		   		tba:texte="Rabelais"/>
+		   		id="textAuteurPleiade"
+		   		texte="Rabelais"/>
 		   		
 		   		<Text
-		   		tba:id="textPeintreRomantisme"
-		   		tba:texte="Théodore Géricault"/>
+		   		id="textPeintreRomantisme"
+		   		texte="Théodore Géricault"/>
 		   		
 		   		<Text
-		   		tba:id="textAuteurRomantisme"
-		   		tba:texte="Victor Hugo"/>
+		   		id="textAuteurRomantisme"
+		   		texte="Victor Hugo"/>
 		   		
 		   		<Text
-		   		tba:id="textPeintreLumiere"
-		   		tba:texte="Jean-Antoine Watteau"/>
+		   		id="textPeintreLumiere"
+		   		texte="Jean-Antoine Watteau"/>
 		   		
 		   		<Text
-		   		tba:id="textAuteurLumiere"
-		   		tba:texte="Voltaire"/>
+		   		id="textAuteurLumiere"
+		   		texte="Voltaire"/>
 		   		
 		   		<Text
-		   		tba:id="textPeintreSurrealisme"
-		   		tba:texte="Salvador Dali"/>
+		   		id="textPeintreSurrealisme"
+		   		texte="Salvador Dali"/>
 		   		
 		   		<Text
-		   		tba:id="textAuteurSurrealisme"
-		   		tba:texte="André Breton"/>
+		   		id="textAuteurSurrealisme"
+		   		texte="André Breton"/>
 		   	</Texts>
 		   	
 		   	
@@ -122,233 +123,230 @@
 	<Behavior>
 		<Conds>
 		   		<Cond
-		   		tba:id="conditionAuteurPleiade"
-		   		tba:att="COULEUR"
-		   		tba:valCible="red"/>
+		   		id="conditionAuteurPleiade"
+		   		att="COULEUR"
+		   		valCible="red"/>
 		   		
 		   		<Cond
-		   		tba:id="conditionPeintrePleiade"
-		   		tba:att="COULEUR"
-		   		tba:valCible="yellow"/>
+		   		id="conditionPeintrePleiade"
+		   		att="COULEUR"
+		   		valCible="yellow"/>
 		   		
 		   		<Cond
-		   		tba:id="conditionAuteurBaroque"
-		   		tba:att="COULEUR"
-		   		tba:valCible="red"/>
+		   		id="conditionAuteurBaroque"
+		   		att="COULEUR"
+		   		valCible="red"/>
 		   		
 		   		<Cond
-		   		tba:id="conditionPeintreBaroque"
-		   		tba:att="COULEUR"
-		   		tba:valCible="yellow"/>
+		   		id="conditionPeintreBaroque"
+		   		att="COULEUR"
+		   		valCible="yellow"/>
 		   		
 		   		<Cond
-		   		tba:id="conditionAuteurSurrealisme"
-		   		tba:att="COULEUR"
-		   		tba:valCible="red"/>
+		   		id="conditionAuteurSurrealisme"
+		   		att="COULEUR"
+		   		valCible="red"/>
 		   		
 		   		<Cond
-		   		tba:id="conditionPeintreSurrealisme"
-		   		tba:att="COULEUR"
-		   		tba:valCible="yellow"/>
+		   		id="conditionPeintreSurrealisme"
+		   		att="COULEUR"
+		   		valCible="yellow"/>
 		   		
 		   		<Cond
-		   		tba:id="conditionAuteurLumieres"
-		   		tba:att="COULEUR"
-		   		tba:valCible="red"/>
+		   		id="conditionAuteurLumieres"
+		   		att="COULEUR"
+		   		valCible="red"/>
 		   	
 		   		<Cond
-		   		tba:id="conditionPeintreLumieres"
-		   		tba:att="COULEUR"
-		   		tba:valCible="yellow"/>
+		   		id="conditionPeintreLumieres"
+		   		att="COULEUR"
+		   		valCible="yellow"/>
 		   		
 		   		<Cond
-		   		tba:id=" conditionAuteurRomantisme"
-		   		tba:att="COULEUR"
-		   		tba:valCible="red"/>
+		   		id=" conditionAuteurRomantisme"
+		   		att="COULEUR"
+		   		valCible="red"/>
 		   		
 		   		<Cond
-		   		tba:id=" conditionPeintreRomantisme"
-		   		tba:att="COULEUR"
-		   		tba:valCible="yellow"/>
+		   		id=" conditionPeintreRomantisme"
+		   		att="COULEUR"
+		   		valCible="yellow"/>
 		   	
 		   	</Conds>
 	</Behavior>
 	<Output>
 	
 		<Tts
-		tba:id="maTTS"/>
+		id="maTTS"/>
 	</Output>
 	
 	<Links>
-		<!-- -------------Liens PIONS A ZONES---------------------- -->
+		<!--Liens PIONS A ZONES-->
 		<Link
-			tba:srcId="pionAuteur"
-			tba:destId="zoneSurrealisme"/>
+			srcId="pionAuteur"
+			destId="zoneSurrealisme"/>
 			
 			<Link
-			tba:srcId="pionAuteur"
-			tba:destId="zonePleiade"/>
+			srcId="pionAuteur"
+			destId="zonePleiade"/>
 			
 			<Link
-			tba:srcId="pionAuteur"
-			tba:destId="zoneBaroque"/>
+			srcId="pionAuteur"
+			destId="zoneBaroque"/>
 			
 			<Link
-			tba:srcId="pionAuteur"
-			tba:destId="zoneLumieres"/>
+			srcId="pionAuteur"
+			destId="zoneLumieres"/>
 			
 			<Link
-			tba:srcId="pionAuteur"
-			tba:destId="zoneRomantisme"/>
+			srcId="pionAuteur"
+			destId="zoneRomantisme"/>
 			
 			<Link
-			tba:srcId="pionPeintre"
-			tba:destId="zoneSurrealisme"/>
+			srcId="pionPeintre"
+			destId="zoneSurrealisme"/>
 			
 			<Link
-			tba:srcId="pionPeintre"
-			tba:destId="zonePleiade"/>
+			srcId="pionPeintre"
+			destId="zonePleiade"/>
 			
 			<Link
-			tba:srcId="pionPeintre"
-			tba:destId="zoneBaroque"/>
+			srcId="pionPeintre"
+			destId="zoneBaroque"/>
 			
 			<Link
-			tba:srcId="pionPeintre"
-			tba:destId="zoneLumieres"/>
+			srcId="pionPeintre"
+			destId="zoneLumieres"/>
 			
 			<Link
-			tba:srcId="pionPeintre"
-			tba:destId="zoneRomantisme"/>
+			srcId="pionPeintre"
+			destId="zoneRomantisme"/>
 			
 			
-		<!-- --------------Liens ZONES A CONDITIONS------------------- -->
+		<!--Liens ZONES A CONDITIONS-->
 			<Link
-			tba:srcId="zonePleiade"
-			tba:destId="conditionAuteurPleiade"/>
-			
-			<Link
-			tba:srcId="zonePleiade"
-			tba:destId="conditionPeintrePleiade"/>
+			srcId="zonePleiade"
+			destId="conditionAuteurPleiade"/>
 			
 			<Link
-			tba:srcId="zoneBaroque"
-			tba:destId="conditionAuteurBaroque"/>
+			srcId="zonePleiade"
+			destId="conditionPeintrePleiade"/>
 			
 			<Link
-			tba:srcId="zoneBaroque"
-			tba:destId="conditionPeintreBaroque"/>
+			srcId="zoneBaroque"
+			destId="conditionAuteurBaroque"/>
 			
 			<Link
-			tba:srcId="zoneRomantisme"
-			tba:destId="conditionAuteurRomantisme"/>
+			srcId="zoneBaroque"
+			destId="conditionPeintreBaroque"/>
 			
 			<Link
-			tba:srcId="zoneRomantisme"
-			tba:destId="conditionPeintreRomantisme"/>
+			srcId="zoneRomantisme"
+			destId="conditionAuteurRomantisme"/>
 			
 			<Link
-			tba:srcId="zoneSurrealisme"
-			tba:destId="conditionAuteurSurrealisme"/>
+			srcId="zoneRomantisme"
+			destId="conditionPeintreRomantisme"/>
 			
 			<Link
-			tba:srcId="zoneSurrealisme"
-			tba:destId="conditionPeintreSurrealisme"/>
+			srcId="zoneSurrealisme"
+			destId="conditionAuteurSurrealisme"/>
 			
 			<Link
-			tba:srcId="zoneLumieres"
-			tba:destId="conditionAuteurLumieres"/>
+			srcId="zoneSurrealisme"
+			destId="conditionPeintreSurrealisme"/>
 			
 			<Link
-			tba:srcId="zoneLumieres"
-			tba:destId="conditionPeintreLumieres"/>
+			srcId="zoneLumieres"
+			destId="conditionAuteurLumieres"/>
+			
+			<Link
+			srcId="zoneLumieres"
+			destId="conditionPeintreLumieres"/>
 
-		<!-- --------Liens CONDITIONS A TEXTE-------------------- -->
+		<!-- Liens CONDITIONS A TEXT -->
 		
 			<Link
-			tba:srcId="conditionAuteurBaroque"
-			tba:destId="textAuteurBaroque"/>
+			srcId="conditionAuteurBaroque"
+			destId="textAuteurBaroque"/>
 			
 			<Link
-			tba:srcId="conditionPeintreBaroque"
-			tba:destId="textPeintreBaroque"/>
+			srcId="conditionPeintreBaroque"
+			destId="textPeintreBaroque"/>
 			
 			<Link
-			tba:srcId="conditionAuteurPleiade"
-			tba:destId="textAuteurPleiade"/>
+			srcId="conditionAuteurPleiade"
+			destId="textAuteurPleiade"/>
 			
 			<Link
-			tba:srcId="conditionPeintrePleiade"
-			tba:destId="textPeintrePleiade"/>
+			srcId="conditionPeintrePleiade"
+			destId="textPeintrePleiade"/>
 			
 			<Link
-			tba:srcId="conditionAuteurLumieres"
-			tba:destId="textAuteurLumieres"/>
+			srcId="conditionAuteurLumieres"
+			destId="textAuteurLumieres"/>
 			
 			<Link
-			tba:srcId="conditionPeintreLumieres"
-			tba:destId="textPeintreLumieres"/>
+			srcId="conditionPeintreLumieres"
+			destId="textPeintreLumieres"/>
 			
 			<Link
-			tba:srcId="conditionAuteurRomantisme"
-			tba:destId="textAuteurRomantisme"/>
+			srcId="conditionAuteurRomantisme"
+			destId="textAuteurRomantisme"/>
 			
 			<Link
-			tba:srcId="conditionPeintreRomantisme"
-			tba:destId="textPeintreRomantisme"/>
+			srcId="conditionPeintreRomantisme"
+			destId="textPeintreRomantisme"/>
 			
 			<Link
-			tba:srcId="conditionAuteurSurrealisme"
-			tba:destId="textAuteurSurrealisme"/>
+			srcId="conditionAuteurSurrealisme"
+			destId="textAuteurSurrealisme"/>
 			
 			<Link
-			tba:srcId="conditionPeintreSurrealisme"
-			tba:destId="textPeintreSurrealisme"/>
+			srcId="conditionPeintreSurrealisme"
+			destId="textPeintreSurrealisme"/>
 			
-		<!-- --------Liens TEXTE A TTS-------------------- -->
+		<!--Liens TEXTE A TTS -->
 
 			<Link
-			tba:srcId="textPeintreBaroque"
-			tba:destId="maTTS"/>
+			srcId="textPeintreBaroque"
+			destId="maTTS"/>
 			
 			<Link
-			tba:srcId="textPeintrePleiade"
-			tba:destId="maTTS"/>
+			srcId="textPeintrePleiade"
+			destId="maTTS"/>
 			
 			<Link
-			tba:srcId="textAuteurBaroque"
-			tba:destId="maTTS"/>
+			srcId="textAuteurBaroque"
+			destId="maTTS"/>
 			
 			<Link
-			tba:srcId="textAuteurPleiade"
-			tba:destId="maTTS"/>
+			srcId="textAuteurPleiade"
+			destId="maTTS"/>
 			
 			<Link
-			tba:srcId="textAuteurLumiere"
-			tba:destId="maTTS"/>
+			srcId="textAuteurLumiere"
+			destId="maTTS"/>
 			
 			<Link
-			tba:srcId="textAuteurRomantisme"
-			tba:destId="maTTS"/>
+			srcId="textAuteurRomantisme"
+			destId="maTTS"/>
 			
 			<Link
-			tba:srcId="textAuteurSurrealisme"
-			tba:destId="maTTS"/>
+			srcId="textAuteurSurrealisme"
+			destId="maTTS"/>
 			
 			<Link
-			tba:srcId="textPeintreLumiere"
-			tba:destId="maTTS"/>
+			srcId="textPeintreLumiere"
+			destId="maTTS"/>
 			
 			<Link
-			tba:srcId="textPeintreRomantisme"
-			tba:destId="maTTS"/>
+			srcId="textPeintreRomantisme"
+			destId="maTTS"/>
 			
 			<Link
-			tba:srcId="textPeintreSurrealisme"
-			tba:destId="maTTS"/>
-			
-			
-			
+			srcId="textPeintreSurrealisme"
+			destId="maTTS"/>			
 
 			
 	</Links>
