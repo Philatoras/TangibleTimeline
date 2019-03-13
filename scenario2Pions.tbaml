@@ -10,11 +10,11 @@
 	    		tba:color="red"
 	    		tba:form="rond"/>
 	    		
-	    		<Pion 
+	    	<Pion 
 	    		tba:id="pionPeintre"
 	    		tba:color="yellow"
 	    		tba:form="rond"/>
-	    	</Pions>
+	    </Pions>
 	    	
 	    <ZoneGroup 
 		    tba:id=""/>

@@ -37,6 +37,11 @@ public class TBAMLToJava extends DefaultHandler {
 			CodingBlock dest = codingBlocks.get(destId);
 			src.addSortie(dest);
 		}
+		if(qName == "Pion") {
+			String id = attributes.getValue("id");
+			String color = attributes.getValue("color");
+			String form = attributes.getValue("form");
+		}
 	}
 	
 	public TBAMLToJava(){
