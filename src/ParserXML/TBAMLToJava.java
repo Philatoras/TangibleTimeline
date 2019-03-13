@@ -104,7 +104,14 @@ public class TBAMLToJava extends DefaultHandler {
 		SAXParserFactory spf = SAXParserFactory.newInstance();
 		SAXParser saxParser = spf.newSAXParser();
 		TBAMLToJava.zmb = zmb;
-		saxParser.parse(new File(FILE_TO_CONVERT),new TBAMLToJava());
+		File myTbaml=new File(FILE_TO_CONVERT);
+		TBAML_validator tbamlValidator=new TBAML_validator(myTbaml);
+		if(tbamlValidator.validateTest()) {
+			saxParser.parse(new File(FILE_TO_CONVERT),new TBAMLToJava());
+		}
+		else {
+			//gestion en cas de fichier non valide
+		}
 		
 	}
 }
