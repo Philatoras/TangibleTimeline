@@ -6,12 +6,12 @@
 		
 		<Pions>
 	    	<Pion 
-	    		tba:id="pionAuteur"
+	    		tba:id="pionFrise"
 	    		tba:color="red"
 	    		tba:form="rond"/>
 	    		
 	    		<Pion 
-	    		tba:id="pionPeintre"
+	    		tba:id="pionMenu"
 	    		tba:color="yellow"
 	    		tba:form="rond"/>
 	    	</Pions>
@@ -20,6 +20,8 @@
 		    tba:id=""/>
 		
 		<Zones>
+		
+		<!-- -------------Zones Frise---------------------- -->
 			<Zone  
 		    	tba:id="zonePleiade"
 		    	tba:idGroup="null"
@@ -69,6 +71,31 @@
 		    	tba:width="30"
 		    	tba:height="20"
 		   	 	tba:texte="Surrealisme"/>
+		   	 	
+		   	 	<!-- -------------Zones Menu---------------------- -->
+		   	 	
+		   	 	<Zone      
+		    	tba:id="zoneMenuAuteur"
+		    	tba:idGroup="null"
+				tba:form="rect" 
+		    	tba:x="140"
+		    	tba:y="130"
+		    	tba:width="30"
+		    	tba:height="20"
+		   	 	tba:texte="auteur"/>
+		   	 	
+		   	 	<Zone      
+		    	tba:id="zoneMenuPeintre"
+		    	tba:idGroup="null"
+				tba:form="rect" 
+		    	tba:x="110"
+		    	tba:y="130"
+		    	tba:width="30"
+		    	tba:height="20"
+		   	 	tba:texte="peintre"/>
+		   	 	
+		   	 	
+		   	 	
 		   	</Zones>
 		   	
 		   	<Texts>
@@ -111,64 +138,70 @@
 		   		<Text
 		   		tba:id="textAuteurSurrealisme"
 		   		tba:texte="André Breton"/>
-		   	</Texts>
+		   	</Texts>		   	
 		   	
-		   	<Conds>
-		   		<Cond
-		   		tba:id="conditionAuteurPleiade"
-		   		tba:att="COULEUR"
-		   		tba:valCible="red"/>
-		   		
-		   		<Cond
-		   		tba:id="conditionPeintrePleiade"
-		   		tba:att="COULEUR"
-		   		tba:valCible="yellow"/>
-		   		
-		   		<Cond
-		   		tba:id="conditionAuteurBaroque"
-		   		tba:att="COULEUR"
-		   		tba:valCible="red"/>
-		   		
-		   		<Cond
-		   		tba:id="conditionPeintreBaroque"
-		   		tba:att="COULEUR"
-		   		tba:valCible="yellow"/>
-		   		
-		   		<Cond
-		   		tba:id="conditionAuteurSurrealisme"
-		   		tba:att="COULEUR"
-		   		tba:valCible="red"/>
-		   		
-		   		<Cond
-		   		tba:id="conditionPeintreSurrealisme"
-		   		tba:att="COULEUR"
-		   		tba:valCible="yellow"/>
-		   		
-		   		<Cond
-		   		tba:id="conditionAuteurLumieres"
-		   		tba:att="COULEUR"
-		   		tba:valCible="red"/>
-		   	
-		   		<Cond
-		   		tba:id="conditionPeintreLumieres"
-		   		tba:att="COULEUR"
-		   		tba:valCible="yellow"/>
-		   		
-		   		<Cond
-		   		tba:id=" conditionAuteurRomantisme"
-		   		tba:att="COULEUR"
-		   		tba:valCible="red"/>
-		   		
-		   		<Cond
-		   		tba:id=" conditionPeintreRomantisme"
-		   		tba:att="COULEUR"
-		   		tba:valCible="yellow"/>
-		   	
-		   	</Conds>
 		   	
 	</Panel>
 	
 	<Behavior>
+	
+		<Conds>
+			<VarCond
+		   	tba:id="conditionAuteurPleiade"
+		   	tba:variable="vaMenu"
+		   	tba:valCible="auteur"/>
+		   		
+		   	<VarCond
+		   	tba:id="conditionPeintrePleiade"
+		   	tba:variable="valMenu"
+		   	tba:valCible="peintre"/>
+		   		
+		   	<VarCond
+		   	tba:id="conditionAuteurBaroque"
+		   	tba:variable="valMenu"
+		   	tba:valCible="auteur"/>
+		   	
+		   	<VarCond
+		   	tba:id="conditionPeintreBaroque"
+		   	tba:variable="valMenu"
+		   	tba:valCible="peintre"/>
+		   	
+		   	<VarCond
+		   	tba:id="conditionAuteurSurrealisme"
+		   tba:variable="valMenu"
+		   	tba:valCible="auteur"/>
+		   	
+		   	<VarCond
+		   	tba:id="conditionPeintreSurrealisme"
+		   	tba:variable="valMenu"
+		   	tba:valCible="peintre"/>
+		   	
+		   	<VarCond
+		   	tba:id="conditionAuteurLumieres"
+		   	tba:variable="valMenu"
+		   	tba:valCible="auteur"/>
+		   	
+		   	<VarCond
+		   	tba:id="conditionPeintreLumieres"
+		   	tba:variable="valMenu"
+		   	tba:valCible="peintre"/>
+		   	
+		   	<VarCond
+		   	tba:id=" conditionAuteurRomantisme"
+		   	tba:variable="valMenu"
+		   	tba:valCible="auteur"/>
+		   		
+		   	<VarCond
+		   	tba:id=" conditionPeintreRomantisme"
+		   	tba:variable="valMenu"
+		   	tba:valCible="peintre"/>	
+		   	
+		</Conds>
+		
+		<Vars>
+			<Var 
+				tba:id="valMenu"/>
+		</Vars>
 	</Behavior>
 	<Output>
 	
@@ -179,44 +212,34 @@
 	<Links>
 		<!-- -------------Liens PIONS A ZONES---------------------- -->
 		<Link
-			tba:srcId="pionAuteur"
-			tba:destId="zoneSurrealisme"/>
+		tba:srcId="pionFrise"
+		tba:destId="zoneSurrealisme"/>
 			
-			<Link
-			tba:srcId="pionAuteur"
-			tba:destId="zonePleiade"/>
+		<Link
+		tba:srcId="pionFrise"
+		tba:destId="zonePleiade"/>
 			
-			<Link
-			tba:srcId="pionAuteur"
-			tba:destId="zoneBaroque"/>
+		<Link
+		tba:srcId="pionFrise"
+		tba:destId="zoneBaroque"/>
 			
-			<Link
-			tba:srcId="pionAuteur"
-			tba:destId="zoneLumieres"/>
+		<Link
+		tba:srcId="pionFrise"
+		tba:destId="zoneLumieres"/>
+		
+		<Link
+		tba:srcId="pionFrise"
+		tba:destId="zoneRomantisme"/>
+		
+		<Link
+		tba:srcId="pionMenu"
+		tba:destId="zoneMenuAuteur"/>	
+		
+		<Link
+		tba:srcId="pionMenu"
+		tba:destId="zoneMenuPeintre"/>				
 			
-			<Link
-			tba:srcId="pionAuteur"
-			tba:destId="zoneRomantisme"/>
 			
-			<Link
-			tba:srcId="pionPeintre"
-			tba:destId="zoneSurrealisme"/>
-			
-			<Link
-			tba:srcId="pionPeintre"
-			tba:destId="zonePleiade"/>
-			
-			<Link
-			tba:srcId="pionPeintre"
-			tba:destId="zoneBaroque"/>
-			
-			<Link
-			tba:srcId="pionPeintre"
-			tba:destId="zoneLumieres"/>
-			
-			<Link
-			tba:srcId="pionPeintre"
-			tba:destId="zoneRomantisme"/>
 			
 			
 		<!-- --------------Liens ZONES A CONDITIONS------------------- -->
@@ -302,6 +325,14 @@
 			tba:srcId="conditionPeintreSurrealisme"
 			tba:destId="textPeintreSurrealisme"/>
 			
+			<Link
+			tba:srcId="zoneMenuAuteur"
+			tba:destId="valMenu"/>
+			
+			<Link
+			tba:srcId="zoneMenuAuteur"
+			tba:destId="valMenu"/>
+			
 		<!-- --------Liens TEXTE A TTS-------------------- -->
 
 			<Link
@@ -342,8 +373,7 @@
 			
 			<Link
 			tba:srcId="textPeintreSurrealisme"
-			tba:destId="maTTS"/>
-			
+			tba:destId="maTTS"/>		
 			
 			
 
