@@ -24,7 +24,7 @@
 		    	tba:y="100"
 		    	tba:width="30"
 		    	tba:height="20"
-		   	 	tba:texte="Pléïade"/>
+		   	 	tba:texte="PlÃ©Ã¯ade"/>
 		   	 	
 		   	 	<Zone   
 		    	tba:id="zoneBaroque"
@@ -44,7 +44,7 @@
 		    	tba:y="100"
 		    	tba:width="30"
 		    	tba:height="20"
-		   	 	tba:texte="Lumières"/>
+		   	 	tba:texte="LumiÃ¨res"/>
 		   	 	
 		   	 	<Zone    
 		    	tba:id="zoneRomantisme"
@@ -174,4 +174,4 @@
 				
 	</Links>
 	
-</TangibleBox>
+</TangibleBoxApp>
