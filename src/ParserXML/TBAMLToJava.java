@@ -13,6 +13,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import blocs.CodingBlock;
 import blocs.PionBlock;
+import blocs.TextBlock;
 import blocs.ZoneBlock;
 import serveur.ZoneManagerBloc;
 
@@ -42,21 +43,27 @@ public class TBAMLToJava extends DefaultHandler {
 			String id = attributes.getValue("id");
 			String color = attributes.getValue("color");
 			String form = attributes.getValue("form");
-			PionBlock pion = new PionBlock(id, color, form);
-			zmb.addPion(pion);
-			codingBlocks.put(id, pion);
+			PionBlock pionBlock = new PionBlock(id, color, form);
+			zmb.addPion(pionBlock);
+			codingBlocks.put(id, pionBlock);
 		}
 		if(qName == "Zone") {
 			String id = attributes.getValue("id");
-			String form = attributes.getValue("form");
+			//String form = attributes.getValue("form");
 			String x = attributes.getValue("x");
 			String y = attributes.getValue("y");
 			String width = attributes.getValue("width");
 			String height = attributes.getValue("height");
 			String texte = attributes.getValue("texte");
-			ZoneBlock zone = new ZoneBlock(id,Integer.parseInt(x),Integer.parseInt(y),Integer.parseInt(width),Integer.parseInt(height), texte);
-			zmb.addZone(zone);
-			codingBlocks.put(id,zone);
+			ZoneBlock zoneBlock = new ZoneBlock(id,Integer.parseInt(x),Integer.parseInt(y),Integer.parseInt(width),Integer.parseInt(height), texte);
+			zmb.addZone(zoneBlock);
+			codingBlocks.put(id,zoneBlock);
+		}
+		if(qName == "Text") {
+			String id = attributes.getValue("id");
+			String texte = attributes.getValue("texte");
+			TextBlock textBlock = new TextBlock(texte);
+			codingBlocks.put(id, textBlock);
 		}
 	}
 	
