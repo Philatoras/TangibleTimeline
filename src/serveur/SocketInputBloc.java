@@ -14,14 +14,14 @@ import blocs.PionBlock;
 import blocs.TTSBlock;
 import blocs.ZoneBlock;
 
-public class SocketInputBloc2 implements Runnable
+public class SocketInputBloc implements Runnable
 {
 	Socket client;
 	ParserBloc parser;
 	ZoneManagerBloc zmb;
 	
 
-	public SocketInputBloc2(Socket client, ServeurBloc2 s)
+	public SocketInputBloc(Socket client, ServeurBloc s)
 
 	
 	{
