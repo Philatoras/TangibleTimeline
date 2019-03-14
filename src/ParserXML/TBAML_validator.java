@@ -26,21 +26,26 @@ public class TBAML_validator {
 	public boolean validateTest() throws tbamlFormatException{
 		boolean isValide=false;
 		schemaFileTbaml = new File("/tba.xsd"); 
-		
+		Schema schema=null;
 		Source xmlFile = new StreamSource(this.myTBAMLfile);
 
 		SchemaFactory schemaFactory = SchemaFactory
 			    .newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		try {
+			schema = schemaFactory.newSchema(schemaFileTbaml);
+		} catch (SAXException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 			try {
-			  Schema schema = schemaFactory.newSchema(schemaFileTbaml);
 			  Validator validator = schema.newValidator();
 			  validator.validate(xmlFile);
 			  System.out.println(xmlFile.getSystemId() + " le tbaml est valide");
 			  isValide=true;
 			} catch (SAXException e) {
-				throw new tbamlFormatException();
+				throw new tbamlFormatException(schema);
 			} catch (IOException e) {
-				throw new tbamlFormatException();
+				throw new tbamlFormatException(schema);
 			}
 		return isValide;
 	}
