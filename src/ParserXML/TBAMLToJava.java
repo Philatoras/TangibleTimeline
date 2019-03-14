@@ -115,6 +115,7 @@ public class TBAMLToJava extends DefaultHandler {
 		TBAML_validator tbamlValidator=new TBAML_validator(myTbaml);
 		try {
 			tbamlValidator.validateTest();
+			//suite 
 		} catch (tbamlFormatException e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
