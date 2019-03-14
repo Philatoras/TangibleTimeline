@@ -107,7 +107,7 @@ public class TBAMLToJava extends DefaultHandler {
 		File myTbaml=new File(FILE_TO_CONVERT);
 		TBAML_validator tbamlValidator=new TBAML_validator(myTbaml);
 		if(tbamlValidator.validateTest()) {
-			saxParser.parse(new File(FILE_TO_CONVERT),new TBAMLToJava());
+			saxParser.parse(myTbaml,new TBAMLToJava());
 		}
 		else {
 			//gestion en cas de fichier non valide
