@@ -17,13 +17,13 @@ public class TBAML_validator {
 	private File myTBAMLfile;
 	private File schemaFileTbaml;
 	
-	public TBAML_validator(File tbamlFile) {
+	public TBAML_validator(File tbamlFile)  {
 		this.myTBAMLfile=tbamlFile;
 		File schemaFileTbaml;
 		
 	}
 	
-	public boolean validateTest() {
+	public boolean validateTest() throws tbamlFormatException{
 		boolean isValide=false;
 		schemaFileTbaml = new File("/tba.xsd"); 
 		
@@ -38,8 +38,10 @@ public class TBAML_validator {
 			  System.out.println(xmlFile.getSystemId() + " le tbaml est valide");
 			  isValide=true;
 			} catch (SAXException e) {
-			  System.out.println(xmlFile.getSystemId() + " le tbaml n'est pas valide:" + e);
-			} catch (IOException e) {}
+				throw new tbamlFormatException();
+			} catch (IOException e) {
+				throw new tbamlFormatException();
+			}
 		return isValide;
 	}
 
