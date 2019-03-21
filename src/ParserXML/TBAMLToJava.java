@@ -124,13 +124,13 @@ public class TBAMLToJava extends DefaultHandler {
 		
 		File myTbaml=new File(fileToConvert);
 		TBAML_validator tbamlValidator=new TBAML_validator(myTbaml);
-		//try {
-			//tbamlValidator.validateTest();
+		try {
+			tbamlValidator.validateTest();
 			saxParser.parse(myTbaml, new TBAMLToJava());
-		//} catch (tbamlFormatException e) {
-			//e.printStackTrace();
-			//System.out.println(e.getMessage());
-		//}
+		} catch (tbamlFormatException e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
 		
 	}
 }
