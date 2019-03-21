@@ -151,7 +151,7 @@
 		<VarConds>
 			<VarCond
 		   	id="conditionAuteurPleiade"
-		   	variable="vaMenu"
+		   	variable="valMenu"
 		   	valCible="auteur"/>
 		   		
 		   	<VarCond
@@ -333,7 +333,7 @@
 			destId="valMenu"/>
 			
 			<Link
-			srcId="zoneMenuAuteur"
+			srcId="zoneMenuPeintre"
 			destId="valMenu"/>
 			
 		<!--Liens TEXTE A TTS -->
