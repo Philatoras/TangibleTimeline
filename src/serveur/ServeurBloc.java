@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class ServeurBloc2 implements Runnable
+public class ServeurBloc implements Runnable
 {
 	private static final int PORT = 8952;
 	ServerSocket server;
-	SocketInputBloc2 input;
+	SocketInputBloc input;
 
 	public void run() 
 	{
@@ -23,7 +23,7 @@ public class ServeurBloc2 implements Runnable
 		{
 			try {
 				Socket client = server.accept();
-				input = new SocketInputBloc2(client, this);
+				input = new SocketInputBloc(client, this);
 				Thread t = new Thread(input);
 				t.start();
 			} catch (IOException e) {
@@ -34,7 +34,7 @@ public class ServeurBloc2 implements Runnable
 	
 	public static void main(String[] args) 
 	{
-		ServeurBloc2 s = new ServeurBloc2();
+		ServeurBloc s = new ServeurBloc();
 		Thread t = new Thread(s);
 		t.start();
 	}

@@ -8,20 +8,23 @@
 		
 		<Pions>
 	    	<Pion 
-	    		id="pionAuteur"
+	    		id="pionFrise"
 	    		color="red"
 	    		form="rond"/>
 	    		
-	    	<Pion 
-	    		tba:id="pionPeintre"
-	    		tba:color="yellow"
-	    		tba:form="rond"/>
-	    </Pions>
-	    	
-	    <ZoneGroup 
-		    tba:id=""/>
+	    		<Pion 
+	    		id="pionMenu"
+	    		color="yellow"
+	    		form="rond"/>
+	    	</Pions>
+	    <ZoneGroups>	
+	    	<ZoneGroup 
+		    id=""/>
+		 </ZoneGroups>
 		
 		<Zones>
+		
+		<!--Zones Frise -->
 			<Zone  
 		    	id="zonePleiade"
 		    	idGroup="null"
@@ -30,7 +33,7 @@
 		    	y="100"
 		    	width="30"
 		    	height="20"
-		   	 	texte="PlÃ©Ã¯ade"/>
+		   	 	texte="Pléïade"/>
 		   	 	
 		   	 	<Zone   
 		    	id="zoneBaroque"
@@ -50,7 +53,7 @@
 		    	y="100"
 		    	width="30"
 		    	height="20"
-		   	 	texte="LumiÃ¨res"/>
+		   	 	texte="Lumières"/>
 		   	 	
 		   	 	<Zone    
 		    	id="zoneRomantisme"
@@ -71,6 +74,31 @@
 		    	width="30"
 		    	height="20"
 		   	 	texte="Surrealisme"/>
+		   	 	
+		   	 	<!--Zones Menu-->
+		   	 	
+		   	 	<Zone      
+		    	id="zoneMenuAuteur"
+		    	idGroup="null"
+				form="rect" 
+		    	x="140"
+		    	y="130"
+		    	width="30"
+		    	height="20"
+		   	 	texte="auteur"/>
+		   	 	
+		   	 	<Zone      
+		    	id="zoneMenuPeintre"
+		    	idGroup="null"
+				form="rect" 
+		    	x="110"
+		    	y="130"
+		    	width="30"
+		    	height="20"
+		   	 	texte="peintre"/>
+		   	 	
+		   	 	
+		   	 	
 		   	</Zones>
 		   	
 		   	<Texts>
@@ -92,7 +120,7 @@
 		   		
 		   		<Text
 		   		id="textPeintreRomantisme"
-		   		texte="ThÃ©odore GÃ©ricault"/>
+		   		texte="Théodore Géricault"/>
 		   		
 		   		<Text
 		   		id="textAuteurRomantisme"
@@ -112,66 +140,71 @@
 		   		
 		   		<Text
 		   		id="textAuteurSurrealisme"
-		   		texte="AndrÃ© Breton"/>
-		   	</Texts>
-		   	
+		   		texte="André Breton"/>
+		   	</Texts>		   	
 		   	
 		   	
 	</Panel>
 	
 	<Behavior>
-		<Conds>
-		   		<Cond
-		   		id="conditionAuteurPleiade"
-		   		att="COULEUR"
-		   		valCible="red"/>
+	
+		<VarConds>
+			<VarCond
+		   	id="conditionAuteurPleiade"
+		   	variable="vaMenu"
+		   	valCible="auteur"/>
 		   		
-		   		<Cond
-		   		id="conditionPeintrePleiade"
-		   		att="COULEUR"
-		   		valCible="yellow"/>
+		   	<VarCond
+		   	id="conditionPeintrePleiade"
+		   	variable="valMenu"
+		   	valCible="peintre"/>
 		   		
-		   		<Cond
-		   		id="conditionAuteurBaroque"
-		   		att="COULEUR"
-		   		valCible="red"/>
-		   		
-		   		<Cond
-		   		id="conditionPeintreBaroque"
-		   		att="COULEUR"
-		   		valCible="yellow"/>
-		   		
-		   		<Cond
-		   		id="conditionAuteurSurrealisme"
-		   		att="COULEUR"
-		   		valCible="red"/>
-		   		
-		   		<Cond
-		   		id="conditionPeintreSurrealisme"
-		   		att="COULEUR"
-		   		valCible="yellow"/>
-		   		
-		   		<Cond
-		   		id="conditionAuteurLumieres"
-		   		att="COULEUR"
-		   		valCible="red"/>
+		   	<VarCond
+		   	id="conditionAuteurBaroque"
+		   	variable="valMenu"
+		   	valCible="auteur"/>
 		   	
-		   		<Cond
-		   		id="conditionPeintreLumieres"
-		   		att="COULEUR"
-		   		valCible="yellow"/>
-		   		
-		   		<Cond
-		   		id=" conditionAuteurRomantisme"
-		   		att="COULEUR"
-		   		valCible="red"/>
-		   		
-		   		<Cond
-		   		id=" conditionPeintreRomantisme"
-		   		att="COULEUR"
-		   		valCible="yellow"/>
+		   	<VarCond
+		   	id="conditionPeintreBaroque"
+		   	variable="valMenu"
+		   	valCible="peintre"/>
 		   	
-		   	</Conds>
+		   	<VarCond
+		   	id="conditionAuteurSurrealisme"
+		   	variable="valMenu"
+		   	valCible="auteur"/>
+		   	
+		   	<VarCond
+		   	id="conditionPeintreSurrealisme"
+		   	variable="valMenu"
+		   	valCible="peintre"/>
+		   	
+		   	<VarCond
+		   	id="conditionAuteurLumieres"
+		   	variable="valMenu"
+		   	valCible="auteur"/>
+		   	
+		   	<VarCond
+		   	id="conditionPeintreLumieres"
+		   	variable="valMenu"
+		   	valCible="peintre"/>
+		   	
+		   	<VarCond
+		   	id=" conditionAuteurRomantisme"
+		   	variable="valMenu"
+		   	valCible="auteur"/>
+		   		
+		   	<VarCond
+		   	id=" conditionPeintreRomantisme"
+		   	variable="valMenu"
+		   	valCible="peintre"/>	
+		   	
+		</VarConds>
+		
+		<Vars>
+			<Var 
+				id="valMenu"/>
+		</Vars>
 	</Behavior>
 	<Output>
 	
@@ -180,46 +213,36 @@
 	</Output>
 	
 	<Links>
-		<!--Liens PIONS A ZONES-->
+		<!-- Liens PIONS A ZONES -->
 		<Link
-			srcId="pionAuteur"
-			destId="zoneSurrealisme"/>
+		srcId="pionFrise"
+		destId="zoneSurrealisme"/>
 			
-			<Link
-			srcId="pionAuteur"
-			destId="zonePleiade"/>
+		<Link
+		srcId="pionFrise"
+		destId="zonePleiade"/>
 			
-			<Link
-			srcId="pionAuteur"
-			destId="zoneBaroque"/>
+		<Link
+		srcId="pionFrise"
+		destId="zoneBaroque"/>
 			
-			<Link
-			srcId="pionAuteur"
-			destId="zoneLumieres"/>
+		<Link
+		srcId="pionFrise"
+		destId="zoneLumieres"/>
+		
+		<Link
+		srcId="pionFrise"
+		destId="zoneRomantisme"/>
+		
+		<Link
+		srcId="pionMenu"
+		destId="zoneMenuAuteur"/>	
+		
+		<Link
+		srcId="pionMenu"
+		destId="zoneMenuPeintre"/>				
 			
-			<Link
-			srcId="pionAuteur"
-			destId="zoneRomantisme"/>
 			
-			<Link
-			srcId="pionPeintre"
-			destId="zoneSurrealisme"/>
-			
-			<Link
-			srcId="pionPeintre"
-			destId="zonePleiade"/>
-			
-			<Link
-			srcId="pionPeintre"
-			destId="zoneBaroque"/>
-			
-			<Link
-			srcId="pionPeintre"
-			destId="zoneLumieres"/>
-			
-			<Link
-			srcId="pionPeintre"
-			destId="zoneRomantisme"/>
 			
 			
 		<!--Liens ZONES A CONDITIONS-->
@@ -263,7 +286,7 @@
 			srcId="zoneLumieres"
 			destId="conditionPeintreLumieres"/>
 
-		<!-- Liens CONDITIONS A TEXT -->
+		<!--Liens CONDITIONS A TEXTE-->
 		
 			<Link
 			srcId="conditionAuteurBaroque"
@@ -305,6 +328,14 @@
 			srcId="conditionPeintreSurrealisme"
 			destId="textPeintreSurrealisme"/>
 			
+			<Link
+			srcId="zoneMenuAuteur"
+			destId="valMenu"/>
+			
+			<Link
+			srcId="zoneMenuAuteur"
+			destId="valMenu"/>
+			
 		<!--Liens TEXTE A TTS -->
 
 			<Link
@@ -345,7 +376,9 @@
 			
 			<Link
 			srcId="textPeintreSurrealisme"
-			destId="maTTS"/>			
+			destId="maTTS"/>		
+			
+			
 
 			
 	</Links>
