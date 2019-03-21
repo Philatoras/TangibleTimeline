@@ -44,6 +44,7 @@ public class TBAMLToJava extends DefaultHandler {
 			String destId = attributes.getValue("destId");
 			CodingBlock src = codingBlocks.get(srcId);
 			CodingBlock dest = codingBlocks.get(destId);
+			System.out.println("Lien : " + srcId + " vers " + destId);
 			src.addSortie(dest);
 		}
 		if(qName == "Pion") {
