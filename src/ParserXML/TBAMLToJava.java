@@ -2,6 +2,7 @@ package ParserXML;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -93,6 +94,7 @@ public class TBAMLToJava extends DefaultHandler {
 	 */
 	public TBAMLToJava(){
 		super();
+		this.codingBlocks = new HashMap<String, CodingBlock>();
 	}
 	
 	/**
@@ -122,13 +124,13 @@ public class TBAMLToJava extends DefaultHandler {
 		
 		File myTbaml=new File(fileToConvert);
 		TBAML_validator tbamlValidator=new TBAML_validator(myTbaml);
-		try {
-			tbamlValidator.validateTest();
+		//try {
+			//tbamlValidator.validateTest();
 			saxParser.parse(myTbaml, new TBAMLToJava());
-		} catch (tbamlFormatException e) {
-			e.printStackTrace();
-			System.out.println(e.getMessage());
-		}
+		//} catch (tbamlFormatException e) {
+			//e.printStackTrace();
+			//System.out.println(e.getMessage());
+		//}
 		
 	}
 }

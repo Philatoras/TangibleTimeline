@@ -11,7 +11,7 @@ public class ServeurBloc implements Runnable
 	private static final int PORT = 8952;
 	ServerSocket server;
 	SocketInputBloc input;
-	String fileToConvert = "ScenarioSimple.tbaml";
+	String fileToConvert = "./ScenarioSimple.tbaml";
 
 	public void run() 
 	{
@@ -24,6 +24,7 @@ public class ServeurBloc implements Runnable
 		{
 			try {
 				Socket client = server.accept();
+				System.out.println("accepté");
 				input = new SocketInputBloc(client, this,fileToConvert);
 				Thread t = new Thread(input);
 				t.start();

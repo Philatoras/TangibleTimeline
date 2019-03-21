@@ -27,7 +27,7 @@
 		    	y="100"
 		    	width="30"
 		    	height="20"
-		   	texte="Pléïade"/>
+		   	texte="PlÃ©Ã¯ade"/>
 		   	 	
 		   	 	<Zone   
 		    	id="zoneBaroque"
@@ -47,7 +47,7 @@
 		    	y="100"
 		    	width="30"
 		    	height="20"
-		   	 	texte="Lumières"/>
+		   	 	texte="LumiÃ¨res"/>
 		   	 	
 		   	 	<Zone    
 		    	id="zoneRomantisme"
