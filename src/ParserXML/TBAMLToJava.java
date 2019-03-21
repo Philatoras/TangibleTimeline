@@ -88,11 +88,16 @@ public class TBAMLToJava extends DefaultHandler {
 		}
 	}
 	
+	/**
+	 * Lance le parsing grâce à SAX
+	 */
 	public TBAMLToJava(){
 		super();
 	}
 	
-	//charger une nouvelle application Tangible Box à partir de .tbaml
+	/**
+	 * charger une nouvelle application Tangible Box à partir de .tbaml
+	 */
 	protected void changeTbamlFile() {
 		XML_finder graphicFinder=new XML_finder();
 		File nouveauTbaml=graphicFinder.fileChooser();
@@ -115,7 +120,7 @@ public class TBAMLToJava extends DefaultHandler {
 		TBAML_validator tbamlValidator=new TBAML_validator(myTbaml);
 		try {
 			tbamlValidator.validateTest();
-			//suite 
+			saxParser.parse(myTbaml, new TBAMLToJava());
 		} catch (tbamlFormatException e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
