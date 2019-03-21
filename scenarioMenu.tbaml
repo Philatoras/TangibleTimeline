@@ -33,7 +33,7 @@
 		    	y="100"
 		    	width="30"
 		    	height="20"
-		   	 	texte="Pléïade"/>
+		   	 	texte="PlÃ©Ã¯ade"/>
 		   	 	
 		   	 	<Zone   
 		    	id="zoneBaroque"
@@ -53,7 +53,7 @@
 		    	y="100"
 		    	width="30"
 		    	height="20"
-		   	 	texte="Lumières"/>
+		   	 	texte="LumiÃ¨res"/>
 		   	 	
 		   	 	<Zone    
 		    	id="zoneRomantisme"
@@ -120,7 +120,7 @@
 		   		
 		   		<Text
 		   		id="textPeintreRomantisme"
-		   		texte="Théodore Géricault"/>
+		   		texte="ThÃ©odore GÃ©ricault"/>
 		   		
 		   		<Text
 		   		id="textAuteurRomantisme"
@@ -140,7 +140,7 @@
 		   		
 		   		<Text
 		   		id="textAuteurSurrealisme"
-		   		texte="André Breton"/>
+		   		texte="AndrÃ© Breton"/>
 		   	</Texts>		   	
 		   	
 		   	
@@ -190,12 +190,12 @@
 		   	valCible="peintre"/>
 		   	
 		   	<VarCond
-		   	id=" conditionAuteurRomantisme"
+		   	id="conditionAuteurRomantisme"
 		   	variable="valMenu"
 		   	valCible="auteur"/>
 		   		
 		   	<VarCond
-		   	id=" conditionPeintreRomantisme"
+		   	id="conditionPeintreRomantisme"
 		   	variable="valMenu"
 		   	valCible="peintre"/>	
 		   	
@@ -306,11 +306,11 @@
 			
 			<Link
 			srcId="conditionAuteurLumieres"
-			destId="textAuteurLumieres"/>
+			destId="textAuteurLumiere"/>
 			
 			<Link
 			srcId="conditionPeintreLumieres"
-			destId="textPeintreLumieres"/>
+			destId="textPeintreLumiere"/>
 			
 			<Link
 			srcId="conditionAuteurRomantisme"

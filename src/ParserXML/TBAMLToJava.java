@@ -42,9 +42,11 @@ public class TBAMLToJava extends DefaultHandler {
 		if(qName == "Link") {
 			String srcId = attributes.getValue("srcId");
 			String destId = attributes.getValue("destId");
+			System.out.println("Lien : " + srcId + " vers " + destId);
 			CodingBlock src = codingBlocks.get(srcId);
 			CodingBlock dest = codingBlocks.get(destId);
-			System.out.println("Lien : " + srcId + " vers " + destId);
+			if (dest == null)
+				throw new NullPointerException("erreur destination");
 			src.addSortie(dest);
 		}
 		if(qName == "Pion") {
@@ -90,14 +92,14 @@ public class TBAMLToJava extends DefaultHandler {
 			GroupBlock group = new GroupBlock(id);
 			codingBlocks.put(id, group);
 		}
-		if(qName == "varCond") {
+		if(qName == "VarCond") {
 			String id = attributes.getValue("id");
 			String variable = attributes.getValue("variable");
 			String valeur = attributes.getValue("valCible");
 			ConditionVariableBlock block = new ConditionVariableBlock(variable, valeur);
 			codingBlocks.put(id, block);
 		}
-		if(qName == "var") {
+		if(qName == "Var") {
 			String id = attributes.getValue("id");
 			VariableBlock block = new VariableBlock(id);
 			codingBlocks.put(id, block);
