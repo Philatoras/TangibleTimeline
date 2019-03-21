@@ -133,10 +133,10 @@
 		
 			<Link
 			srcId="zonePleiade"
-			destId="textBaroque"/>
+			destId="textPleiade"/>
 			
 			<Link
-			srcId="zonePleiade"
+			srcId="zoneBaroque"
 			destId="textBaroque"/>
 			
 			<Link
