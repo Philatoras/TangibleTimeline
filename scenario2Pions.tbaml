@@ -12,15 +12,14 @@
 	    		color="red"
 	    		form="rond"/>
 	    		
-	    		<Pion 
-	    		id="pionPeintre"
-	    		color="yellow"
-	    		form="rond"/>
-	    	</Pions>
-	    <ZoneGroups>	
-	   		 <ZoneGroup 
-		    id=""/>
-		 </ZonesGroups>   
+	    	<Pion 
+	    		tba:id="pionPeintre"
+	    		tba:color="yellow"
+	    		tba:form="rond"/>
+	    </Pions>
+	    	
+	    <ZoneGroup 
+		    tba:id=""/>
 		
 		<Zones>
 			<Zone  
@@ -31,7 +30,7 @@
 		    	y="100"
 		    	width="30"
 		    	height="20"
-		   	 	texte="Pléïade"/>
+		   	 	texte="PlÃ©Ã¯ade"/>
 		   	 	
 		   	 	<Zone   
 		    	id="zoneBaroque"
@@ -51,7 +50,7 @@
 		    	y="100"
 		    	width="30"
 		    	height="20"
-		   	 	texte="Lumières"/>
+		   	 	texte="LumiÃ¨res"/>
 		   	 	
 		   	 	<Zone    
 		    	id="zoneRomantisme"
@@ -93,7 +92,7 @@
 		   		
 		   		<Text
 		   		id="textPeintreRomantisme"
-		   		texte="Théodore Géricault"/>
+		   		texte="ThÃ©odore GÃ©ricault"/>
 		   		
 		   		<Text
 		   		id="textAuteurRomantisme"
@@ -113,7 +112,7 @@
 		   		
 		   		<Text
 		   		id="textAuteurSurrealisme"
-		   		texte="André Breton"/>
+		   		texte="AndrÃ© Breton"/>
 		   	</Texts>
 		   	
 		   	

@@ -11,7 +11,7 @@ public class ScenarioSimpleBloc implements ScenarioBloc {
 	public void initScenario(ZoneManagerBloc zoneManager) {
 		PionBlock pionAuteur = new PionBlock("auteur","red","rond");
 		
-		ZoneBlock zonePleiade = new ZoneBlock("zonePleiade",110, 100,30,20,"Pléïade");
+		ZoneBlock zonePleiade = new ZoneBlock("zonePleiade",110, 100,30,20,"PlÃ©Ã¯ade");
 		pionAuteur.addSortie(zonePleiade);
 		
 		ZoneBlock zoneBaroque = new ZoneBlock("zoneBaroque",140, 100,30,20,"Baroque");
@@ -30,7 +30,7 @@ public class ScenarioSimpleBloc implements ScenarioBloc {
 		TextBlock textAuteurPleiade = new TextBlock("Rabelais");
 		TextBlock textAuteurRomantisme = new TextBlock("Victor Hugo");
 		TextBlock textAuteurLumiere = new TextBlock("Voltaire");
-		TextBlock textAuteurSurrealisme = new TextBlock("André Breton");
+		TextBlock textAuteurSurrealisme = new TextBlock("AndrÃ© Breton");
 		
 		zonePleiade.addSortie(textAuteurPleiade);
 		zoneBaroque.addSortie(textAuteurBaroque);
