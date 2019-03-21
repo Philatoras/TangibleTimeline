@@ -15,6 +15,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import blocs.Attributs;
 import blocs.CodingBlock;
 import blocs.ConditionBlock;
+import blocs.ConditionVariableBlock;
 import blocs.GroupBlock;
 import blocs.PionBlock;
 import blocs.TTSBlock;
@@ -86,6 +87,13 @@ public class TBAMLToJava extends DefaultHandler {
 			String id = attributes.getValue("id");
 			GroupBlock group = new GroupBlock(id);
 			codingBlocks.put(id, group);
+		}
+		if(qName == "varCond") {
+			String id = attributes.getValue("id");
+			String variable = attributes.getValue("variable");
+			String valeur = attributes.getValue("valCible");
+			ConditionVariableBlock block = new ConditionVariableBlock(variable, valeur);
+			codingBlocks.put(id, block);
 		}
 	}
 	
