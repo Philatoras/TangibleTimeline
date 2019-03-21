@@ -13,13 +13,15 @@
 	    		form="rond"/>
 	    		
 	    	<Pion 
-	    		tba:id="pionPeintre"
-	    		tba:color="yellow"
-	    		tba:form="rond"/>
+	    		id="pionPeintre"
+	    		color="yellow"
+	    		form="rond"/>
 	    </Pions>
 	    	
+		<ZoneGroups>	
 	    <ZoneGroup 
-		    tba:id=""/>
+		    id=""/>
+        </ZoneGroups>
 		
 		<Zones>
 			<Zone  
@@ -162,12 +164,12 @@
 		   		valCible="yellow"/>
 		   		
 		   		<Cond
-		   		id=" conditionAuteurRomantisme"
+		   		id="conditionAuteurRomantisme"
 		   		att="COULEUR"
 		   		valCible="red"/>
 		   		
 		   		<Cond
-		   		id=" conditionPeintreRomantisme"
+		   		id="conditionPeintreRomantisme"
 		   		att="COULEUR"
 		   		valCible="yellow"/>
 		   	

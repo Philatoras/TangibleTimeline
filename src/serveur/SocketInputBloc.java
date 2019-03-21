@@ -9,6 +9,12 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.util.HashMap;
 
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
+
+import ParserXML.TBAMLToJava;
+import ParserXML.TBAML_validator;
 import blocs.Attributs;
 import blocs.PionBlock;
 import blocs.TTSBlock;
@@ -21,7 +27,7 @@ public class SocketInputBloc implements Runnable
 	ZoneManagerBloc zmb;
 	
 
-	public SocketInputBloc(Socket client, ServeurBloc s)
+	public SocketInputBloc(Socket client, ServeurBloc s, String fileToConvert)
 
 	
 	{
@@ -31,8 +37,14 @@ public class SocketInputBloc implements Runnable
 		this.zmb = new ZoneManagerBloc();
 
 		//ScenarioBloc scenar = new ScenarioQuad();
-		ScenarioBloc scenar = new ScenarioMenuBlock();
-		scenar.initScenario(zmb);
+		//ScenarioBloc scenar = new ScenarioMenuBlock();
+		//scenar.initScenario(zmb);
+		try {
+			TBAMLToJava.convert(zmb, fileToConvert);
+		} catch (ParserConfigurationException | SAXException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.parser = new ParserBloc(zmb);
 	}
 	

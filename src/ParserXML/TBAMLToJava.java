@@ -2,6 +2,7 @@ package ParserXML;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -14,10 +15,12 @@ import org.xml.sax.helpers.DefaultHandler;
 import blocs.Attributs;
 import blocs.CodingBlock;
 import blocs.ConditionBlock;
+import blocs.ConditionVariableBlock;
 import blocs.GroupBlock;
 import blocs.PionBlock;
 import blocs.TTSBlock;
 import blocs.TextBlock;
+import blocs.VariableBlock;
 import blocs.ZoneBlock;
 import serveur.ZoneManagerBloc;
 
@@ -30,7 +33,7 @@ public class TBAMLToJava extends DefaultHandler {
 
 	private static ZoneManagerBloc zmb;
 	
-	private static String FILE_TO_CONVERT = "/test.tbaml";
+	private static String fileToConvert;
 	
 	private Map<String,CodingBlock> codingBlocks; //Map de CodingBlocks caractérisés par leur ID
 	
@@ -39,8 +42,11 @@ public class TBAMLToJava extends DefaultHandler {
 		if(qName == "Link") {
 			String srcId = attributes.getValue("srcId");
 			String destId = attributes.getValue("destId");
+			System.out.println("Lien : " + srcId + " vers " + destId);
 			CodingBlock src = codingBlocks.get(srcId);
 			CodingBlock dest = codingBlocks.get(destId);
+			if (dest == null)
+				throw new NullPointerException("erreur destination");
 			src.addSortie(dest);
 		}
 		if(qName == "Pion") {
@@ -86,6 +92,18 @@ public class TBAMLToJava extends DefaultHandler {
 			GroupBlock group = new GroupBlock(id);
 			codingBlocks.put(id, group);
 		}
+		if(qName == "VarCond") {
+			String id = attributes.getValue("id");
+			String variable = attributes.getValue("variable");
+			String valeur = attributes.getValue("valCible");
+			ConditionVariableBlock block = new ConditionVariableBlock(variable, valeur);
+			codingBlocks.put(id, block);
+		}
+		if(qName == "Var") {
+			String id = attributes.getValue("id");
+			VariableBlock block = new VariableBlock(id);
+			codingBlocks.put(id, block);
+		}
 	}
 	
 	/**
@@ -93,6 +111,7 @@ public class TBAMLToJava extends DefaultHandler {
 	 */
 	public TBAMLToJava(){
 		super();
+		this.codingBlocks = new HashMap<String, CodingBlock>();
 	}
 	
 	/**
@@ -101,22 +120,26 @@ public class TBAMLToJava extends DefaultHandler {
 	protected void changeTbamlFile() {
 		XML_finder graphicFinder=new XML_finder();
 		File nouveauTbaml=graphicFinder.fileChooser();
-		TBAMLToJava.FILE_TO_CONVERT=nouveauTbaml.getAbsolutePath();
+		TBAMLToJava.fileToConvert=nouveauTbaml.getAbsolutePath();
 	}
 	
 	/**
 	 * Lance la conversion du fichier TBAML en code java
-	 * @param zmb ZoneManager utilisé pour le programme
+	 * @param in_zmb ZoneManager utilisé pour le programme
+	 * @param in_fileToConvert path du fichier à convertir
 	 * @throws ParserConfigurationException
 	 * @throws SAXException
 	 * @throws IOException
 	 */
-	public static void convert(ZoneManagerBloc zmb) throws ParserConfigurationException,
+	public static void convert(ZoneManagerBloc in_zmb, String in_fileToConvert) throws ParserConfigurationException,
 	SAXException, IOException {
+		fileToConvert = in_fileToConvert;
+		
 		SAXParserFactory spf = SAXParserFactory.newInstance();
 		SAXParser saxParser = spf.newSAXParser();
-		TBAMLToJava.zmb = zmb;
-		File myTbaml=new File(FILE_TO_CONVERT);
+		TBAMLToJava.zmb = in_zmb;
+		
+		File myTbaml=new File(fileToConvert);
 		TBAML_validator tbamlValidator=new TBAML_validator(myTbaml);
 		try {
 			tbamlValidator.validateTest();
