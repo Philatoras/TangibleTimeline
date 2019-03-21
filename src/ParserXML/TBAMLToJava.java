@@ -30,7 +30,7 @@ public class TBAMLToJava extends DefaultHandler {
 
 	private static ZoneManagerBloc zmb;
 	
-	private static String FILE_TO_CONVERT = "/test.tbaml";
+	private static String fileToConvert;
 	
 	private Map<String,CodingBlock> codingBlocks; //Map de CodingBlocks caractérisés par leur ID
 	
@@ -101,22 +101,26 @@ public class TBAMLToJava extends DefaultHandler {
 	protected void changeTbamlFile() {
 		XML_finder graphicFinder=new XML_finder();
 		File nouveauTbaml=graphicFinder.fileChooser();
-		TBAMLToJava.FILE_TO_CONVERT=nouveauTbaml.getAbsolutePath();
+		TBAMLToJava.fileToConvert=nouveauTbaml.getAbsolutePath();
 	}
 	
 	/**
 	 * Lance la conversion du fichier TBAML en code java
-	 * @param zmb ZoneManager utilisé pour le programme
+	 * @param in_zmb ZoneManager utilisé pour le programme
+	 * @param in_fileToConvert path du fichier à convertir
 	 * @throws ParserConfigurationException
 	 * @throws SAXException
 	 * @throws IOException
 	 */
-	public static void convert(ZoneManagerBloc zmb) throws ParserConfigurationException,
+	public static void convert(ZoneManagerBloc in_zmb, String in_fileToConvert) throws ParserConfigurationException,
 	SAXException, IOException {
+		fileToConvert = in_fileToConvert;
+		
 		SAXParserFactory spf = SAXParserFactory.newInstance();
 		SAXParser saxParser = spf.newSAXParser();
-		TBAMLToJava.zmb = zmb;
-		File myTbaml=new File(FILE_TO_CONVERT);
+		TBAMLToJava.zmb = in_zmb;
+		
+		File myTbaml=new File(fileToConvert);
 		TBAML_validator tbamlValidator=new TBAML_validator(myTbaml);
 		try {
 			tbamlValidator.validateTest();
