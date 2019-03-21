@@ -20,6 +20,7 @@ import blocs.GroupBlock;
 import blocs.PionBlock;
 import blocs.TTSBlock;
 import blocs.TextBlock;
+import blocs.VariableBlock;
 import blocs.ZoneBlock;
 import serveur.ZoneManagerBloc;
 
@@ -93,6 +94,11 @@ public class TBAMLToJava extends DefaultHandler {
 			String variable = attributes.getValue("variable");
 			String valeur = attributes.getValue("valCible");
 			ConditionVariableBlock block = new ConditionVariableBlock(variable, valeur);
+			codingBlocks.put(id, block);
+		}
+		if(qName == "var") {
+			String id = attributes.getValue("id");
+			VariableBlock block = new VariableBlock(id);
 			codingBlocks.put(id, block);
 		}
 	}
