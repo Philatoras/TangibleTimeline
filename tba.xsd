@@ -66,6 +66,8 @@ elementFormDefault="qualified">
             type="tba:string" />
 		<tba:attribute name="destId" form="unqualified"
             type="tba:string" />	
+		<tba:attribute name="port" form="unqualified"
+            type="tba:string" use="optional"/>	
 	</tba:attributeGroup>	
 	
 	<tba:attributeGroup name="gr_cond">

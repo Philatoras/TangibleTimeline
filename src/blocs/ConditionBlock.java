@@ -35,5 +35,9 @@ public class ConditionBlock extends CodingBlock {
 			c.receipt(this.getAttributs());
 	}
 	
+	public void addSortieFalse(CodingBlock cb) {
+			listeSortieFaux.add(cb);
+	}
+	
 
 }
