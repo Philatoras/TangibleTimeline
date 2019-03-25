@@ -151,7 +151,7 @@
 		<VarConds>
 			<VarCond
 		   	id="conditionAuteurPleiade"
-		   	variable="vaMenu"
+		   	variable="valMenu"
 		   	valCible="auteur"/>
 		   		
 		   	<VarCond
