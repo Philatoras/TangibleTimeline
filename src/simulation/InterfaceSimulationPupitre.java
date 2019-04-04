@@ -46,7 +46,7 @@ public class InterfaceSimulationPupitre extends JFrame
 	{
 		Comm com = new Comm();
 		if(com.open()){
-			new InterfaceSimulationPupitre("plateauFriseMenu.csv",com);
+			new InterfaceSimulationPupitre("plateauSalle.csv",com);
 		}
 	}
 }

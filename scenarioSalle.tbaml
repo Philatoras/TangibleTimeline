@@ -196,11 +196,11 @@
 			port="else"/>
 			
 			<Link
-			srcId="conditionAmoire"
+			srcId="conditionArmoire"
 			destId="textArmoireOK"/>
 			
 			<Link
-			srcId="conditionAmoire"
+			srcId="conditionArmoire"
 			destId="textArmoireKO"
 			port="else"/>			
 			

@@ -42,12 +42,23 @@ public class TBAMLToJava extends DefaultHandler {
 		if(qName == "Link") {
 			String srcId = attributes.getValue("srcId");
 			String destId = attributes.getValue("destId");
+			String port = attributes.getValue("port");
 			System.out.println("Lien : " + srcId + " vers " + destId);
-			CodingBlock src = codingBlocks.get(srcId);
-			CodingBlock dest = codingBlocks.get(destId);
-			if (dest == null)
-				throw new NullPointerException("erreur destination");
-			src.addSortie(dest);
+			if(port == null) {
+				CodingBlock src = codingBlocks.get(srcId);
+				CodingBlock dest = codingBlocks.get(destId);
+				if (dest == null)
+					throw new NullPointerException("erreur destination");
+				src.addSortie(dest);
+			}
+			else {
+				ConditionBlock src = (ConditionBlock) codingBlocks.get(srcId);
+				CodingBlock dest = codingBlocks.get(destId);
+				if(port.equals("else")) {
+					src.addSortieFalse(dest);
+				}
+			}
+			
 		}
 		if(qName == "Pion") {
 			String id = attributes.getValue("id");

@@ -8,7 +8,9 @@ public enum TypePionFrise
 	PIONN("PionN", "pionn", "black", new Color(0,0,0)),
 	MENU("Menu", "menu", "red", new Color(250,0,0)),
 	PIONJ("PionJ", "pionj", "yellow", new Color(250,250,0)),
-	PIONR("PionR", "pionr", "red", new Color(250,0,0));
+	ARMOIRE("Armoire", "armoire", "yellow", new Color(250,250,0)),
+	PIONR("PionR", "pionr", "red", new Color(250,0,0)),
+	CHAISE("Chaise", "chaise", "red", new Color(250,0,0));
 	
 	private String libelle, nom, couleurJeton;
 	private Color couleur;
