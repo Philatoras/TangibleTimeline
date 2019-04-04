@@ -8,20 +8,13 @@ import java.util.Map;
 public class SwitchBlock extends CodingBlock {
 
 	private Attributs attributTest;
-	
-	private List<String> valeursPossibles ;
-	
+		
 	private Map<String, ArrayList<CodingBlock>> mapSorties;	
 
-	public SwitchBlock(Attributs att, List<String> valeurs) {
+	public SwitchBlock(String id, Attributs att) {
 		super();
-		this.attributTest = att;
-		this.valeursPossibles = valeurs;
-		mapSorties = new HashMap<String, ArrayList<CodingBlock>>();
-		for(String val : valeursPossibles) {
-			mapSorties.put(val, new ArrayList<CodingBlock>());
-		}
-		
+		this.attributTest = att;		
+		mapSorties = new HashMap<String, ArrayList<CodingBlock>>();		
 	}
 	
 	@Override
@@ -45,6 +38,9 @@ public class SwitchBlock extends CodingBlock {
 	
 	public void addInMap(String val, CodingBlock cb) {
 		ArrayList<CodingBlock> liste = mapSorties.get(val);
+		if(liste == null) {
+			liste = new ArrayList<CodingBlock>();
+		}
 		liste.add(cb);
 		mapSorties.put(val, liste);
 	}

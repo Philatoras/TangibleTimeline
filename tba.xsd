@@ -78,6 +78,13 @@ elementFormDefault="qualified">
 		<tba:attribute name="valCible" form="unqualified"
             type="tba:string" />	
 	</tba:attributeGroup>
+	
+	<tba:attributeGroup name="gr_condSwitch">
+		<tba:attribute name="id" form="unqualified"
+            type="tba:string" />
+		<tba:attribute name="att" form="unqualified"
+            type="tba:string" />
+	</tba:attributeGroup>
 
 	<tba:attributeGroup name="gr_varcond">
 		<tba:attribute name="id" form="unqualified"
@@ -121,6 +128,10 @@ elementFormDefault="qualified">
 			<tba:attributeGroup ref="gr_cond" />
 	</tba:complexType>
 	
+	<tba:complexType name="condSwitchType">
+			<tba:attributeGroup ref="gr_condSwitch" />
+	</tba:complexType>
+	
 	<tba:complexType name="varCondType">
 			<tba:attributeGroup ref="gr_varcond" />
 	</tba:complexType>
@@ -155,7 +166,8 @@ elementFormDefault="qualified">
 	
 	<tba:complexType name="condsType">
 		<tba:sequence>
-			<tba:element maxOccurs="unbounded" name="Cond" type="condType"/>							
+			<tba:element minOccurs="0" maxOccurs="unbounded" name="Cond" type="condType"/>
+			<tba:element minOccurs="0" maxOccurs="unbounded" name="CondSwitch" type="condSwitchType"/>				
 		</tba:sequence>
 	</tba:complexType>	
 	

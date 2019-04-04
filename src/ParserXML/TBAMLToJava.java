@@ -18,6 +18,7 @@ import blocs.ConditionBlock;
 import blocs.ConditionVariableBlock;
 import blocs.GroupBlock;
 import blocs.PionBlock;
+import blocs.SwitchBlock;
 import blocs.TTSBlock;
 import blocs.TextBlock;
 import blocs.VariableBlock;
@@ -44,18 +45,24 @@ public class TBAMLToJava extends DefaultHandler {
 			String destId = attributes.getValue("destId");
 			String port = attributes.getValue("port");
 			System.out.println("Lien : " + srcId + " vers " + destId);
+			CodingBlock dest = codingBlocks.get(destId);
+			if (dest == null)
+				throw new NullPointerException("erreur destination");
+			//Cas par defaut
 			if(port == null) {
-				CodingBlock src = codingBlocks.get(srcId);
-				CodingBlock dest = codingBlocks.get(destId);
-				if (dest == null)
-					throw new NullPointerException("erreur destination");
+				CodingBlock src = codingBlocks.get(srcId);					
 				src.addSortie(dest);
 			}
+			//Cas d'un block condition avec else
 			else {
-				ConditionBlock src = (ConditionBlock) codingBlocks.get(srcId);
-				CodingBlock dest = codingBlocks.get(destId);
 				if(port.equals("else")) {
+					ConditionBlock src = (ConditionBlock) codingBlocks.get(srcId);
 					src.addSortieFalse(dest);
+				}
+				//Si le port n'est pas else alors c'est un switch
+				else {
+					SwitchBlock src = (SwitchBlock) codingBlocks.get(srcId);
+					src.addInMap(port, dest);
 				}
 			}
 			
@@ -114,6 +121,12 @@ public class TBAMLToJava extends DefaultHandler {
 			String id = attributes.getValue("id");
 			VariableBlock block = new VariableBlock(id);
 			codingBlocks.put(id, block);
+		}
+		if(qName == "CondSwitch") {
+			String id = attributes.getValue("id");
+			String attribut = attributes.getValue("att");
+			SwitchBlock switchBlock = new SwitchBlock(id, Attributs.valueOf(attribut));
+			codingBlocks.put(id, switchBlock);
 		}
 	}
 	
