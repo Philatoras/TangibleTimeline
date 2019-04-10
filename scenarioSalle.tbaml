@@ -92,7 +92,13 @@
 		   		id="textArmoireKO"
 		   		texte="Armoire KO"/>
 		   		
+		   		<Text
+		   		id="textChaiseEnter"
+		   		texte="ENTREE CHAISE"/>
 		   		
+		   		<Text
+		   		id="textChaiseExit"
+		   		texte="SORTIE CHAISE"/>
 		   	</Texts>
 		   	
 		   	
@@ -183,6 +189,16 @@
 			<Link
 			srcId="zoneArmoire2"
 			destId="conditionArmoire"/>
+			
+			<Link
+			srcId="zoneChaise1"
+			destId="textChaiseEnter"
+			port="entered"/>
+			
+			<Link
+			srcId="zoneChaise1"
+			destId="textChaiseExit"
+			port="exited"/>
 						
 		<!-- Liens CONDITIONS A TEXT -->
 		
@@ -204,6 +220,7 @@
 			destId="textArmoireKO"
 			port="else"/>			
 			
+			
 		<!--Liens TEXTE A TTS -->
 
 			<Link
@@ -221,6 +238,16 @@
 			<Link
 			srcId="textArmoireKO"
 			destId="maTTS"/>
+			
+			<Link
+			srcId="textChaiseEnter"
+			destId="maTTS"/>
+			
+			<Link
+			srcId="textChaiseExit"
+			destId="maTTS"/>
+			
+			
 			
 			
 	</Links>

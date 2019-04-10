@@ -27,17 +27,18 @@ import serveur.ZoneManagerBloc;
 
 /**
  * Classe dédiée à la conversion des fichiers TBAML en code java
+ * 
  * @author gwend
  *
  */
 public class TBAMLToJava extends DefaultHandler {
 
 	private static ZoneManagerBloc zmb;
-	
+
 	private static String fileToConvert;
-	
-	private Map<String,CodingBlock> codingBlocks; //Map de CodingBlocks caractérisés par leur ID
-	
+
+	private Map<String, CodingBlock> codingBlocks; // Map de CodingBlocks caractérisés par leur ID
+
 	public void startElement(String uri, String localName, String qName,
 			Attributes attributes) throws SAXException {
 		if(qName == "Link") {
@@ -55,15 +56,26 @@ public class TBAMLToJava extends DefaultHandler {
 			}
 			//Cas d'un block condition avec else
 			else {
-				if(port.equals("else")) {
-					ConditionBlock src = (ConditionBlock) codingBlocks.get(srcId);
-					src.addSortieFalse(dest);
+				
+				switch(port) {
+					case "else":
+						ConditionBlock srcCond = (ConditionBlock) codingBlocks.get(srcId);
+						srcCond.addSortieFalse(dest);
+						break;
+					case "entered":
+						ZoneBlock srcZEnt = (ZoneBlock) codingBlocks.get(srcId);
+						srcZEnt.addSortieEntree(dest);
+						break;
+					case "exited":
+						ZoneBlock srcZExit = (ZoneBlock) codingBlocks.get(srcId);
+						srcZExit.addSortieSortie(dest);
+						break;
+					default:
+						SwitchBlock srcSwitch = (SwitchBlock) codingBlocks.get(srcId);
+						srcSwitch.addInMap(port, dest);
+						break;
 				}
-				//Si le port n'est pas else alors c'est un switch
-				else {
-					SwitchBlock src = (SwitchBlock) codingBlocks.get(srcId);
-					src.addInMap(port, dest);
-				}
+				
 			}
 			
 		}
@@ -129,42 +141,43 @@ public class TBAMLToJava extends DefaultHandler {
 			codingBlocks.put(id, switchBlock);
 		}
 	}
-	
+
 	/**
 	 * Lance le parsing grâce à SAX
 	 */
-	public TBAMLToJava(){
+	public TBAMLToJava() {
 		super();
 		this.codingBlocks = new HashMap<String, CodingBlock>();
 	}
-	
+
 	/**
 	 * charger une nouvelle application Tangible Box à partir de .tbaml
 	 */
 	protected void changeTbamlFile() {
-		XML_finder graphicFinder=new XML_finder();
-		File nouveauTbaml=graphicFinder.fileChooser();
-		TBAMLToJava.fileToConvert=nouveauTbaml.getAbsolutePath();
+		XML_finder graphicFinder = new XML_finder();
+		File nouveauTbaml = graphicFinder.fileChooser();
+		TBAMLToJava.fileToConvert = nouveauTbaml.getAbsolutePath();
 	}
-	
+
 	/**
 	 * Lance la conversion du fichier TBAML en code java
-	 * @param in_zmb ZoneManager utilisé pour le programme
+	 * 
+	 * @param in_zmb           ZoneManager utilisé pour le programme
 	 * @param in_fileToConvert path du fichier à convertir
 	 * @throws ParserConfigurationException
 	 * @throws SAXException
 	 * @throws IOException
 	 */
-	public static void convert(ZoneManagerBloc in_zmb, String in_fileToConvert) throws ParserConfigurationException,
-	SAXException, IOException {
+	public static void convert(ZoneManagerBloc in_zmb, String in_fileToConvert)
+			throws ParserConfigurationException, SAXException, IOException {
 		fileToConvert = in_fileToConvert;
-		
+
 		SAXParserFactory spf = SAXParserFactory.newInstance();
 		SAXParser saxParser = spf.newSAXParser();
 		TBAMLToJava.zmb = in_zmb;
-		
-		File myTbaml=new File(fileToConvert);
-		TBAML_validator tbamlValidator=new TBAML_validator(myTbaml);
+
+		File myTbaml = new File(fileToConvert);
+		TBAML_validator tbamlValidator = new TBAML_validator(myTbaml);
 		try {
 			tbamlValidator.validateTest();
 			saxParser.parse(myTbaml, new TBAMLToJava());
@@ -172,6 +185,6 @@ public class TBAMLToJava extends DefaultHandler {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-		
+
 	}
 }
