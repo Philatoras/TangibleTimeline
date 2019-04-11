@@ -61,6 +61,18 @@ elementFormDefault="qualified">
             type="tba:string" />			
 	</tba:attributeGroup>
 	
+	<tba:attributeGroup name="gr_song">
+        <tba:attribute name="id" form="unqualified"
+            type="tba:string" />
+		<tba:attribute name="songName" form="unqualified"
+            type="tba:string" />	
+	</tba:attributeGroup>
+	
+	<tba:attributeGroup name="gr_songplayer">
+        <tba:attribute name="id" form="unqualified"
+            type="tba:string" />			
+	</tba:attributeGroup>
+	
 	<tba:attributeGroup name="gr_link">
         <tba:attribute name="srcId" form="unqualified"
             type="tba:string" />
@@ -120,6 +132,14 @@ elementFormDefault="qualified">
 			<tba:attributeGroup ref="gr_tts" />
 	</tba:complexType>
 	
+	<tba:complexType name="songType">
+			<tba:attributeGroup ref="gr_song" />
+	</tba:complexType>
+	
+	<tba:complexType name="songplayerType">
+			<tba:attributeGroup ref="gr_songplayer" />
+	</tba:complexType>
+	
 	<tba:complexType name="linkType">
 			<tba:attributeGroup ref="gr_link" />
 	</tba:complexType>
@@ -164,6 +184,12 @@ elementFormDefault="qualified">
 		</tba:sequence>
 	</tba:complexType>	
 	
+	<tba:complexType name="songsType">
+		<tba:sequence>
+			<tba:element maxOccurs="unbounded" name="Song" type="songType"/>			
+		</tba:sequence>
+	</tba:complexType>	
+	
 	<tba:complexType name="condsType">
 		<tba:sequence>
 			<tba:element minOccurs="0" maxOccurs="unbounded" name="Cond" type="condType"/>
@@ -203,7 +229,8 @@ elementFormDefault="qualified">
 	
 	<tba:complexType name="outputType">
 		<tba:sequence>
-			<tba:element maxOccurs="unbounded" name="Tts" type="ttsType"/>			
+			<tba:element maxOccurs="unbounded" name="Tts" type="ttsType"/>	
+			<tba:element maxOccurs="unbounded" name="Songplayer" type="songplayerType"/>		
 		</tba:sequence>
 	</tba:complexType>
 	
