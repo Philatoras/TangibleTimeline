@@ -15,6 +15,7 @@ public class TextBlock extends CodingBlock {
 	void receipt(HashMap<Attributs, Object> atts) {
 		atts.put(Attributs.TEXTE, textePerso);
 		this.sendAttributs(atts);
+	
 	}
 
 }
