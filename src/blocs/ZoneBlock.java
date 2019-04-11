@@ -6,6 +6,8 @@ import java.util.Map;
 
 public class ZoneBlock extends CodingBlock{
 	
+	private boolean triggeredTimedEvent;
+	
 	private String idGroup;
 	//Liste des blocs auxquels le flux sera transmis en cas d'entree du pion dans la zone
 	private ArrayList<CodingBlock> listeSortieEntreeZone;
@@ -14,21 +16,22 @@ public class ZoneBlock extends CodingBlock{
 	//dictionnaire pour stocker les coordonnes precedentes de chaque pion
 	private Map<String, Integer[]> pionMap;
 	
-	public ZoneBlock(String id, int x, int y, int l, int h, String texte) {
+	public ZoneBlock(String id, int x, int y, int l, int h,int deltaT, String texte) {
 		super();		
 		getAttributs().put(Attributs.ID, id);
 		getAttributs().put(Attributs.X, x);
 		getAttributs().put(Attributs.Y, y);
 		getAttributs().put(Attributs.LONGUEUR, l);
 		getAttributs().put(Attributs.HAUTEUR, h);
-		getAttributs().put(Attributs.TEXTE, texte);		
+		getAttributs().put(Attributs.TEXTE, texte);	
+		getAttributs().put(Attributs.DELTA_T,deltaT);	
 		listeSortieEntreeZone = new ArrayList<CodingBlock>();
 		listeSortieSortieZone = new ArrayList<CodingBlock>();
 		pionMap = new HashMap<String, Integer[]>();
-		
+		triggeredTimedEvent = false;
 	}
 	
-	public ZoneBlock(String id, int x, int y, int l, int h, String texte, String idGroup) {
+	public ZoneBlock(String id, int x, int y, int l, int h,int deltaT, String texte, String idGroup) {
 		super();
 		getAttributs().put(Attributs.ID, id);
 		getAttributs().put(Attributs.X, x);
@@ -36,11 +39,12 @@ public class ZoneBlock extends CodingBlock{
 		getAttributs().put(Attributs.LONGUEUR, l);
 		getAttributs().put(Attributs.HAUTEUR, h);
 		getAttributs().put(Attributs.TEXTE, texte);
+		getAttributs().put(Attributs.DELTA_T,deltaT);
 		this.idGroup = idGroup;		
 		listeSortieEntreeZone = new ArrayList<CodingBlock>();
 		listeSortieSortieZone = new ArrayList<CodingBlock>();
 		pionMap = new HashMap<String, Integer[]>();
-		
+		triggeredTimedEvent = false;
 	}	
 
 	
@@ -69,7 +73,13 @@ public class ZoneBlock extends CodingBlock{
 			if(xRecu>x && xRecu<(x+l) && yRecu>y && yRecu<(y+h)) {			
 				
 				if(xPrec>x && xPrec<(x+l) && yPrec>y && yPrec<(y+h)) {
-					sendAttributs(atts);
+					if((int)atts.get(Attributs.DELTA_T) > (int)getAttributs().get(Attributs.DELTA_T) && !triggeredTimedEvent) {
+						triggeredTimedEvent = true;
+						sendAttributs(atts);
+					} 
+					if((int)atts.get(Attributs.DELTA_T) < (int)getAttributs().get(Attributs.DELTA_T) || (int)getAttributs().get(Attributs.DELTA_T) <= 0) {
+						triggeredTimedEvent = false;
+					}
 				}
 				//Cas entree du pion
 				else {
