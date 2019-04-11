@@ -229,8 +229,8 @@ elementFormDefault="qualified">
 	
 	<tba:complexType name="outputType">
 		<tba:sequence>
-			<tba:element maxOccurs="unbounded" name="Tts" type="ttsType"/>	
-			<tba:element maxOccurs="unbounded" name="Songplayer" type="songplayerType"/>		
+			<tba:element minOccurs="0" maxOccurs="unbounded" name="Tts" type="ttsType"/>	
+			<tba:element minOccurs="0" maxOccurs="unbounded" name="Songplayer" type="songplayerType"/>		
 		</tba:sequence>
 	</tba:complexType>
 	

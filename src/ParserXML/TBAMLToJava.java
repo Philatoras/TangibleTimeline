@@ -18,6 +18,8 @@ import blocs.ConditionBlock;
 import blocs.ConditionVariableBlock;
 import blocs.GroupBlock;
 import blocs.PionBlock;
+import blocs.PlaySongBlock;
+import blocs.SongBlock;
 import blocs.SwitchBlock;
 import blocs.TTSBlock;
 import blocs.TextBlock;
@@ -139,6 +141,17 @@ public class TBAMLToJava extends DefaultHandler {
 			String attribut = attributes.getValue("att");
 			SwitchBlock switchBlock = new SwitchBlock(id, Attributs.valueOf(attribut));
 			codingBlocks.put(id, switchBlock);
+		}
+		if(qName == "Song") {
+			String id = attributes.getValue("id");
+			String songName = attributes.getValue("songName");
+			SongBlock songBlock = new SongBlock(songName);
+			codingBlocks.put(id, songBlock);
+		}
+		if(qName == "Songplayer") {
+			String id = attributes.getValue("id");
+			PlaySongBlock playSongBlock = new PlaySongBlock();
+			codingBlocks.put(id, playSongBlock);
 		}
 	}
 
