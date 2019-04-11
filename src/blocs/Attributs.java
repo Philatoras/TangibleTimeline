@@ -9,5 +9,6 @@ public enum Attributs {
 	Y,
 	LONGUEUR,
 	HAUTEUR,
-	TEXTE;
+	TEXTE,
+	DELTA_T;
 }
