@@ -102,7 +102,11 @@
 	<Behavior>
 		<Conds>
 		   		<CondSwitch
-		   		id="conditionMeuble"
+		   		id="conditionChaise"
+		   		att="COULEUR" />	
+		   		
+		   		<CondSwitch
+		   		id="conditionArmoire"
 		   		att="COULEUR" />	   		
 		   		
 		   	
@@ -160,43 +164,43 @@
 		<!--Liens ZONES A CONDITIONS-->
 			<Link
 			srcId="zoneChaise1"
-			destId="conditionMeuble"/>
+			destId="conditionChaise"/>
 			
 			<Link
 			srcId="zoneChaise2"
-			destId="conditionMeuble"/>
+			destId="conditionChaise"/>
 			
 			<Link
 			srcId="zoneChaise3"
-			destId="conditionMeuble"/>
+			destId="conditionChaise"/>
 			
 			<Link
 			srcId="zoneArmoire1"
-			destId="conditionMeuble"/>
+			destId="conditionArmoire"/>
 			
 			<Link
 			srcId="zoneArmoire2"
-			destId="conditionMeuble"/>
+			destId="conditionArmoire"/>
 						
 		<!-- Liens CONDITIONS A TEXT -->
 		
 			<Link
-			srcId="conditionMeuble"
+			srcId="conditionChaise"
 			destId="textChaiseOK"
 			port="red"/>
 			
 			<Link
-			srcId="conditionMeuble"
+			srcId="conditionChaise"
 			destId="textChaiseKO"
 			port="yellow"/>
 			
 			<Link
-			srcId="conditionMeuble"
+			srcId="conditionArmoire"
 			destId="textArmoireOK"
 			port="yellow"/>
 			
 			<Link
-			srcId="conditionMeuble"
+			srcId="conditionArmoire"
 			destId="textArmoireKO"
 			port="red"/>			
 			

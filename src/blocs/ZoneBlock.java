@@ -73,7 +73,7 @@ public class ZoneBlock extends CodingBlock{
 				}
 				//Cas entree du pion
 				else {
-					System.out.println(idPion + " : " + xPrec + ", " + yPrec);
+					
 					sendAttributsEntree(atts);
 				}			
 			}

@@ -5,10 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SwitchBlock extends CodingBlock {
+//Bloc agissant comme un switch case, permettant d'avoir plus de 2 listes en sortie (par rapport au bloc Condition)
+//Entrée : attribut à tester, par exemple COULEUR
+//Sortie : selon la valeur, on send à la liste correpondante 
 
+public class SwitchBlock extends CodingBlock {
+	//Attribut testé
 	private Attributs attributTest;
-		
+	//Map avec une valeur de l'attribut en clé et la liste des blocs correspondante en valeur.	
 	private Map<String, ArrayList<CodingBlock>> mapSorties;	
 
 	public SwitchBlock(String id, Attributs att) {

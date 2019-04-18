@@ -2,6 +2,10 @@ package blocs;
 
 import java.util.HashMap;
 
+//Bloc lisant le texte en entrée avec la TTS (ici System.out pour le debug)
+//Entrée : texte à lire
+//Sortie : Son
+
 public class TTSBlock extends CodingBlock{
 
 	@Override

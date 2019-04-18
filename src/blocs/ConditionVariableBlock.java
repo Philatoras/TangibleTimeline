@@ -4,9 +4,15 @@ import java.util.HashMap;
 
 import serveur.ZoneManagerBloc;
 
-public class ConditionVariableBlock extends CodingBlock {
+//Bloc permettant de tester une variable
+//Entrée : nom de la variable
+//Sortie : send aux blocs de la liste de sortie par défaut si true (pas de else implémenté)
 
+
+public class ConditionVariableBlock extends CodingBlock {
+	//Valeur souhaitée pour que le test soit true
 	String valeurCible;
+	//Nom de la variable à tester
 	String variable;
 	
 	public ConditionVariableBlock(String variable, String valeurCible) {

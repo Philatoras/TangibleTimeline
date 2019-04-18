@@ -2,6 +2,10 @@ package blocs;
 
 import java.util.HashMap;
 
+//Bloc représentant un pion, caractérisé par son id, sa couleur et sa forme
+//Entrée : rien
+//Sortie : send aux blocs de la liste, généralement des zones
+
 public class PionBlock extends CodingBlock{
 
 	public PionBlock(String id, String couleur, String forme) {

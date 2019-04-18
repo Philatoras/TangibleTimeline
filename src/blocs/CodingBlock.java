@@ -3,6 +3,8 @@ package blocs;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+//Classe abstraite, tous les autres types de blocs en héritent
+
 public abstract class CodingBlock {
 	private ArrayList<CodingBlock> listeSortie;
 	private HashMap<Attributs, Object> attributs;
