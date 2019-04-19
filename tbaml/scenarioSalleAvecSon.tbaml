@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TangibleBoxApp xmlns="http://www.example.com"
+    xmlns:tba="http://www.w3.org/2001/XMLSchema-instance"
+    tba:schemaLocation="./tba.xsd">
+	<Panel
+	    layout_width="800"
+	    layout_height="">
+		
+		<Pions>
+	    	<Pion 
+	    		id="pionChaise"
+	    		color="red"
+	    		form="rond"/>
+	    		
+	    	<Pion 
+	    		id="pionArmoire"
+	    		color="yellow"
+	    		form="rond"/>
+	    </Pions>
+	    	
+		<ZoneGroups>	
+	    <ZoneGroup 
+		    id=""/>
+        </ZoneGroups>
+		
+		<Zones>
+			<Zone  
+		    	id="zoneChaise1"
+		    	idGroup="null"
+				form="rect" 
+		    	x="110"
+		    	y="100"
+		    	width="30"
+		    	height="20"
+		   	 	texte="Chaise"/>
+		   	 	
+		   	 	<Zone   
+		    	id="zoneChaise2"
+		    	idGroup="null"
+				form="rect" 
+		    	x="140"
+		    	y="100"
+		    	width="30"
+		    	height="20"
+		   	 	texte="Chaise"/>
+		   	 	
+		   	 	<Zone    
+		    	id="zoneChaise3"
+		    	idGroup="null"
+				form="rect" 
+		    	x="170"
+		    	y="100"
+		    	width="30"
+		    	height="20"
+		   	 	texte="Chaise"/>
+		   	 	
+		   	 	<Zone    
+		    	id="zoneArmoire1"
+		    	idGroup="null"
+				form="rect" 
+		    	x="200"
+		    	y="100"
+		    	width="30"
+		    	height="20"
+		   	 	texte="Armoire"/>
+		   	 	
+		   	 	<Zone      
+		    	id="zoneArmoire2"
+		    	idGroup="null"
+				form="rect" 
+		    	x="230"
+		    	y="100"
+		    	width="30"
+		    	height="20"
+		   	 	texte="Armoire"/>
+		   	</Zones>
+		   	
+		   	<Texts>
+		   		<Text
+		   		id="textChaiseOK"
+		   		texte="Chaise OK"/>
+		   		
+				<Text
+		   		id="textChaiseKO"
+		   		texte="Chaise KO"/>
+				
+				<Text
+		   		id="textArmoireOK"
+		   		texte="Armoire OK"/>
+				
+				<Text
+		   		id="textArmoireKO"
+		   		texte="Armoire KO"/>
+		   		
+		   		<Text
+		   		id="textChaiseEnter"
+		   		texte="ENTREE CHAISE"/>
+		   		
+		   		<Text
+		   		id="textChaiseExit"
+		   		texte="SORTIE CHAISE"/>
+		   	</Texts>
+		   	
+		   	<Songs>
+		   		<Song 
+		   		id="sonOK"
+		   		songName="gagne.wav"/>
+		   	</Songs>
+		   	
+		   	
+		   	
+	</Panel>
+	
+	<Behavior>
+		<Conds>
+		   		<Cond
+		   		id="conditionChaise"
+		   		att="COULEUR"
+		   		valCible="red"/>
+				
+		   		<Cond
+		   		id="conditionArmoire"
+		   		att="COULEUR"
+		   		valCible="yellow"/>
+		   		
+		   	
+		   	</Conds>
+	</Behavior>
+	<Output>
+	
+		<Tts
+		id="maTTS"/>
+		
+		<SongPlayer 
+		id="songPlayer"/>
+		
+	</Output>
+	
+	<Links>
+		<!--Liens PIONS A ZONES-->
+		<Link
+			srcId="pionChaise"
+			destId="zoneChaise1"/>
+			
+			<Link
+			srcId="pionChaise"
+			destId="zoneChaise2"/>
+			
+			<Link
+			srcId="pionChaise"
+			destId="zoneChaise3"/>
+			
+			<Link
+			srcId="pionChaise"
+			destId="zoneArmoire1"/>
+			
+			<Link
+			srcId="pionChaise"
+			destId="zoneArmoire2"/>
+			
+			<Link
+			srcId="pionArmoire"
+			destId="zoneChaise1"/>
+			
+			<Link
+			srcId="pionArmoire"
+			destId="zoneChaise2"/>
+			
+			<Link
+			srcId="pionArmoire"
+			destId="zoneChaise3"/>
+			
+			<Link
+			srcId="pionArmoire"
+			destId="zoneArmoire1"/>
+			
+			<Link
+			srcId="pionArmoire"
+			destId="zoneArmoire2"/>
+			
+			
+		<!--Liens ZONES A CONDITIONS-->
+			<Link
+			srcId="zoneChaise1"
+			destId="conditionChaise"/>
+			
+			<Link
+			srcId="zoneChaise2"
+			destId="conditionChaise"/>
+			
+			<Link
+			srcId="zoneChaise3"
+			destId="conditionChaise"/>
+			
+			<Link
+			srcId="zoneArmoire1"
+			destId="conditionArmoire"/>
+			
+			<Link
+			srcId="zoneArmoire2"
+			destId="conditionArmoire"/>
+			
+			<Link
+			srcId="zoneChaise1"
+			destId="textChaiseEnter"
+			port="entered"/>
+			
+			<Link
+			srcId="zoneChaise1"
+			destId="textChaiseExit"
+			port="exited"/>
+						
+		<!-- Liens CONDITIONS A TEXT -->
+		
+			<Link
+			srcId="conditionChaise"
+			destId="sonOK"/>
+			
+			<Link
+			srcId="conditionChaise"
+			destId="textChaiseKO"
+			port="else"/>
+			
+			<Link
+			srcId="conditionArmoire"
+			destId="sonOK"/>
+			
+			<Link
+			srcId="conditionArmoire"
+			destId="textArmoireKO"
+			port="else"/>			
+			
+			
+		<!--Liens TEXTE A TTS OU SONGPLAYER -->
+
+			<Link
+			srcId="sonOK"
+			destId="songPlayer"/>
+			
+			<Link
+			srcId="textChaiseKO"
+			destId="maTTS"/>
+			
+			<Link
+			srcId="sonOK"
+			destId="songPlayer"/>
+			
+			<Link
+			srcId="textArmoireKO"
+			destId="maTTS"/>
+			
+			<Link
+			srcId="textChaiseEnter"
+			destId="maTTS"/>
+			
+			<Link
+			srcId="textChaiseExit"
+			destId="maTTS"/>			
+			
+			
+			
+	</Links>
+	
+</TangibleBoxApp>

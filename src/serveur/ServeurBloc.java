@@ -11,7 +11,7 @@ public class ServeurBloc implements Runnable
 	private static final int PORT = 8952;
 	ServerSocket server;
 	SocketInputBloc input;
-	String fileToConvert = "./scenarios/scenarioSalleSwitch.tbaml";
+	String fileToConvert = "./tbaml/scenarioSalleAvecSon.tbaml";
 
 	public void run() 
 	{

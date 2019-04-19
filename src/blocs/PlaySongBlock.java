@@ -5,7 +5,9 @@ import java.util.HashMap;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-
+//Bloc permettant de jouer un fichier son
+//Entrée : nom du fichier sous forme de String
+//Sortie : son
 
 
 public class PlaySongBlock extends CodingBlock{

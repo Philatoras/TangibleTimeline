@@ -6,6 +6,8 @@ import javax.sound.sampled.Clip;
 
 import java.util.HashMap;
 
+//Bloc stockant le nom d'un fichier son (similaire au TextBlock)
+
 public class SongBlock extends CodingBlock {
 
 	private String songName;

@@ -214,7 +214,8 @@ elementFormDefault="qualified">
 			<tba:element maxOccurs="unbounded" name="Pions" type="pionsType"/>	
 			<tba:element  minOccurs="0" name="ZoneGroups" type="zoneGroupsType"/>	
 			<tba:element maxOccurs="unbounded" name="Zones" type="zonesType"/>
-			<tba:element maxOccurs="unbounded" name="Texts" type="textsType"/>					
+			<tba:element maxOccurs="unbounded" name="Texts" type="textsType"/>
+			<tba:element minOccurs="0" maxOccurs="unbounded" name="Songs" type="songsType"/>						
 		</tba:sequence>
 		<tba:attributeGroup ref="gr_panel" />
 	</tba:complexType>	
@@ -230,7 +231,7 @@ elementFormDefault="qualified">
 	<tba:complexType name="outputType">
 		<tba:sequence>
 			<tba:element minOccurs="0" maxOccurs="unbounded" name="Tts" type="ttsType"/>	
-			<tba:element minOccurs="0" maxOccurs="unbounded" name="Songplayer" type="songplayerType"/>		
+			<tba:element minOccurs="0" maxOccurs="unbounded" name="SongPlayer" type="songplayerType"/>		
 		</tba:sequence>
 	</tba:complexType>
 	

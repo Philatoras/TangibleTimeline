@@ -148,7 +148,7 @@ public class TBAMLToJava extends DefaultHandler {
 			SongBlock songBlock = new SongBlock(songName);
 			codingBlocks.put(id, songBlock);
 		}
-		if(qName == "Songplayer") {
+		if(qName == "SongPlayer") {
 			String id = attributes.getValue("id");
 			PlaySongBlock playSongBlock = new PlaySongBlock();
 			codingBlocks.put(id, playSongBlock);
